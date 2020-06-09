@@ -1,0 +1,211 @@
+---
+title: "OSM Working Draft"
+author: "Eugene Chong"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output:
+  html_document:
+    toc: true
+    toc_float: 
+      collapsed: false
+    toc_depth: 4
+    code_folding: show
+---
+  
+```{r setup, include=FALSE}
+cache_state = TRUE
+
+knitr::opts_chunk$set(echo = TRUE, cache = cache_state, message = FALSE)
+```
+
+# Admin
+
+Load packages
+
+```{r packages}
+library(tidyverse)
+library(sf)
+library(osmdata)
+library(ggmap)
+
+library(httr)
+library(jsonlite)
+
+# unload packages
+# detach("package:microbenchmark", unload=TRUE)
+```
+
+# Explore OSM data 
+
+**Resources**
+
+Vignette: https://cran.r-project.org/web/packages/osmdata/vignettes/osmdata.html
+
+Map features: https://wiki.openstreetmap.org/wiki/Map_Features
+
+`?available_features()` and `?available_tags([feature])`
+
+## Baltimore
+
+### Query parameters
+
+List of parameters:
+
+* City name
+* key
+* value
+
+```{r}
+Balt_bbox <- getbb("Baltimore") %>% 
+  opq()
+```
+
+### Transit
+
+Query the bus stops in Baltimore.
+
+```{r}
+Balt_busStops <- Balt_bbox %>% 
+  add_osm_feature(key = "highway", value = "bus_stop") %>% 
+  osmdata_sf() %>% 
+  # keep only the points. Note that the query returned 4333 points, 9 polygons, and 1 multi-line feature
+  .$osm_points
+```
+
+What's in the bus stops data?
+
+```{r}
+glimpse(Balt_busStops)
+```
+
+Make a quick map
+
+```{r}
+Balt_map <- get_map(getbb("Baltimore"), maptype = "toner-background")
+```
+
+```{r, fig.height=10, fig.width=7}
+ggmap(Balt_map) +
+  geom_sf(data = Balt_busStops,
+          inherit.aes = FALSE, # this is necessary
+          alpha = 0.5) +
+  labs(title = "Bus Stops in Baltimore",
+       caption = "Data source: OSM",
+       x = "",
+       y = "")
+```
+
+### Query some historical data
+
+#### API admin
+
+```{r}
+base_url <- "https://api.ohsome.org/v0.9"
+api_metadata <- GET(url= paste(base_url, "/metadata", sep = "")) %>% 
+  content("text") %>% 
+  fromJSON()
+```
+
+The below tells us the database contains data from October 8, 2007 to May 23, 2020.
+
+```{r}
+api_metadata$extractRegion$temporalExtent
+```
+
+#### Aggregation endpoint
+
+Use this endpoint to aggregate OSM data, e.g. counts, areas, lengths, and users (contributors).
+
+Let's look at the trends for mapping bus stops in Baltimore.
+
+```{r}
+
+# api_bbox <- getbb("Baltimore") %>% bbox_to_string() # note that the order of the coords is flipped from what the database needs
+balt_bbox <- "-76.770759, 39.1308816,-76.450759,39.4508816"
+# api_bbox <- "8.6581,49.3836,8.7225,49.4363"
+
+api_keys <- "highway"
+api_values <- "bus_stop"
+
+monthly <- "2007-11-01/2020-05-23/P1M"
+
+api_data <- GET(url = paste(base_url, "/elements/count", sep = ""),
+                query = list(
+                  bboxes = balt_bbox,
+                  keys = api_keys,
+                  values = api_values,
+                  time = monthly))
+
+busStops_hist <- content(api_data, as = "text") %>% 
+  fromJSON() %>% 
+  .$result
+```
+
+The query from `osmdata` showed 4333 bus stops in Baltimore currently. The OSHDB query shows 4241 bus stops as of May 1, 2020.
+
+```{r}
+ggplot(busStops_hist, 
+       aes(x = as.Date(timestamp),
+           y = value)) +
+  geom_line() +
+  theme_bw() +
+  labs(title = "Bus Stops in Baltimore Mapped In OSM Over Time",
+       caption = "Source: OSHDB, ohsome API",
+       x = "Date",
+       y = "Count")
+```
+
+#### Extraction endpoint
+
+Use this endpoint to pull historical snapshots of OSM features.
+
+**Code below is not the most elegant and the resulting dataframe seems odd - is there a better way to convert the API geoJSON response into sf?**
+
+```{r}
+# is there a more elegant way to do the below?
+file <- tempfile(fileext = ".geojson")
+extraction_api_data <- GET(url= paste(base_url, "/elements/geometry", sep = ""),
+                query = list(
+                  bboxes = balt_bbox,
+                  keys = api_keys,
+                  values = api_values,
+                  types = "point", # do I want to limit it to points only?
+                  time = monthly),
+                httr::write_disk(file))
+busStops_geom_hist <- sf::read_sf(file)
+busStops_geom_hist$X.snapshotTimestamp <- as.Date(busStops_geom_hist$X.snapshotTimestamp)
+
+busStops_geom_hist
+
+# busStops_geom_hist <- content(extraction_api_data, as = "text") %>%
+#   fromJSON()
+
+# write(busStops_geom_hist %>% toJSON(), "test.json")
+```
+
+According to our aggregated data, there was a massive spike in bus stops in Baltimore on OSM at the beginning of February, 2019: from 280 to 3968.
+
+First, does the geometry data have the same number of observations as the aggregated data? It's very close - it may be a matter of the time of day queried.
+
+```{r}
+busStops_changeMap <- busStops_geom_hist %>% 
+  filter(X.snapshotTimestamp %in% as.Date(c("2019-02-01", "2019-01-01")))
+
+busStops_changeMap %>% group_by(X.snapshotTimestamp) %>% 
+  summarize(count = n())
+```
+
+Next, compare to two months side-by-side on a map. 
+
+```{r, fig.width=12, fig.height=8}
+ggmap(Balt_map) +
+  geom_sf(data = busStops_changeMap,
+          inherit.aes = FALSE, 
+          alpha = 0.5) +
+  labs(title = "Change in Bus Stops Mapped on OSM in Baltimore",
+       subtitle = "Number of bus stops jumped from 280 in January 2019 to 3968 in February 2019.",
+       caption = "Data source: OSHDB",
+       x = "",
+       y = "") +
+  facet_wrap(~ X.snapshotTimestamp) 
+```
+
