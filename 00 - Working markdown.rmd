@@ -158,20 +158,18 @@ ggplot(busStops_hist,
 
 Use this endpoint to pull historical snapshots of OSM features.
 
-**Code below is not the most elegant and the resulting dataframe seems odd - is there a better way to convert the API geoJSON response into sf?**
+**The column names for the resulting dataframe seem odd - is there a better way to convert the API geoJSON response into sf?**
 
 ```{r}
 # is there a more elegant way to do the below?
-file <- tempfile(fileext = ".geojson")
 extraction_api_data <- GET(url= paste(base_url, "/elements/geometry", sep = ""),
                 query = list(
                   bboxes = balt_bbox,
                   keys = api_keys,
                   values = api_values,
                   types = "point", # do I want to limit it to points only?
-                  time = monthly),
-                httr::write_disk(file))
-busStops_geom_hist <- sf::read_sf(file)
+                  time = monthly))
+busStops_geom_hist <- read_sf(extraction_api_data)
 busStops_geom_hist$X.snapshotTimestamp <- as.Date(busStops_geom_hist$X.snapshotTimestamp)
 
 busStops_geom_hist
