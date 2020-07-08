@@ -3,6 +3,7 @@
 # 1. Loads packages 
 # 2. Defines global variables
 #   (a) Cities for SDG analysis
+#   (b) Projections for the cities
 # 3. 
 #   (a) Sets Census API key
 #   (b) Caches Census shapefiles
@@ -19,11 +20,13 @@
 ## 1. ----
 # Data reading and wrangling
 library(tidyverse)
+library(measurements) # unit conversion
 
 # spatial data
 library(sf)
 library(tmap) # thematic mapping
 library(tmaptools) # spatial utility functions
+library(walkscoreAPI) # for walksheds
 
 # census
 library(tidycensus)
@@ -35,20 +38,27 @@ library(gridExtra)
 library(knitr)
 library(kableExtra)
 # library(wesanderson) # palettes
+library(osmplotr)
 
 # OSM and OSHDB tools
 library(osmdata)
 library(httr)
 library(jsonlite)
+library(osrm) # isochrones
 
 # debugging
 library(rbenchmark) # time processing speed
 
 ## 2. ----
 # (a)
-sdg_cities <- c("Baltimore",
-                "Minneapolis",
-                "New Orleans")
+sdg_cities <- data.frame(city = c("Baltimore, Maryland",
+                                  "Minneapolis, Minnesota",
+                                  "New Orleans, Louisiana"),
+                         proj = c(2248,
+                                  26821,
+                                  3452))
+
+sdg_cities_list <- split(sdg_cities, f = sdg_cities$city)
 
 ## 3. ----
 # (a)
@@ -68,16 +78,17 @@ plotTheme <- function(){
 
 mapTheme <- function(base_size = 12) {
   theme(
-    text = element_text( color = "black"),
-    plot.title = element_text(size = 14,colour = "black"),
-    plot.subtitle=element_text(face="italic"),
-    plot.caption=element_text(hjust=0),
+    text = element_text(color = "black"),
+    plot.title = element_text(size = 14, colour = "black"),
+    plot.subtitle = element_text(face = "italic"),
+    plot.caption = element_text(hjust = 1),
     axis.ticks = element_blank(),
-    panel.background = element_blank(),axis.title = element_blank(),
+    panel.background = element_blank(),
+    axis.title = element_blank(),
     axis.text = element_blank(),
     axis.title.x = element_blank(),
     axis.title.y = element_blank(),
     panel.grid.minor = element_blank(),
-    panel.border = element_rect(colour = "black", fill=NA, size=2)
+    panel.border = element_rect(colour = "black", fill = NA, size = 2)
   )
 }

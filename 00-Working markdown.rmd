@@ -63,7 +63,7 @@ Tags used:
 * `public_transport=*`
 
 ```{r}
-source("~scripts/11 - Read Transit SDG data.R")
+source("~scripts/12 - Read Transit SDG data.R")
 
 # Balt_busStops <- Balt_bbox %>% 
 #   add_osm_feature(key = "highway", value = "bus_stop") %>% 
@@ -100,7 +100,7 @@ tmp <- list.files("~plots/31_transit_point_maps",
 for (i in 1:length(tmp)) {
   cat("###### ", sdg_cities[i],"\n")
   cat(paste0("![](", tmp[i], "){width=100%}"), "\n")
-  cat('\n\n')
+  cat('\n\n') 
 }
 ```
 
@@ -217,4 +217,42 @@ ggmap(sdg_basemaps$Baltimore) +
        y = "") +
   facet_wrap(~ X.snapshotTimestamp) 
 ```
+
+# Tutorial
+
+This tutorial is a guide to using R to query OpenStreetMap and the US Census to track progress made on two UN Sustainable Development Goals. The intended audience for this tutorial is someone with an elementary understanding of the R programming language, but who is unfamiliar with using the language to manipulate spatial data and with OpenStreetMap generally.
+
+* List the two SDGs, why they're important, how they're measured, briefly
+* Talk about APIs used
+* Challenges (OSM data inconsistent across locales, and dependent on strength of local mapping community)
+
+## Pulling Census Data for Baltimore
+
+For this tutorial, we'll be looking at Baltimore, Maryland. Our first step is to download data from the US Census Bureau for the city. These data include two types of information that are important for our analysis:
+
+1. **Geography:** Choosing a _geographic unit of analysis_ is an important step in any spatial analysis, and it can drastically affect our results. Patterns that might be present at one unit of geography might not be present for a different unit. For example, we might see that a city, as a percentage of its total land area, has plentiful open space and parkland, but we might also find that that space is not distributed evenly across the city, and that certain neighborhoods have far less access to parks than others. In this tutorial, we'll be using [Census Block Groups](https://www2.census.gov/geo/pdfs/reference/GARM/Ch11GARM.pdf), the smallest geographical unit for which the Census Bureau publishes [5-year ACS estimates](https://www.census.gov/programs-surveys/acs/geography-acs/areas-published.html) every year. 
+
+2. **Demographic and Socio-economic data:** In addition to geographic information, we will be downloading Census data such as the total population, household income, education, vehicle ownership rates, and racial makeup for each block group. These data will provide additional demographic and socio-economic context for our SDG findings.
+
+
+
+## Transit SDG
+
+We'll start with the 
+
+**To-do:**
+
+* Collect census data
+* Pull all transit stops
+  + show that data includes platforms and stop positions. Choose only stop positions. But flag that this may be different city to city
+  + Discuss how they don't reliably include frequency information
+* 3 ways to figure out what is a "20-minute walk" away:
+  1. Using a buffer is simplest, but that doesn't really reflect walking distance.
+  2. Use walksheds from `calc_network_catchment()`, but that relies only on distance.
+* But this also doesn't really reflect walking distance.
+  + Find walk sheds using OSRM and overlay that on the plain buffer
+* Count total transit stops.
+
+
+
 
