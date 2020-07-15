@@ -53,10 +53,12 @@ library(rbenchmark) # time processing speed
 # (a)
 sdg_cities <- data.frame(city = c("Baltimore, Maryland",
                                   "Minneapolis, Minnesota",
-                                  "New Orleans, Louisiana"),
+                                  "New Orleans, Louisiana",
+                                  "Pennsylvania"),
                          proj = c(2248,
                                   26821,
-                                  3452))
+                                  3452,
+                                  2272))
 
 sdg_cities_list <- split(sdg_cities, f = sdg_cities$city)
 

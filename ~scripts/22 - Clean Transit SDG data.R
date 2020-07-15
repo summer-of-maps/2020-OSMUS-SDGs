@@ -29,10 +29,14 @@ pubTrans <- pmap(.l = list(buses, trams, rail, ferries),
 # 2. ----
 # (a)
 walkroads <- map2(walkroads,
-                  sdg_cities_list,
+                  sdg_cities_list[1:3],
                   ~ .x %>% 
                     dplyr::select(highway, geometry) %>% 
                     st_transform(crs = .y$proj))
+
+walkroads[["Pennsylvania"]] <- PA_walkroads %>% 
+  dplyr::select(highway = fclass, geometry) %>% 
+  st_transform(sdg_cities_list$Pennsylvania$proj)
 
 # (b)
 pubTrans <- map2(pubTrans,
@@ -43,6 +47,6 @@ pubTrans <- map2(pubTrans,
 
 ## 1. Export as RDS ----
 # saveRDS(walkroads,
-#         "~objects/20/22_walkroads.RDS")
+#         "~objects/~large_files/22_walkroads.RDS")
 # saveRDS(pubTrans,
 #         "~objects/20/22_pubTrans.RDS")

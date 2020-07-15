@@ -21,8 +21,8 @@
 source("~scripts/10 - Data admin.R")
 
 ## 2. ----
-walkroads <- map2(bboxes,
-                  sdg_cities_list,
+walkroads <- map2(bboxes[1:3],
+                  sdg_cities_list[1:3],
                  ~ .x %>% 
                    add_osm_feature(key = "highway", value = c("primary", 
                                                               "primary_link",
@@ -48,8 +48,31 @@ walkroads <- map2(bboxes,
                                                 format_out = "polygon")) %>% 
                    .$osm_lines)
 
+# download and process from geofrabrik since pulling from OSM API runs into rate limit
+PA_walkroads <- st_read("~objects/~large_files/state_roads/PA/gis_osm_roads_free_1.shp") %>% 
+  filter(fclass %in% c("primary", 
+                       "primary_link",
+                       "secondary",
+                       "secondary_link",
+                       "tertiary",
+                       "tertiary_link",
+                       "unclassified",
+                       "residential",
+                       "road",
+                       "living_street",
+                       "service",
+                       "track",
+                       "path",
+                       "steps",
+                       "pedestrian",
+                       "footway",
+                       "pier"))
+
 ## 3. ----
 # buses
+# server_url <- "https://overpass.kumi.systems/api/interpreter" # this server does not have a rate limit
+# set_overpass_url(server_url)
+
 buses1 <- map(bboxes,
               ~ .x %>% 
                 add_osm_feature(key = "highway", value = "bus_stop") %>% 
@@ -82,7 +105,7 @@ trams <- map(bboxes,
 rail <- map(bboxes,
              ~ .x %>% 
                add_osm_feature(key = "railway", value = "station") %>% 
-               add_osm_feature(key = "station", value = c("subway", "light_rail")) %>%
+               # add_osm_feature(key = "station", value = c("subway", "light_rail")) %>% # some regional rail in PA has no station tag
                osmdata_sf() %>% 
                unique_osmdata())
 
@@ -91,4 +114,5 @@ ferries <- map(bboxes,
               ~ .x %>% 
                 add_osm_feature(key = "amenity", value = "ferry_terminal") %>% 
                 osmdata_sf() %>% 
-                unique_osmdata()$osm_points)
+                unique_osmdata() %>% 
+                .$osm_points)

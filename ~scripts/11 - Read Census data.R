@@ -5,6 +5,7 @@
 #   (a) Baltimore
 #   (b) Minneapolis
 #   (c) New Orleans
+#   (d) Pennsylvania
 # 3. Combines them
 #
 # Exports: 
@@ -17,7 +18,7 @@
 #
 ##########################################################################
 
-## 2. ----
+## 1. ----
 # List of 2018 ACS variables: https://api.census.gov/data/2018/acs/acs5/variables.html
 census_df <- data.frame(vars =     c("B01003_001", 
                                      "B19013_001", 
@@ -160,14 +161,46 @@ nola_BGs <- get_acs(geography = "block group",
                      vars = census_vars,
                      names = census_colNames,
                      drop_MOE = TRUE)
+
+# (d) Pennsylvania
+# tracts
+PA_tracts <- get_acs(geography = "tract",
+                       variables = census_vars, # population
+                       year = 2018,
+                       state = "Pennsylvania",
+                       survey = "acs5",
+                       output = "wide",
+                       geometry = TRUE) %>% 
+  st_transform(sdg_cities_list$Pennsylvania$proj) %>% 
+  rename_census_cols(x = .,
+                     vars = census_vars,
+                     names = census_colNames,
+                     drop_MOE = TRUE)
+
+# block groups
+PA_BGs <- get_acs(geography = "block group",
+                    variables = census_vars, # population
+                    year = 2018,
+                    state = "Pennsylvania",
+                    survey = "acs5",
+                    output = "wide",
+                    geometry = TRUE) %>% 
+  st_transform(sdg_cities_list$Pennsylvania$proj) %>% 
+  rename_census_cols(x = .,
+                     vars = census_vars,
+                     names = census_colNames,
+                     drop_MOE = TRUE) %>% 
+  .[!st_is_empty(.), , drop = FALSE]
 ## 3. ----
 tracts <- list("Baltimore" = balt_tracts,
                "Minneapolis" = mpls_tracts,
-               "New Orleans" = nola_tracts)
+               "New Orleans" = nola_tracts,
+               "Pennsylvania" = PA_tracts)
 
 BGs <- list("Baltimore" = balt_BGs,
             "Minneapolis" = mpls_BGs,
-            "New Orleans" = nola_BGs)
+            "New Orleans" = nola_BGs,
+            "Pennsylvania" = PA_BGs)
 
 
 ## 1. Export as RDS ----

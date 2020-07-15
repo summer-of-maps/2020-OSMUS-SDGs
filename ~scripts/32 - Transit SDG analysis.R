@@ -34,10 +34,6 @@ grids_summary <- map(grids,
                        summarize(TotPop = sum(TotPop)) %>% 
                        mutate(prop = TotPop / sum(TotPop)))
 
-grids_summary$Baltimore
-grids_summary$Minneapolis
-grids_summary$`New Orleans`
-
 ## 2. ----
 # How many within a 0.5km buffer of the center of the grid cell?
 buffer_dist <- conv_unit(0.5,
@@ -62,10 +58,6 @@ buffers_summary <- map(buffers,
                          group_by(hasTransit) %>% 
                          summarize(TotPop = sum(TotPop)) %>% 
                          mutate(prop = TotPop / sum(TotPop)))
-
-buffers_summary$Baltimore
-buffers_summary$Minneapolis
-buffers_summary$`New Orleans`
 
 ## 3. ----
 # how many within a 0.5km walk by road
@@ -136,10 +128,63 @@ nola_isometric <- map(nola_isometric_list,
   bind_rows(.id = "cell_ID") %>% 
   st_as_sf()
 
+# Pennsylvania
+# state
+grids <- readRDS("~objects/30/32_grids.RDS")
+centroids <- st_centroid(grids$Pennsylvania)
+
+PA_isometric_list <- list()
+time <- Sys.time()
+for (row in 50274:length(PA_isometric_list)) {
+  if(row %% 25 == 0){
+    print(row)
+    print(Sys.time() - time)
+    time <- Sys.time()
+  }
+  tryCatch({
+    PA_isometric_list[[row]] <- osrmIsometric( # find isochrones
+      centroids[row,],
+      breaks = 500, # 500-meter walk
+      exclude = NULL, # don't exclude any road types
+      res = 20, # resolution
+      returnclass = "sf"
+    )}, error = function(e){})
+}
+
+
+PA_isometric_list <- readRDS("~objects/~large_files/PA_isometric/PA_isometric_list1_.RDS")
+
+PA_isometric_df1 <- map(PA_isometric_list,
+                      ~ as.data.frame(.x)) %>% 
+  bind_rows(.id = "cell_ID")
+
+PA_isometric_df2 <- map(PA_isometric_list[10001:20000],
+                        ~ as.data.frame(.x)) %>% 
+  bind_rows(.id = "cell_ID")
+
+saveRDS(PA_isometric_list, # elements 1:50273
+        "~objects/~large_files/PA_isometric/PA_isometric_list1_.RDS")
+
+saveRDS(PA_isometric_df1,
+        "~objects/~large_files/PA_isometric/32_PA_isometricdf1_.RDS")
+saveRDS(PA_isometric_df2,
+        "~objects/~large_files/PA_isometric/32_PA_isometricdf2_.RDS")
+
+PA_isometric <- PA_isometric_df %>% 
+  st_as_sf()
+
+
+
+
 ## 4. ----
+# balt_isometric <- readRDS("~objects/30/32_balt_isometric.RDS")
+# mpls_isometric <- readRDS("~objects/30/32_mpls_isometric.RDS")
+# nola_isometric <- readRDS("~objects/30/32_nola_isometric.RDS")
+
 isometric_list <- list("Baltimore" = balt_isometric,
                        "Minneapolis" = mpls_isometric,
-                       "New Orleans" = nola_isometric) %>% 
+                       "New Orleans" = nola_isometric,
+                       "Pennsylvania" = PA_isometric) %>% 
   map2(.x = .,
        .y = pubTrans,
        ~ .x %>% 
@@ -180,7 +225,7 @@ tm_shape(isochrone_test2) + tm_polygons(col = "green", alpha = 0.5) +
 # saveRDS(grids,
 #         "~objects/30/32_grids.RDS")
 # saveRDS(buffers,
-#         "~objects/30/32_buffers.RDS")
+#         "~objects/~large_files/32_buffers.RDS")
 
 ## 2. Export as RDS ----
 # saveRDS(balt_isometric,

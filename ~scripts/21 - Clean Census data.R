@@ -44,7 +44,7 @@ grids <- map(BGs,
                             cellsize = find_hex_cellsize(cell_size),
                             # hex cells
                             square = FALSE) %>% 
-               st_sf()%>% 
+               st_sf() %>% 
                # interpolate population by BG to each grid cell
                {st_interpolate_aw(.x["TotPop"],
                                   .,

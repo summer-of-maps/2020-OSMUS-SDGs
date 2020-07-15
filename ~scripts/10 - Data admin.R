@@ -1,6 +1,7 @@
 ##########################################################################
 # This script assigns any variables used when collecting OSM data for both SDGs:
 # 1. Define the geographic areas for the cities of interest
+#     (IS THIS NEEDED?)
 # 2. Bounding boxes for each sdg city
 #
 # Exports: 
@@ -30,4 +31,5 @@ mpls <- places("Minnesota",
 ## 2. ---- 
 bboxes <- map(set_names(sdg_cities$city), # set names adds names to the list output
               ~ getbb(.x) %>% 
-                opq())
+                opq(timeout = 900, # 900 seconds
+                    memsize = 1073741824 * 3)) # 3 GB
