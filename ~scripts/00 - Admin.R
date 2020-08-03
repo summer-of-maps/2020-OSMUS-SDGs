@@ -45,6 +45,7 @@ library(osmdata)
 library(httr)
 library(jsonlite)
 library(osrm) # isochrones
+library(nominatim)
 
 # debugging
 library(rbenchmark) # time processing speed
@@ -54,13 +55,20 @@ library(rbenchmark) # time processing speed
 sdg_cities <- data.frame(city = c("Baltimore, Maryland",
                                   "Minneapolis, Minnesota",
                                   "New Orleans, Louisiana",
+                                  "Philadelphia, Pennsylvania",
+                                  "Houston, Texas",
+                                  "San Francisco, California",
                                   "Pennsylvania"),
                          proj = c(2248,
                                   26821,
                                   3452,
+                                  2272,
+                                  2278,
+                                  2227,
                                   2272))
 
-sdg_cities_list <- split(sdg_cities, f = sdg_cities$city)
+sdg_cities_list <- split(sdg_cities, f = seq(nrow(sdg_cities))) %>% 
+  set_names(sdg_cities$city)
 
 ## 3. ----
 # (a)
@@ -91,6 +99,7 @@ mapTheme <- function(base_size = 12) {
     axis.title.x = element_blank(),
     axis.title.y = element_blank(),
     panel.grid.minor = element_blank(),
-    panel.border = element_rect(colour = "black", fill = NA, size = 2)
+    panel.border = element_blank()
+    # panel.border = element_rect(colour = "black", fill = NA, size = 2)
   )
 }

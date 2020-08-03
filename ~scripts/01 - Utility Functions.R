@@ -9,6 +9,7 @@
 #   optionally drop the margin of error columns
 # 4. find_hex_cellsize(): for a desired hexagonal cell area, returns a cellsize for the st_make_grid() function 
 # 5. st_snap_points(): snap point geometries x to nearest point in geometries y
+# 6. base_map_bb(): Get a bounding box for use with the ggmap package's get_map() function
 #
 # To-do:
 # 1. 
@@ -84,3 +85,9 @@ st_snap_points = function(x, y, max_dist = 1000) {
   )
   return(out)
 }
+
+## 6. ----
+base_map_bb <- function(sf # this should be an sf object
+                        ) {
+  tmaptools::bb(sf, output = "matrix")
+  }

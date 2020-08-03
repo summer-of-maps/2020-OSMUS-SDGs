@@ -10,9 +10,10 @@
 ##########################################################################
 
 ## 1. ----
-sdg_basemaps <- map(set_names(sdg_cities),
-                    ~ get_map(getbb(.x), 
-                              maptype = "toner-background"))
+sdg_basemaps <- map(set_names(sdg_cities$city),
+                    ~ get_stamenmap(getbb(.x), 
+                                    zoom = 11,
+                                    maptype = "toner-background"))
 
 ## 1. Export as RDS ----
 # saveRDS(sdg_basemaps,

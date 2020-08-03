@@ -16,6 +16,7 @@ cache_state = TRUE
 
 knitr::opts_chunk$set(echo = TRUE, cache = cache_state, message = FALSE)
 knitr::opts_knit$set(root.dir = '..') 
+# setwd(here::here())
 ```
 
 
@@ -117,11 +118,11 @@ for(i in seq_along(buffers_summary)) {
 Examples. The buffers are in orange, original grids in blue, bus stops in red.
 
 ```{r, cache = FALSE}
-buffers <- readRDS("~objects/30/32_buffers.RDS")
-
-tm_shape(buffers$Baltimore[c(462, 498, 534, 572),]) + tm_polygons(col = "orange", alpha = 0.5) +
-  tm_shape(grids$Baltimore[c(462, 498, 534, 572),]) + tm_polygons(col = "blue", alpha = 0.3) +
-  tm_shape(pubTrans$Baltimore) + tm_dots(col = "red")
+# buffers <- readRDS("~objects/30/32_buffers.RDS")
+# 
+# tm_shape(buffers$Baltimore[c(462, 498, 534, 572),]) + tm_polygons(col = "orange", alpha = 0.5) +
+#   tm_shape(grids$Baltimore[c(462, 498, 534, 572),]) + tm_polygons(col = "blue", alpha = 0.3) +
+#   tm_shape(pubTrans$Baltimore) + tm_dots(col = "red")
 ```
 
 ### Method 3: 
@@ -142,7 +143,7 @@ for(i in seq_along(isometric_summary)) {
 Examples. The original grids are in blue, the grid centroid in green, the 0.5km walking distance in orange, and the bus stops in red
 
 ```{r, cache = FALSE}
-walkroads <- readRDS("~objects/20/22_walkroads.RDS")
+walkroads <- readRDS("~objects/20/~archive/22_walkroads.RDS")
 isometric_list <- readRDS("~objects/30/32_isometric_list.RDS")
 
 tmp <- st_intersection(walkroads$Baltimore,
@@ -154,6 +155,47 @@ tm_shape(grids$Baltimore[c(462, 498, 534, 572),]) + tm_polygons(col = "blue", al
   tm_shape(tmp) + tm_lines(col = "orange", lwd = 4) +
   tm_shape(centroid_tmp[c(462, 498, 534, 572),]) + tm_dots(col = "green", size = 1) +
   tm_shape(pubTrans$Baltimore) + tm_dots(col = "red")
+```
+
+# Open Space SDG (11.7.1)
+
+SDG target 11.7 is `By 2030, provide universal access to safe, inclusive and accessible, green and public spaces, particularly for women and children, older persons and persons with disabilities.` [Source](https://sustainabledevelopment.un.org/content/documents/2013150612-FINAL-SDSN-Indicator-Report1.pdf).
+
+Sufficient public space is critical for cities to function effectively and grow equitably. Public spaces, which the UN defines as any "streets, sidewalks, squares, gardens, parks, and conservation areas" available for public use, support necessary infrastructure like fire hydrants and roadways, and green spaces in particular provide important public health and environmental benefits. 
+
+To track progress made on this SDG, the UN has proposed the following indicator: `Area of public and green space as a proportion of total city space`. The UN's minimum standard for public space in urban areas is 45%, broken down into 30% for streets and sidewalks and 15% for green space.
+
+## Method
+
+What percentages of Baltimore, Minneapolis, New Orleans, Philadelphia, Houston, and San Francisco consist of publicly accessible green space?
+
+1. Download the following OpenStreetMap features. Collect only the polygon/multipolygon features, as areas cannot be calculated for point or line features. 
+
+  * **key=leisure**
+    + value=park
+    + value=dog_park
+    + value=garden
+    + value=nature_reserve
+    + value=pitch
+    + value=playground
+  * **key=place**, value=square
+  * **key=landuse**, value=cemetery
+
+2. Download the same features (to the extent possible) from each city's open data website. Some cities (e.g., Philadelphia) provide detailed land use maps that distinguish parks, ball fields, playgrounds, and cemeteries. Others (e.g. Houston) provide only shapefiles for city parks. These will serve as "control" datasets. How does this SDG indicator differ between measurements made on OSM data and municipality open data?
+
+3. Download US Census TIGER/Line boundaries and hydrologies for each city. Subtract the area of the hydrologies from the total area of the city to derive the land area for each city.
+
+4. Calculate the total area of park space features from OSM. Do the same for the open data features. Divide each sum by the city's land area.
+
+## Results
+
+```{r, include = FALSE}
+openSpace_results <- readRDS("~objects/30/33_openSpace_results.rds")
+```
+
+```{r}
+kable(openSpace_results) %>% 
+  kable_styling()
 ```
 
 # Running list of questions / notes
@@ -193,7 +235,5 @@ docker run -t -v "${PWD}:/data" osrm/osrm-backend osrm-customize "/data/minnesot
 # launch!
 docker run -t -i -p 5000:5000 -v "${PWD}:/data" osrm/osrm-backend osrm-routed --algorithm mld /data/minnesota-latest.osrm
 ```
-
-
 
 

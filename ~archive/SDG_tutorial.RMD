@@ -1,0 +1,686 @@
+---
+title: "Measuring UN SDG Progress using R and OSM"
+author: "Eugene Chong"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output:
+  html_document:
+    toc: true
+    toc_float: 
+      collapsed: false
+    toc_depth: 4
+    code_folding: show
+---
+  
+```{r setup, include=FALSE}
+cache_state = TRUE
+
+knitr::opts_chunk$set(echo = TRUE, cache = cache_state, message = FALSE)
+```
+
+# 1. Introduction
+
+This tutorial is a guide to using R to query OpenStreetMap and the US Census to track progress made on a UN Sustainable Development Goal. The intended audience for this tutorial is someone with an elementary understanding of the R programming language and the data manipulation and visualization tools in the `tidyverse` package, but who is unfamiliar with using the language to manipulate spatial data and with OpenStreetMap generally.
+
+Why do this in R?
+
+* Reproducible
+* Scalable
+
+To-do:
+
+* Describe the SDG and how it's measured, briefly
+* Talk about APIs used
+* Challenges (OSM data inconsistent across locales, and dependent on strength of local mapping community)
+
+Follow along in this tutorial by opening your own R script and pasting the code as you go!
+
+# 2. Census Data
+
+For this tutorial, we'll be looking at Baltimore, Maryland. Our first step is to download data from the US Census Bureau for the city. These data include two types of information that are important for our analysis:
+
+1. **Geography:** Choosing a _geographic unit of analysis_ is an important step in any spatial analysis, and it can drastically affect our results. Patterns that might be present at one unit of geography might not be present for a different unit. For example, we might see that a city, as a percentage of its total land area, has plentiful open space and parkland, but we might also find that that space is not distributed evenly across the city, and that certain neighborhoods have far less access to parks than others. In this tutorial, we'll be using [Census Block Groups](https://www2.census.gov/geo/pdfs/reference/GARM/Ch11GARM.pdf), the smallest geographical unit for which the Census Bureau publishes [5-year ACS estimates](https://www.census.gov/programs-surveys/acs/geography-acs/areas-published.html) every year. 
+
+2. **Demographic and Socio-economic data:** In addition to geographic information, we will be downloading Census data such as the total population, household income, education, vehicle ownership rates, and racial makeup for each block group. These data will provide additional demographic and socio-economic context for our SDG findings.
+
+## Setting things up
+
+To download the data, the first thing we need to do is install and load the packages we'll be using. Rather than loading all packages at the very beginning, I'll load packages using the `library()` function as we proceed. Note that if you receive an error message saying `there is no package called '[package]'`, you likely need to install it first. To do so, use the `install.packages()` commands below.
+
+In R, anything following a `#` is a comment, meaning it is not evaluated as code. Below, I use `#` to "comment out" the `install.packages()` commands and also to add short descriptions of the two packages we're loading, `tidycensus` and `tigris`.
+
+```{r, echo=FALSE}
+# source("~scripts/00 - Admin.R")
+```
+
+```{r census data packages}
+# install.packages("tidycensus")
+library(tidycensus) # lets us download Census data, e.g. total population or household income
+# install.packages("tigris")
+library(tigris) # lets us download TIGER/Line Census geographies: https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html
+```
+
+We download data through the [Census API](https://www.census.gov/data/developers/data-sets.html), the interface that lets R "talk" to the Census' databases. We next set a couple options for how we communicate with the Census API:
+
+* **API Key:** Every person or organization needs an "API key" (basically a personal ID) to access the Census API. You can sign up for one [here](https://api.census.gov/data/key_signup.html). Paste the key below where it says `[YOUR_KEY_HERE]`. Make sure to delete the square brackets but keep the quotation marks.
+* **Cache:** This option tells R not to re-download Census geographies after you've downloaded them once. 
+
+```{r, echo = FALSE}
+census_key <- readRDS("API_keys/census_api_key.rds")
+census_api_key(census_key, install = T, overwrite = TRUE)
+```
+
+```{r api key, eval = FALSE}
+census_key <- "[YOUR_KEY_HERE]" # set your API key
+census_api_key(census_key, install = T, overwrite = TRUE) # install your api key into your R profile
+
+options(tigris_use_cache = TRUE) # do not re-download Census geographies
+
+options(scipen = 999) # turn off scientific notation in plots and graphs
+```
+
+## What data do we want?
+
+The first thing we need to do is figure out what data we want from the Census. This requires we answer three questions (a couple of which we already have answers for!):
+
+1. **What is the geographic area we're analyzing?** Baltimore, Maryland
+2. **What is the geographic unit of analysis we want to use?** Census block groups
+3. **What ACS variables are we interested in?** This depends on your interests, but for now, let's start simple and look at _Total Population_ and _Median Household Income_ for each block group. You can find a full list of all ACS variables and their codes [here](https://api.census.gov/data/2018/acs/acs5/variables.html). For this SDG, what other variables are you interested in seeing? 
+
+To stay organized, let's create a dataframe that'll act as a "dictionary" for our census variables. It will contain variable codes and the shorthand names we'll use to refer to them. It only includes two variables for now, but this will be a very handy reference if you add more
+
+```{r, echo=FALSE}
+# source("~scripts/11 - Read Census data.R")
+```
+
+```{r census vars}
+census_df <- data.frame(codes = c("B01003_001E", # the code corresponding to Total Population
+                                  "B19013_001E"), # and to Median Household Income
+                        names = c("TotPop",
+                                  "MdHHInc"),
+                        stringsAsFactors = FALSE)
+
+census_df
+```
+## Download the data
+
+Now that we've answered those three questions above, we can turn to downloading the data! We'll do this using the `get_acs()` function from the tidycensus package. Below is the full function call, annotated with comments explaining what each piece of the call does. 
+
+```{r download census data, results = "hide"}
+balt_BGs <- get_acs( 
+  geography = "block group", # we want block groups for our geographic unit of analysis.
+  variables = census_df$codes, # what variables do we want? We use the "codes" column from our census_df dataframe 
+                    year = 2018, # what year do we want? The most recent year available is 2018, so let's use that.
+                    state = "Maryland", 
+                    county = "Baltimore city", # specify that we want the county of "Baltimore city" from Maryland
+                    survey = "acs5", # We want 5-year ACS estimates (as opposed to 1-year or 3-year, which are less accurate)
+                    output = "wide", # each variable will be its own column 
+                    geometry = TRUE # do we want the geographic data? Yes.
+  ) 
+```
+
+The data will take a minute to download. To celebrate, let's make our first map. We can use the `plot()` function on the data's geometry column to do so.
+
+```{r baltimore BG map}
+plot(balt_BGs$geometry)
+```
+
+The map doesn't look like much, but we can see the overall shape of the city, include the harbor in the bottom-right corner, as well as all of the census block groups the city is divided into.
+
+Now let's look at some of the other variables included with the data.
+
+```{r see census data}
+balt_BGs
+```
+
+Looking at the data, we see that each row is one block group in Baltimore, and each block group has its own `GEOID`, `NAME`, and `geometry`. We also see four columns related to our census variables. The ones ending with "E" are the estimates themselves; the first row shows that Block Group 4 in Census Tract 1201 has an estimated population of 1,476 and an estimated median household income of \$47,697. The columns ending in "M" are the margins of error. Since the ACS is a survey of a _sample_ of people, the Census reports a margin of error at a 90% confidence interval. That same block group has a margin of error of 279 for population, meaning the Census is 90% confident that the block group's population is somewhere in the range of 1,476 $\pm$ 279. For median household income, the margin of error is about \$30,000, nearly 2/3 of the estimate itself! 
+
+As an experiment, let's divide the margin of error for median HH income by the estimate for each of the 653 block groups in Baltimore. Then, we'll take the average of that to see how confident we can be in that data overall.
+
+```{r margin of error block groups}
+mean(balt_BGs$B19013_001M / balt_BGs$B19013_001E, 
+     na.rm = TRUE)
+```
+
+On average, the margin of error for median HH income in a Baltimore block group is over 40% of the estimate! Now let's see how to compares to the average margin of error for the 200 _census tracts_ in Baltimore. Remember that census tracts are bigger - they're each made up of several block groups.
+
+```{r margin of error tracts, results = "hide"}
+balt_tracts <- get_acs( 
+  geography = "tract", # this time, we want census tracts for our geographic unit of analysis.
+  variables = census_df$codes, 
+                    year = 2018, 
+                    state = "Maryland", 
+                    county = "Baltimore city", 
+                    survey = "acs5", 
+                    output = "wide", 
+                    geometry = TRUE 
+  ) 
+
+mean(balt_tracts$B19013_001M / balt_tracts$B19013_001E, 
+     na.rm = TRUE)
+```
+
+For tracts, the average is significantly lower, about 24%. If we do this again for the entire city, we'll find that the margin of error for median HH income is just about 1% of the estimate.
+
+```{r margin of error county, eval = FALSE, echo = FALSE}
+balt_city <- get_acs( 
+  geography = "county", # we want block groups for our geographic unit of analysis.
+  variables = census_df$codes, # what variables do we want? We use the "codes" column from our census_df dataframe 
+                    year = 2018, # what year do we want? The most recent year available is 2018, so let's use that.
+                    state = "Maryland", 
+                    county = "Baltimore city", # specify that we want the county of "Baltimore city" from Maryland
+                    survey = "acs5", # We want 5-year ACS estimates (as opposed to 1-year or 3-year, which are less accurate)
+                    output = "wide", # each variable will be its own column 
+                    geometry = TRUE # do we want the geographic data? Yes.
+  ) 
+
+mean(balt_city$B19013_001M / balt_city$B19013_001E, 
+     na.rm = TRUE)
+```
+
+This experiment illustrates an important concept in spatial analysis: the trade-off between geographic precision and measurement error. Looking at a smaller unit of geography like a census block group provides us a higher spatial resolution than a larger unit like an entire city, but it also means that the statistics we sample from that smaller unit are more likely to be inaccurate. Ultimately, how you choose to make this trade-off depends on the goals of your analysis.
+
+Since, as part of this tutorial, we're measuring the percentage of people within a half kilometer walk of transit, we'll proceed with block groups, the smallest geography available for the ACS. While census tracts would provide more accurate data, they vary widely in size, and many of them exceed 0.5km in length, meaning that some people in the tract might have good access to transit while others might not. Using a smaller geography like block groups would reduce the likelihood we encounter those situations. 
+
+Let's go back to the block group data to remove the margin of error columns and rename the variables using the shorthand names we gave earlier. Note that we load the package `tidyverse`, which provides functions for manipulating and visualizing data.
+
+```{r}
+library(tidyverse) # a package for manipulating and visualizing data
+
+balt_BGs <- balt_BGs %>% 
+  dplyr::select(-c(B01003_001M, B19013_001M)) %>% # remove columns we don't want
+  rename(TotPop = B01003_001E, # rename the census variables with shorthand names
+         MdHHInc = B19013_001E)
+
+balt_BGs
+```
+
+The last thing we need to do with the data is _un-project_ it. Data from the Census is provided in the projection EPSG:3857 (a flat representation of the Earth) used by Google Maps and many other web services. This makes the data suitable for mapping purposes (after all, maps are flat), but it can cause large distortions in spatial operations such as distance measurements, which we'll be doing later on. Further, these distortions aren't constant - they are different depending on the distances being measured the the latitudes of the endpoints, so they're hard to "un-do" after the fact. See [this page](https://lyzidiamond.com/posts/4326-vs-3857) and [this page](https://postgis.net/workshops/postgis-intro/geography.html) for short introductions on common projections.
+
+To reduce these distortions, we'll transform the data from its projected form into a geographic coordinate system (EPSG:4326) that represents our census data by its location on the Earth. We'll do this by loading in the `sf` package and using the `st_transform()` function.
+
+```{r BG transform}
+library(sf)
+
+balt_BGs <- st_transform(balt_BGs,
+                         crs = 4326) # specify the coordinate system we want to use
+```
+
+## Map the data
+
+Finally, let's map our census variables. Creating maps or any sort of visualization in R in typically an iterative process. We start with the simplest version of the map, and then we add features and tweak the aesthetics one-by-one until the final product has the intended effect. We'll walk through that process here by mapping the distribution of household income across Baltimore.
+
+Let's start simply and just map each block group. This time, we'll use the `ggplot()` function, which gives us more flexibility than the simple `plot()` function we used earlier. Here, we use `ggplot()` to create a plot and then add the block groups as a layer using `geom_sf()`. `geom_sf()` recognizes the `geometry` column from the block group data and uses it to draw a map. 
+
+This looks very similar to the map we create above, with the outlines for each census block group in Baltimore.
+
+```{r, fig.height=8}
+ggplot() +
+  geom_sf(data = balt_BGs)
+```
+
+Next, let's add household income information to the map. We assign the data's `MdHHInc` column to the `fill` aesthetic for the plot.
+
+```{r, fig.height=8}
+ggplot() +
+  geom_sf(data = balt_BGs,
+          aes(fill = MdHHInc)) # assign MdHHInc column to the "fill" aesthetic
+```
+
+This provides us with some more information about the city. We see that the areas in north central Baltimore and near the harbor tend to have higher incomes, and that there are a fair number of areas in gray for which the census did not provide an estimate for median household income. The continuous color scale, however, makes the map a bit hard to read. Would splitting the map into quintiles help?
+
+Below, we create a function that will help us split the data into quintiles. See the comments in the code for more detail on how the function works.
+
+```{r, echo=FALSE}
+# source("~scripts/01 - Utility Functions.R")
+```
+
+```{r quintile functions}
+q5 <- function(variable) { # this function q5() takes one input called "variable"
+  ntile(variable, 5) %>% # the function splits "variable" into 5 quantiles 
+    as.factor() # then it turns those quantiles into a factor
+  } 
+```
+
+We use the function to draw the map again.
+
+```{r, fig.height=8}
+ggplot() +
+  geom_sf(data = balt_BGs,
+          # this time, we use the quintiles to map median HH income as 5 categories
+          aes(fill = q5(MdHHInc))) 
+```
+
+By grouping household income values into quintiles, the plot makes it easier to spot patterns in the geographic distribution of income across the city. The higher income areas in the north and near the harbor are more pronounced, and we can see areas with lower income to the west of downtown a bit more clearly. However, the default, color scheme doesn't make much sense here. It's qualitative, meaning it doesn't tell us how each quintile relates to the order, even though we know that block groups in quintile 5 have a higher income than block groups in quintile 4. Also, the legend doesn't tell us what household incomes actually are in these block groups. Let's fix these problems next.
+
+First, we'll create a new function `qBr()` that provides the value of each quintile break.
+
+```{r qBr function}
+qBr <- function(df, # the dataframe we want to use for our function 
+                variable # the variable for which we want quintile break values
+                ) {  
+  df[[variable]] %>% # take the variable 
+    quantile(c(.01,.2,.4,.6,.8), # find the value at each quintile break  
+             na.rm=T) %>% # ignoring any NAs
+    round(0) %>% # round it to the nearest whole number
+  as.character() # treat it as a character
+}
+```
+
+This version of the map shows the highest income areas in yellow and the lowest income areas in dark blue. It also includes more informative labels for the legend, showing the actual income values for each quintile.
+
+```{r, fig.height=8}
+ggplot() +
+  geom_sf(data = balt_BGs,
+          # this time, we use the quintiles to map median HH income as 5 categories
+          aes(fill = q5(MdHHInc))) +
+  scale_fill_viridis_d(labels = qBr(balt_BGs,
+                                    "MdHHInc"),
+                       name = "Quintile\nBreaks")
+```
+
+Now, let's update some of our map's aesthetics and labels. The axis labels provide longitude and latitude, which aren't very useful context for most people and can be removed. The gray background helps frame the picture, but it also muddies the colors a bit; let's turn that into a white background with a solid black frame. Lastly, the map needs a title and captions!
+
+To update the map's aesthetics, we'll create a function called `mapTheme()`. This lets us add a set of aesthetic features to each map consistently, without having to copy-paste a bunch of code to do so. For details on all the aesthetics you can modify in a plot, type `?theme` into the console. There are many!
+
+```{r}
+mapTheme <- function(base_size = 12) {
+  theme(
+    text = element_text(color = "black"),
+    plot.title = element_text(size = 14, colour = "black"),
+    plot.subtitle = element_text(face = "italic"),
+    plot.caption = element_text(hjust = 1),
+    axis.ticks = element_blank(),
+    panel.background = element_blank(),
+    axis.title = element_blank(),
+    axis.text = element_blank(),
+    axis.title.x = element_blank(),
+    axis.title.y = element_blank(),
+    panel.grid.minor = element_blank(),
+    panel.border = element_rect(colour = "black", fill = NA, size = 2)
+  )
+}
+```
+
+Now, let's finalize our map of household income in Baltimore. Note that we add a title, subtitle, and captions using the `labs()` function.
+
+```{r, fig.height=8}
+income_map <- ggplot() +
+  geom_sf(data = balt_BGs,
+          # this time, we use the quintiles to map median HH income as 5 categories
+          aes(fill = q5(MdHHInc))) +
+  scale_fill_viridis_d(labels = qBr(balt_BGs,
+                                    "MdHHInc"),
+                       name = "Quintile\nBreaks") +
+  labs(title = "Median Household Income for Census Block Groups in Baltimore",
+       subtitle = "Highest income areas are in the north and near the harbor.",
+       caption = "Source: 5-year ACS, 2018") +
+  mapTheme()
+
+income_map
+```
+
+This map is much cleaner than our previous maps, and it provides readers with an understanding of how income is distributed across Baltimore. Still, it lacks some crucial context, such as the locations of roads, parks, or neighborhoods that could provide readers with a better sense of place. We'll add that context using data from OpenStreetMap.
+
+# 3. Transit SDG
+
+One of the indicators that the UN has proposed for this SDG is: _the percentage of people within 0.5km of public transit running at least every 20 minutes_.
+
+The first step for this SDG will be to collect all relevant public transit data for Baltimore from OSM.
+
+## Downloading the data
+
+We load the `osmdata` package and transform our geographic area of interest - the city of Baltimore - into a form that OSM can interpret. We use the `getbb()` function with the argument "Baltimore, Maryland" to receive a bounding box, an area of interest that we can use to download data from OSM. Let's add that bounding box over our income map to see what it looks like.
+
+```{r OSM bbox, fig.height=8}
+library(osmdata) # load the osmdata package
+
+balt_bb <- getbb("Baltimore, Maryland",
+                 format_out = "sf_polygon")
+
+income_map +
+  geom_sf(data = balt_bb,
+          fill = NA,
+          color = "red",
+          size = 2)
+```
+
+It fits our existing data well! Now we'll use that bounding box to pull data from OpenStreetMap. Similarly to how we used the Census API to download ACS data earlier, we'll use the OSM's Overpass API to download OpenStreetMap data.
+
+Since we're looking at the transit SDG, let's start with Baltimore's bus network. **How do we find and download all of the bus stops in Baltimore?**
+
+For new users, one of the most challenging aspects of using OSM is understanding how data is stored and related, both because the data can be difficult to understand and because standards differ between locations. The best place to start when beginning a new mapping task is to refer to the OpenStreetMap Wiki. The [Wiki page for buses](https://wiki.openstreetmap.org/wiki/Buses) tells us that the most common way to record bus stops is to use the tag `highway=bus_stop`. We also see that some mappers use a pair of tags (`public_transport=platform` with `bus=yes`) in addition to or _possibly instead of_ the `highway=bus_stop` tag.
+
+We can confirm this is the case in Baltimore by looking at the map. For example, this [bus stop](https://www.openstreetmap.org/edit#map=19/39.29814/-76.62724) in the Upton neighborhood of Baltimore is tagged with `highway=bus_stop` _and_ `public_transport=platform` with `bus=yes`.
+
+`r knitr::include_graphics(path = "~plots/~tutorial_images/bus_stop.PNG")`
+
+To make sure we get every bus stop, let's use the code below to download OSM features using both data standards.
+
+```{r overpass bus stops}
+balt_bus1 <- balt_bb %>% 
+  # this prepares our bounding box for an Overpass API query
+  opq() %>% 
+  # this is our query: "highway=bus_stop"
+  add_osm_feature(key = "highway", value = "bus_stop") %>% 
+  # this returns the data in "sf" format, the same format as our census block groups
+  osmdata_sf() %>% 
+  # this keeps only unique datapoints. If we don't include this function, we would
+  # get duplicates. See this link for more info: https://cran.r-project.org/web/packages/osmdata/vignettes/osmdata.html#4_recursive_searching
+  unique_osmdata() %>% 
+  # this keeps only the bus stops within the Baltimore city limits
+  trim_osmdata(balt_bb)
+  
+balt_bus2 <- balt_bb %>% 
+  opq() %>% 
+  add_osm_feature(key = "public_transport", value = "platform") %>%
+  # we can add a second query condition with another add_osm_feature() line
+  add_osm_feature(key = "bus", value = "yes") %>%
+  osmdata_sf() %>% 
+  unique_osmdata() %>% 
+  trim_osmdata(balt_bb)
+```
+
+
+```{r, echo = FALSE, eval=FALSE}
+
+NO_bb <- getbb("New Orleans, Louisiana",
+                 format_out = "sf_polygon")
+
+NO_bus1 <- NO_bb %>% 
+  # this prepares our bounding box for an Overpass API query
+  opq() %>% 
+  # this is our query: "highway=bus_stop"
+  add_osm_feature(key = "highway", value = "bus_stop") %>% 
+  # this returns the data in "sf" format, the same format as our census block groups
+  osmdata_sf() %>% 
+  # this keeps only unique datapoints. If we don't include this function, we would
+  # get duplicates. See this link for more info: https://cran.r-project.org/web/packages/osmdata/vignettes/osmdata.html#4_recursive_searching
+  unique_osmdata() %>% 
+  # this keeps only the bus stops within the Baltimore city limits
+  trim_osmdata(NO_bb)
+  
+NO_bus2 <- NO_bb %>% 
+  opq() %>% 
+  add_osm_feature(key = "public_transport", value = "platform") %>%
+  # we can add a second query condition with another add_osm_feature() line
+  add_osm_feature(key = "bus", value = "yes") %>%
+  osmdata_sf() %>% 
+  unique_osmdata() %>% 
+  trim_osmdata(NO_bb)
+
+NO_bus <- c(NO_bus1, NO_bus2)
+
+
+MPLS_bb <- getbb("Minneapolis, Minnesota",
+                 format_out = "sf_polygon")
+
+MPLS_bus1 <- MPLS_bb %>% 
+  # this prepares our bounding box for an Overpass API query
+  opq() %>% 
+  # this is our query: "highway=bus_stop"
+  add_osm_feature(key = "highway", value = "bus_stop") %>% 
+  # this returns the data in "sf" format, the same format as our census block groups
+  osmdata_sf() %>% 
+  # this keeps only unique datapoints. If we don't include this function, we would
+  # get duplicates. See this link for more info: https://cran.r-project.org/web/packages/osmdata/vignettes/osmdata.html#4_recursive_searching
+  unique_osmdata() %>% 
+  # this keeps only the bus stops within the Baltimore city limits
+  trim_osmdata(MPLS_bb)
+  
+MPLS_bus2 <- MPLS_bb %>% 
+  opq() %>% 
+  add_osm_feature(key = "public_transport", value = "platform") %>%
+  # we can add a second query condition with another add_osm_feature() line
+  add_osm_feature(key = "bus", value = "yes") %>%
+  osmdata_sf() %>% 
+  unique_osmdata() %>% 
+  trim_osmdata(MPLS_bb)
+
+MPLS_bus <- c(MPLS_bus1, MPLS_bus2)
+
+PHL_bb <- getbb("Philadelphia, Pennsylvania",
+                 format_out = "sf_polygon")
+
+PHL_bus1 <- PHL_bb %>% 
+  # this prepares our bounding box for an Overpass API query
+  opq() %>% 
+  # this is our query: "highway=bus_stop"
+  add_osm_feature(key = "highway", value = "bus_stop") %>% 
+  # this returns the data in "sf" format, the same format as our census block groups
+  osmdata_sf() %>% 
+  # this keeps only unique datapoints. If we don't include this function, we would
+  # get duplicates. See this link for more info: https://cran.r-project.org/web/packages/osmdata/vignettes/osmdata.html#4_recursive_searching
+  unique_osmdata() %>% 
+  # this keeps only the bus stops within the Baltimore city limits
+  trim_osmdata(PHL_bb)
+  
+PHL_bus2 <- PHL_bb %>% 
+  opq() %>% 
+  add_osm_feature(key = "public_transport", value = "platform") %>%
+  # we can add a second query condition with another add_osm_feature() line
+  add_osm_feature(key = "bus", value = "yes") %>%
+  osmdata_sf() %>% 
+  unique_osmdata() %>% 
+  trim_osmdata(PHL_bb)
+
+PHL_bus <- c(PHL_bus1, PHL_bus2)
+
+DEN_bb <- getbb("Denver, Colorado")
+
+DEN_bus1 <- DEN_bb %>% 
+  # this prepares our bounding box for an Overpass API query
+  opq() %>% 
+  # this is our query: "highway=bus_stop"
+  add_osm_feature(key = "highway", value = "bus_stop") %>% 
+  # this returns the data in "sf" format, the same format as our census block groups
+  osmdata_sf() %>% 
+  # this keeps only unique datapoints. If we don't include this function, we would
+  # get duplicates. See this link for more info: https://cran.r-project.org/web/packages/osmdata/vignettes/osmdata.html#4_recursive_searching
+  unique_osmdata()
+
+DEN_bus2 <- DEN_bb %>% 
+  opq() %>% 
+  add_osm_feature(key = "public_transport", value = "platform") %>%
+  # we can add a second query condition with another add_osm_feature() line
+  add_osm_feature(key = "bus", value = "yes") %>%
+  osmdata_sf() %>% 
+  unique_osmdata() 
+
+DEN_bus <- c(DEN_bus1, DEN_bus2)
+
+ATL_bb <- getbb("Atlanta, Georgia")
+
+ATL_bus1 <- ATL_bb %>% 
+  # this prepares our bounding box for an Overpass API query
+  opq() %>% 
+  # this is our query: "highway=bus_stop"
+  add_osm_feature(key = "highway", value = "bus_stop") %>% 
+  # this returns the data in "sf" format, the same format as our census block groups
+  osmdata_sf() %>% 
+  # this keeps only unique datapoints. If we don't include this function, we would
+  # get duplicates. See this link for more info: https://cran.r-project.org/web/packages/osmdata/vignettes/osmdata.html#4_recursive_searching
+  unique_osmdata()
+
+ATL_bus2 <- ATL_bb %>% 
+  opq() %>% 
+  add_osm_feature(key = "public_transport", value = "platform") %>%
+  # we can add a second query condition with another add_osm_feature() line
+  add_osm_feature(key = "bus", value = "yes") %>%
+  osmdata_sf() %>% 
+  unique_osmdata() 
+
+ATL_bus <- c(ATL_bus1, ATL_bus2)
+```
+
+We now have two sets of bus stops in Baltimore from OSM: 1) those tagged with `highway=bus_stop` and 2) those tagged with `public_transport=platform` and `bus=yes`. How large are those datasets?
+
+```{r bus stop data length}
+paste("There are",
+  nrow(balt_bus1$osm_points),
+  "bus stops tagged as 'highway=bus_stop' and",
+  nrow(balt_bus2$osm_points),
+  "bus stops tagged as 'public_transport=platform' with 'bus=yes'.")
+```
+
+They're pretty close! In general, Baltimore OSM contributors seem to have mapped bus stops using both data standards. How much do those two datasets overlap? Are there some stops that are marked as `public_transport=platform` \/ `bus=yes` but not as `highway=bus_stop`?
+
+Using the `c()` function, we can combine the two sets of features and keep only the unique features. How many total bus stops do we have after we do so?
+
+```{r combine bus stops}
+balt_bus <- c(balt_bus1, balt_bus2)$osm_points
+
+paste("There are",
+      nrow(balt_bus),
+      "total bus stops in the combined dataset.")
+```
+
+The combined dataset includes the same number of bus stops as the original `highway=bus_stop` dataset. This tells us that there were 0 bus stops tagged as `public_transport=platform` \/ `bus=yes` that were not also tagged as `highway=bus_stop`.
+
+## Clean the bus stops
+
+Now that we're confident we've downloaded all of the bus stops in Baltimore that are listed in OSM, let's dig into the data. Using `glimpse()`, we can see every column in the dataset as well as a preview of the first dozen or so rows. The data includes lots of information, like the bus routes served, the operator, whether it has a shelter, and whether it's wheelchair-accessible. We can also see, however, that there are a lot of NA values. Which columns include too many NAs to be usable?
+
+```{r glimpse bus stops}
+glimpse(balt_bus)
+```
+
+```{r count NAs}
+colSums(is.na(balt_bus)) %>% sort(decreasing = TRUE)
+```
+
+More than half of the columns include nearly 3,000 NA values (in our dataset of about 3,000 bus stops). Let's remove those columns so our dataset is easier to work with.
+
+```{r remove NA columns}
+balt_bus <- balt_bus %>% 
+  dplyr::select(-c(amenity,
+                   brand,
+                   brand.wikidata,
+                   intercity_bus,
+                   name.zh,
+                   shelter_type,
+                   surface,
+                   tactile_paving,
+                   source,
+                   website,
+                   note,
+                   bin,
+                   wheelchair,
+                   covered,
+                   local_ref,
+                   commuter_bus,
+                   CCC.CORNER,
+                   network,
+                   bench))
+
+glimpse(balt_bus)
+```
+
+Let's take a closer look at the `operator` column. What types of buses are these stops serving?
+
+```{r explore bus stops}
+table(balt_bus$operator,
+      useNA = "always")
+```
+
+Most of the stops are for Maryland Transit Administration buses. About 100 of the stops serve the Charm City Circulator, which is operated by Veolia Transportation.
+
+## Map the buses
+
+Now, let's map the buses by overlaying them (in red) on our census block groups.
+
+```{r, fig.height=8}
+ggplot() +
+  geom_sf(data = balt_BGs) +
+  geom_sf(data = balt_bus, 
+          color = "red",
+          alpha = 0.5) + # alpha is the transparency
+  mapTheme()
+```
+
+We can see that bus stops are heavily concentrated in the center of the city, but again, this map doesn't provide the reader with much context. Let's try adding a basemap that will include some more landmarks.
+
+## Adding a basemap
+
+Using the `get_stamenmap()` function from the `ggmap` package, we can download a simple basemap that will provide some geographic context for the bus stops. This map adds the harbor and some of the major roads and park areas in Baltimore as an image underneath our map of Baltimore's bus stops.
+
+```{r download basemap, fig.height=8}
+library(ggmap) # package for downloading basemaps
+library(tmaptools) # package that includes the function bb(), which we use to format the bounding box in get_stamenmap()
+
+balt_basemap <- get_stamenmap(bb(balt_bb, output = "matrix"),
+                              maptype = "toner-background",
+                              zoom = 12)
+
+ggmap(balt_basemap,
+      darken = 0.4) +
+  geom_sf(data = balt_bus, 
+          color = "red",
+          alpha = 0.4,
+          inherit.aes = FALSE) +
+  mapTheme() +
+  labs(title = "Bus stops in Baltimore",
+       caption = "Sources: data-OpenStreetMap, basemap-Stamen Maps")
+```
+
+## Transit access analysis
+
+
+
+
+Now that we've downloaded the transit stations for Baltimore, let's start looking at how access differs across each census block group. Our first question: how many bus stops are in each block group?
+
+```{r}
+balt_BGs <- balt_BGs %>% 
+  mutate(bus_stops = lengths(st_intersects(., balt_bus)))
+
+summary(balt_BGs$bus_stops)
+```
+
+There's a large range, and while most block groups contain a handful of bus stops, there are a few with a massive number, up to 77!
+
+```{r, fig.height=8}
+ggplot() +
+  geom_sf(data = balt_BGs,
+          # this time, we use the quintiles to map median HH income as 5 categories
+          aes(fill = q5(bus_stops))) +
+  scale_fill_viridis_d(labels = qBr(balt_BGs,
+                                    "bus_stops"),
+                       name = "Quintile\nBreaks") +
+  labs(title = "Census Block Groups in Baltimore by Number of Bus Stops",
+       # subtitle = "Highest income areas are in the north and near the harbor.",
+       caption = "Sources: OpenStreetMap; 5-year ACS, 2018") +
+  mapTheme()
+```
+
+```{r, echo=FALSE, eval=FALSE}
+routes <- balt_bb %>% 
+  opq() %>% 
+  add_osm_feature(key = "type", value = "route") %>%
+  add_osm_feature(key = "route", value = "bus") %>% 
+  osmdata_sf() %>% 
+
+  # we can add a second query condition with another add_osm_feature() line
+  unique_osmdata()
+
+glimpse(routes$osm_multilines)
+
+colSums(is.na(routes$osm_multilines)) %>% sort(decreasing = F)
+
+routes <- routes$osm_multilines
+```
+
+**To-do:**
+
+* Pull all transit stops
+  + show that data includes platforms and stop positions. Choose only stop positions. But flag that this may be different city to city
+  + Discuss how they don't reliably include frequency information
+* 3 ways to figure out what is a "20-minute walk" away:
+  1. Using a buffer is simplest, but that doesn't really reflect walking distance.
+  2. Use walksheds from `calc_network_catchment()`, but that relies only on distance.
+* But this also doesn't really reflect walking distance.
++ Find walk sheds using OSRM and overlay that on the plain buffer
+* Count total transit stops.
+
+
+
+
