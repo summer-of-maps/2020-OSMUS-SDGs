@@ -352,8 +352,8 @@ parks_openData_list$`New Orleans, Louisiana` <- parks_openData_list$`New Orleans
                                 (BASKETBALL_COURT != "Y" &
                                    TENNIS_COURT != "Y" &
                                    BASEBALL_DIAMOND != "Y") &
-                                PLAYGROUND == "Y" ~ "Playground only"))
-  
+                                PLAYGROUND == "Y" ~ "Playground only",
+                              TRUE ~ "All Purpose Park"))
 
 OpenSpace_openData_mapList$`New Orleans, Louisiana` <- ggplot() +
   geom_sf(data = dryLand_list$`New Orleans, Louisiana`,

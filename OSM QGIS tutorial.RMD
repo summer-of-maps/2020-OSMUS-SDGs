@@ -1,5 +1,5 @@
 ---
-title: "Downloading and Mapping OSM Data using QGIS"
+title: "Downloading and Mapping Data from OpenStreetMap using QGIS"
 author: "Eugene Chong"
 date: "`r format(Sys.time(), '%B %d, %Y')`"
 output:
@@ -8,197 +8,363 @@ output:
     toc: true
     toc_float: 
       collapsed: false
-    toc_depth: 4
+    toc_depth: 2
     code_folding: show
 ---
   
 ```{r setup, include=FALSE}
 cache_state = TRUE
 
-knitr::opts_chunk$set(echo = TRUE, cache = cache_state, message = FALSE)
+knitr::opts_chunk$set(echo = FALSE, cache = cache_state, message = FALSE)
+```
+
+```{r, results='asis', echo = F}
+depth <- 2
+sel <- paste0("h",(depth+1):10, collapse = " > span, ")
+cat(paste0("<style>",
+           sel, 
+           " > .header-section-number { display: none; } </style>"))
 ```
 
 # Introduction
 
-This tutorial is a guide to using QGIS to download and map data from OpenStreetMap. [OpenStreetMap](https://www.openstreetmap.org/), or OSM, is a free, editable map of the world created and edited entirely by volunteer contributors known as mappers. [QGIS](https://qgis.org/en/site/) is a free, open-source geographic information system, or GIS, application that allows users to view, edit, visualize, and analyze geographic data. This tutorial is intended to guide a complete beginner to OpenStreetMap and GIS software through the process of creating a simple, informative map.  
+This tutorial is an introduction to downloading and mapping data from OpenStreetMap using QGIS. [OpenStreetMap](https://www.openstreetmap.org/), or OSM, is a free, editable map of the world created and edited entirely by volunteer contributors known as mappers. [QGIS](https://qgis.org/en/site/) is a free, open-source geographic information system (GIS) application that allows users to view, edit, visualize, and analyze geographic data. This tutorial is intended to guide a complete beginner to OpenStreetMap and GIS software through the process of downloading OSM data and creating a simple, informative map.  
 
 In this tutorial, we will be mapping **parks** and **playgrounds** in Baltimore, Maryland.
 
+**Requirements:** This tutorial requires a Windows or Apple computer, an installation of QGIS (or the ability to install the program on the computer), and an internet connection. No other software or experience is necessary!
+
 # Download QGIS and plug-ins
 
-The first step is to download QGIS, the software that we'll be using to view data from OpenStreetMap and create maps. Go to [this link](https://qgis.org/en/site/forusers/download.html) to download the latest version for Windows or Mac. If you are using a Windows computer, download the "standalone installer" (shown below) instead of the "network installer". Then, follow the prompts to install QGIS on your computer like you would with any other program.
+## Install QGIS
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/install.jpg")`
+The first step is to download QGIS, the software that we'll be using to view data from OpenStreetMap and create maps. Go to [this link](https://qgis.org/en/site/forusers/download.html) to download the latest version for Windows or Mac. If you are using a Windows computer, download the "standalone installer" (shown below).
 
-Open up QGIS. The first thing you might notice is that this is a mapping software, but there isn't a map on the screen! Let's change that by adding a simple **basemap**. A basemap is like a background image for your map. It might include some basic features like state borders, mountains, rivers, or notable monuments that give readers some geographic context, but it should be subtle enough so that the most important features of your map (in this case, parks and playgrounds) stand out.
+```{r, fig.cap = "Installing QGIS on Windows computers", fig.align="center", out.width = "90%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/install.png")
+```
 
-One easy way to add basemaps in QGIS is to use the QuickMapServices **plugin**. Just like your browser, QGIS features a large collection of plugins, which users can install to add additional functionality to the software. To install the _QuickMapServices_ plugin, first go to `Plugins --> Manage and Install Plugins...`.
+If you are using an Apple computer, download the newest installer (shown below).
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/plugin-1.PNG")`
+```{r, fig.cap = "Installing QGIS on Apple computers", fig.align="center", out.width = "90%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/install_mac.png")
+```
+
+Then, follow the prompts to install QGIS on your computer like you would with any other program.
+
+## Install plug-ins
+
+### QuickMapServices plugin
+
+Open up QGIS. The first thing you might notice is that this is a mapping software, but there's no map on the screen! 
+
+Let's change that by adding a **basemap**. A basemap is like a background image for your map. It should include enough features like state borders, highways, waterways, or notable monuments to give readers geographic context, but it should be subtle (and attractive) enough that the most important features of your map (in this case, parks and playgrounds) stand out in a visually pleasing way.
+
+#### Search for the plugin
+
+While we could find those basemap features on our own, an easier option is to use the _QuickMapServices_ **plugin**, which lets us choose from a number of pre-packaged basemaps. Like your web browser, QGIS features a large collection of plugins, which users can install to extend the software's functionality. To install the _QuickMapServices_ plugin, first go to `Plugins -> Manage and Install Plugins...`.
+
+```{r, fig.cap = "Manage and install plugins", fig.align="center", out.width = "90%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/plugin-1.PNG")
+```
+
+#### Install the plugin
 
 Then, search for "quickmapservices" in the search bar, click QuickMapServices, and then click `Install Plugin`. The plugin should take a few seconds to install.
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/plugin-2.PNG")`
+```{r, fig.cap = "Search for QuickMapServices and install", fig.align="center", out.width = "90%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/plugin-2.PNG")
+```
 
-While we're here, let's also install the _QuickOSM_ plugin. This plugin will let us search for and download data from OpenStreetMap. Search for "quickosm" and install that plugin just like you installed QuickMapServices.
+### QuickOSM plugin
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/plugin-3.PNG")`
+While we're here, let's also install the _QuickOSM_ plugin. This plugin will let us search for and download data from OpenStreetMap. Search for "quickosm" and install that plugin the same way like you installed QuickMapServices.
+
+```{r, fig.cap = "Search for QuickOSM and install", fig.align="center", out.width = "90%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/plugin-3.PNG")
+```
 
 # Add a basemap
 
-QuickMapServices is the little blue globe icon in the toolbar. Clicking on the icon shows a few basemaps built into the plugin. Let's try adding the OpenStreetMap Standard as a base for our map.
+## Try the OpenStreetMap Standard basemap
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/QuickMapServices-1.PNG")`
+QuickMapServices is now installed, and it appears as a little blue globe icon in the toolbar. Click on the icon and then go to `OSM`  to see some of the basemaps built into the plugin. Let's try adding the OpenStreetMap Standard as a base for our map.
+
+```{r, fig.cap = "Add the OpenStreetMap Standard basemap", fig.align="center", out.width = "90%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/QuickMapServices-1.PNG")
+```
+
+### Zooming into Baltimore
 
 We have a map! Try zooming in on Baltimore. You can do so by using the scroll wheel on your mouse or the magnifying glass icon. If you click and drag the mouse with the magnifying glass option to draw a box, the map will zoom in so that that box fills your screen.
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/QuickMapServices-2.PNG")`
+```{r, fig.cap = "Zoom with your scroll wheel or the magnifying glass tool", fig.align="center", out.width = "90%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/QuickMapServices-2.PNG")
+```
 
-That's Baltimore, alright. As you'll see, this map includes tons of information, including roads, parks, airports, waterways, municipality names, and county boundaries. This is really useful for getting a full geographic picture of the city, but if we're just trying to highlight the city's parks and playgrounds, it's probably more information than we need, and it'll make it hard to see some of the smaller ones.
+That's Baltimore! As you can see, this map includes tons of information, including roads, parks, airports, waterways, municipality names, and county boundaries. This is really useful for getting a full geographic picture of the city, but if we're just trying to highlight the city's parks and playgrounds, it's probably more information than we need, and it'll make it hard to see some of the smaller ones.
 
-In the bottom left corner of your screen in the "Layers" panel, try unchecking the box next to "OSM Standard". What happens? And what happens if you re-check the box? Now, go back to the QuickMapServices button and try adding a different basemap. What do you see in the Layers panel?
+### Introduction to the Layers panel
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Layers-1.PNG")`
+In the bottom left corner of your screen in the "Layers" panel, try unchecking the box next to "OSM Standard". What happens? And what happens if you re-check the box? Now, go back to the QuickMapServices toolbar and try adding a different basemap. What do you see in the Layers panel?
 
-As the name implies, maps in QGIS are made up of layers. The "OSM Standard" layer corresponds to the OSM Standard basemap that we added. Unchecking the box turns the layer "off", meaning we don't see it anymore. When you added the second basemap, that showed up as another layer. The _order_ of layers is very important. Layers will cover up any layers that are underneath. Try clicking and dragging the layers to change their order. Do you see any changes on the map? (Make sure the boxes for your layers are checked when you try this).
+```{r, fig.cap = "Turning off the basemap layer", fig.align="center", out.width = "50%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Layers-1.PNG")
+```
 
-QuickMapServices comes with a few very nice basemaps, but the selection is limited. We can add more basemaps by going to `QuickMapServices --> Settings --> More Services --> Get contributed pack`.
+Maps in QGIS are made up of layers. The "OSM Standard" layer corresponds to the OSM Standard basemap that we added. Unchecking the box turns the layer "off", meaning we don't see it anymore. When you added the second basemap, that showed up as another layer. The _order_ of layers is very important. Layers will sit on top of any layers that are underneath. Try clicking and dragging the layers to change their order. Do you see any changes on the map? (Make sure the layers are turned on when you try this).
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/QuickMapServices-4.PNG")`
-`r knitr::include_graphics(path = "~plots/~tutorial_images/QuickMapServices-3.PNG")`
+## Adding more basemaps
 
-Try out some of those new basemaps we just added. The screenshots in the rest of this tutorial will use `Stamen --> Stamen Toner Background` as the basemap, but feel free to use whichever basemap you like!
+QuickMapServices comes with a few very nice basemaps, but the selection is limited. We can add more basemaps by going to `QuickMapServices -> Settings -> More Services -> Get contributed pack`.
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Stamen-toner-background.PNG")`
+```{r, fig.cap = "Adding more basemaps", fig.align="center", out.width = "45%", fig.show = "hold"} 
+knitr::include_graphics(path = c("~plots/~tutorial_images/QuickMapServices-4.PNG", "~plots/~tutorial_images/QuickMapServices-3.PNG"))
+```
+
+You should now see a much larger selection of basemaps!
+
+```{r, fig.cap = "Newly added basemaps", fig.align="center", out.width = "40%"} 
+knitr::include_graphics(path = c("~plots/~tutorial_images/QuickMapServices-5.PNG"))
+```
+
+Try out some of those new basemaps we just added. The screenshots in the rest of this tutorial will use `Stamen -> Stamen Toner Background` as the basemap, but feel free to use whichever basemap you like!
+
+```{r, fig.cap = "Stamen Toner Background basemap", fig.align="center", out.width = "100%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Stamen-toner-background.PNG")
+```
 
 # Download OSM data
 
-Next, we need to download the data we're interested in from OpenStreetMap: Baltimore's parks and playgrounds. Click the green magnifying class on the toolbar, the icon for the QuickOSM plugin we just installed.
+## Open the QuickOSM plugin
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Quick OSM-1.PNG")`
+Next, we need to download the data we want from OpenStreetMap: Baltimore's parks and playgrounds. Click the green magnifying class on the toolbar, the icon for the QuickOSM plugin we just installed.
 
-A screen pops up for QuickOSM, and by default it's open on the Quick Query tab. For this tutorial, we'll be sticking with Quick Query and its simple interface. As you continue working with OSM, however, you might find that Quick Query doesn't provide the flexibility you need to download certain datasets. In those cases, you'll want to refer to the Query tab, which lets you write [customized queries](http://overpass-turbo.eu/) to OpenStreetMap's [Overpass API](https://wiki.openstreetmap.org/wiki/Overpass_API).
+```{r, fig.cap = "QuickOSM toolbar icon", fig.align="center", out.width = "50%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Quick OSM-1.PNG")
+```
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Quick OSM-2.PNG")`
+### Quick Query tab
 
-Take a closer look at the Quick Query tab. The first two fields are Key and Value. We don't know what those are yet, so let's skip those for now. The third field, labeled "In" by default, seems intuitive - it's the name of the place for which we want to download data. If we enter in "Baltimore, Maryland", we see a message at the bottom of the window that says "All OSM objects in Baltimore, Maryland are going to be downloaded."
+A screen pops up for QuickOSM, and by default it's open on the Quick Query tab. For this tutorial, we'll be sticking with Quick Query and its simple interface. As you continue working with OSM, however, you might find that Quick Query doesn't provide the flexibility you need to download certain datasets. In those cases, you'll want to use the "Query" tab, which lets you write [custom queries](http://overpass-turbo.eu/) to OpenStreetMap's [Overpass API](https://wiki.openstreetmap.org/wiki/Overpass_API).
+
+```{r, fig.cap = "The Quick Query tab", fig.align="center", out.width = "90%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Quick OSM-2.PNG")
+```
+
+### Spatial Extent field
+
+Take a closer look at the Quick Query tab. The first two fields are Key and Value. We don't know what those are yet, so let's skip those for now. Hover over the third field. It says "The spatial extent to use for the query", and the default option is "In". This is the geographic area for which we want to download data. If we enter in "Baltimore, Maryland", we see a message at the bottom of the window that says "All OSM objects in Baltimore, Maryland are going to be downloaded."
+
+```{r, fig.cap = "The Spatial Extent field", fig.align="center", out.width = "90%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Quick OSM-3.PNG")
+```
+
+#### Searching for place names in Nominatim
+
+You can look up the exact names used for places in OSM by searching for the town or city on [Nominatim](https://nominatim.openstreetmap.org/ui/search.html). This can be helpful if you need to download data for a place with an ambiguous name, like the city of Houston in Texas County, Missouri, and you want to make sure you use the correct name in the query.
+
+```{r, fig.cap = "Searching for places in Nominatim", fig.align="center", out.width = "70%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Quick OSM-4.PNG")
+```
 
 Experiment with other options in the drop-down menu. What do you think is the difference between "Canvas Extent" and "Layer Extent"?
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Quick OSM-3.PNG")`
+## Intro to OSM tags
 
-Switch the drop-down option back to "In", and take another look at the message. We definitely want to download data for Baltimore, so that part is correct, but we don't want _all_ OSM objects, just the parks and playgrounds. How do we find those? Let's start with the parks.
+### Key and Value fields
+
+Switch the Spatial Extent drop-down  back to "In", and take another look at the message (shown below). We definitely want to download data for Baltimore, so that part is correct, but we don't want _all_ OSM objects, just the parks and playgrounds. How do we find those? Let's start with the parks.
 
 > All OSM objects in Baltimore, Maryland are going to be downloaded.
 
-There's a ton of data in OSM, but each data point consists of two pieces of information:
+There's a ton of data in OSM, but each data point is made up of two pieces of information:
 
 1. **The Geography:** This is the _where_. For a building, the geography consists of the building's location on the Earth (its coordinates and/or its street address) as well as its shape. 
 
-2. **The Tag:** This is the _what_. What kind of building is it? A tag in OSM consists of two parts: a `key` and `value`. The key represents the broader category, and the value provides the more specific detail. For instance, a department store might be tagged with the key "building" and the value "retail". In OSM, you'll usually see the tag represented as `key=value`, so, in this case, the full tag for a department store would be `building=retail`.
+2. **The Tag:** This is the _what_. What kind of building is it? A tag in OSM consists of two parts: a `key` and `value`. The key represents the broader category, and the value provides the more specific detail. For instance, a department store might be tagged with the key "building" and the value "retail". In OSM, you'll usually see the tag represented as `key=value`, so, for a department store, the full tag would be `building=retail`.
 
-Now we know that we need to find the combination of key and value that will give us parks. The best place to find this information (and most information about OSM) is the [OpenStreetMap Wiki](https://wiki.openstreetmap.org/wiki/Main_Page). Try searching for "park" in the search bar. You'll automatically be linked to [this page](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dpark) shown below.
+### Finding Key-Value pairs on the OSM Wiki
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Tag-1.PNG")`
+Now we know that we need to find the tag for parks. The best place to find this information (and most information about OSM) is the [OpenStreetMap Wiki](https://wiki.openstreetmap.org/wiki/Main_Page). Try searching for "park" in the search bar. You'll automatically be linked to [this page](https://wiki.openstreetmap.org/wiki/Tag:leisure%3Dpark) shown below.
 
-Based on the Wiki page, we see that parks are recorded in OSM as `leisure=park`. With that in mind, let's go back to QuickOSM and enter those values into the search. You can type the values in yourself or use the dropdown menus to find them. After you've typed in the tag, click "Run query". After a few seconds, you should receive a message that your query was successful!
+```{r, fig.cap = "The OSM Wiki page for parks", fig.align="center", out.width = "90%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Tag-1.PNG")
+```
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Tag-2.PNG")`
+### Downloading the data
+
+Based on the Wiki page, we see that parks are recorded in OSM with the tag `leisure=park`. With that in mind, let's go back to QuickOSM and enter those values into the search. You can type the values in yourself or use the dropdown menus to find them. After you've typed in the tag, click "Run query". Within a few seconds, you should receive a message that your query was successful!
+
+```{r, fig.cap = "Use the tag for parks to download the data", fig.align="center", out.width = "90%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Tag-2.PNG")
+```
 
 # Analyze OSM data
 
-## Points, Lines, and Polygons
+## Points, lines, and polygons: three types of park data
 
-Close the QuickOSM window to return to your map. Take a look at the "Layers" panel. What do you see?
+Close the QuickOSM window and return to your map. Take a look at the "Layers" panel. What do you see?
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-1.PNG")`
+```{r, fig.cap = "The Layers panel now includes layers for Baltimore's parks", fig.align="center", out.width = "50%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-1.PNG")
+```
 
 Three layers that begin with "leisure_park" have been added to the map, and each one has a different icon next to it - a dot, a line, and a square. These icons correspond to different parks on the map, and they mean that each park is represented as a **point**, a **line**, or a **polygon**. What does each of those mean?
 
-**Point:** This is a park whose location is recorded in OSM, but not its exact area or footprint. This is likely because the mapper who first added the park to OSM wasn't able to draw its shape on the map, and no one else has gotten around to doing so. 
+### Points
 
-Let's take a closer look at some of these points. Each park we downloaded from OSM is represented visually on the map, but it's also represented in a table that gives us more information, like the park's name. We can access this table by right-clicking on the layer and opening the Attribute Table.
+These are parks whose locations are recorded in OSM, but not their exact areas or footprints. This is likely because the mapper who first added the park to OSM wasn't able to draw its shape on the map, and no one else has gotten around to doing so. 
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-2.PNG")`
+#### The Attribute Table
 
-Click through the table to get a sense of the information available. Notice that many of the fields are empty. While most of the parks have a name recorded in OSM, some of them do not, and mappers will need to add that information in the future. For now, let's scroll down to "Kirk Avenue Athletic Field" and then _select_ it by clicking on the row number (the number "18" in the picture below).
+Let's take a closer look at some of these points. Each park we downloaded from OSM is represented visually on the map, but it's also represented in a table that gives us more information, like the park's name. We can access this table by right-clicking on the layer and opening the `Attribute Table`.
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-3.PNG")`
+```{r, fig.cap = "Use the tag for parks to download the data", fig.align="center", out.width = "60%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-2.PNG")
+```
 
-Then, right-click on the row, press "Zoom to Feature", and return to the map. 
+Click through the table to get a sense of the information available. Notice that many of the fields are empty. While most of the parks have a name recorded in OSM, some of them do not, and mappers will need to add that information in the future. For now, let's scroll down to "Kirk Avenue Athletic Field" and then select it by clicking on the row number (the number "18" in the picture below).
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-4.PNG")`
+```{r, fig.cap = "Select a park in the attribute table", fig.align="center", out.width = "90%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-3.PNG")
+```
+
+#### Zooming into a park
+
+Then, right-click on the row, press `Zoom to Feature`, and return to the map. 
+
+```{r, fig.cap = "Zoom to Feature zooms in on the selected park", fig.align="center", out.width = "90%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-4.PNG")
+```
 
 You'll see that one of the points in the center of your map is now shaded yellow (the selected park). Zoom into it.
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-5.PNG")`
+```{r, fig.cap = "Selected parks turn a different color", fig.align="center", out.width = "90%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-5.PNG")
+```
 
-We know that this is the Kirk Avenue Athletic Field, but on the map, it just shows up as a dot. Can we be sure there's actually a park there? Try adding a satellite image basemap (using QuickMapServices like we did before) and take a look. Hint: `Bing Satellite` is a good choice.
+We know that this is the Kirk Avenue Athletic Field, but on the map, it just shows up as a dot. Can we be sure there's actually a park there? Try adding a satellite image basemap (using QuickMapServices like we did before) and take a look. 
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-6.PNG")`
+**Hint:** `Bing Satellite` is a good choice.
 
-The satellite image confirms that an athletic field is there, but it hasn't been fully mapped yet. If you'd like, you can contribute to OSM by drawing the park's shape yourself! See ([this link](https://wiki.openstreetmap.org/wiki/Beginners%27_guide)) for a beginner's guide to contributing to OpenStreetMap.
+```{r, fig.cap = "A satellite image confirms the field is there", fig.align="center", out.width = "90%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-6.PNG")
+```
 
-**Lines:** Lines are typically used in OSM to map features like roadways or paths rather than parks. In this case, we can take a look at the attribute table and see that there are only three entries, none of which has a name. 
+The satellite image shows the athletic field is there, but it hasn't been fully mapped yet. If you'd like, you can contribute to OSM by drawing the park's shape yourself! See ([this link](https://wiki.openstreetmap.org/wiki/Beginners%27_guide)) for a beginner's guide to contributing to OpenStreetMap.
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-7.PNG")`
+### Lines
 
-While it's possible that these entries do correspond to real-world parks, and they were simply drawn incorrectly and coded with very little information, we'll treat these parks as data errors in OSM for now and to remove them from the map. You can remove layers in QGIS by right-clicking on the layer and clicking "Remove Layer..."
+Lines are typically used in OSM to map features like roadways or paths rather than parks. In this case, we can take a look at the attribute table and see that there are only three entries, two of which are described as fences, and none of which has a name. 
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-8.PNG")`
+```{r, fig.cap = "Lines are not usually used when mapping parks in OpenStreetMap", fig.align="center", out.width = "90%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-7.PNG")
+```
 
-**Polygons:** The polygons are parks that are "fully mapped" in OSM, meaning OSM knows both their location and their overall shape. Try zooming in on one of the polygons and turning the layer on and off (using the checkboxes in the Layers panel). Does the shape of the polygons line up with the shape of the park in the satellite image?
+#### Deleting Layers
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-9.PNG")`
+While it's possible that these entries do correspond to real-world parks, and they were simply drawn incorrectly or mapped with very little information, we'll treat these parks as data errors in OSM for now and to remove them from the map. You can remove layers in QGIS by right-clicking on the layer and clicking `Remove Layer...`
+ 
+```{r, fig.cap = "Delete unneeded layers from your map", fig.align="center", out.width = "50%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-8.PNG")
+```
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-10.PNG")`
+### Polygons
+
+The polygons are parks that are "fully mapped" in OSM, meaning OSM knows both their location and their overall shape. Try zooming in on one of the polygons and turning the layer on and off (using the checkboxes in the Layers panel). Does the shape of the polygons line up with the shape of the park in the satellite image?
+
+```{r, fig.cap = "A polygon park feature on top of a satellite basemap", fig.align="center", out.width = "90%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-9.PNG")
+```
+
+```{r, fig.cap = "The polygon matches the shape of the park underneath", fig.align="center", out.width = "90%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-10.PNG")
+```
 
 ### Exercise: Add playgrounds
 
-For this part of the tutorial, try downloading Baltimore's playgrounds from OSM and adding them to the map. Are most of the feature you download points, lines, or polygons?
+For this part of the tutorial, try downloading Baltimore's **playgrounds** from OSM and adding them to the map. Are most of the feature you download points, lines, or polygons?
 
-Hint: Check [here](https://wiki.openstreetmap.org/wiki/Tag:leisure=playground) if you have trouble finding the tag for playgrounds.
+**Hint:** Check [here](https://wiki.openstreetmap.org/wiki/Tag:leisure=playground) if you have trouble finding the tag for playgrounds.
 
 After you have successfully added the playgrounds, remove the points layer so that there is only a polygon layer for playgrounds remaining. Your layers panel should look like the below (note that the colors and basemaps listed may look different).
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Exercise-1.PNG")`
+```{r, fig.cap = "The Layers panel with parks, playgrounds, and basemap layers added", fig.align="center", out.width = "50%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Exercise-1.PNG")
+```
 
 ## How big are the parks?
 
 QGIS also allows you to perform geographic analyses with the features on your map. If you ever wanted to know, for example, what percentage of a city's population lives within half a mile of a park, QGIS is a great tool for the job. In this section, let's answer a simple question: how big are the parks in Baltimore in acres?
 
+### Edit the Attribute Table
+
 First, open the Attribute Table for the parks polygon layer. Then, make the layer editable so we can add a column.
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-11.PNG")`
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-12.PNG")`
+```{r, fig.cap = "Turn on editing mode", fig.align="center", out.width = "45%", fig.show = "hold"} 
+knitr::include_graphics(path = c("~plots/~tutorial_images/Analysis-11.PNG", "~plots/~tutorial_images/Analysis-12.PNG"))
+```
 
-Next, open the Field Calculator. As the name suggests, this is used for performing calculations on your data. You can perform mathematical operations on your data (like adding or subtracting columns) or geometric operations, like calculating the area of a polygon.
+Next, open the Field Calculator. The Field Calculator is used for performing calculations on your data. You can perform mathematical operations on your data (like adding or subtracting columns) or geometric operations, like calculating the area of a polygon.
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-13.PNG")`
+```{r, fig.cap = "Open the Field Calculator", fig.align="center", out.width = "90%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-13.PNG")
+```
 
-In the Field Calculator, name your Output field as "Area" or a name of your choice. Make sure to change the Output field type to "Decimal number (real)". Then, in the middle panel, expand the Geometry menu and double-click \$area. The Expression field will be populated with `$area`. Click OK. Then, save your edits.
+In the Field Calculator, name your `Output` field as "Area" or a name of your choice. Make sure to change the Output field type to "Decimal number (real)". Then, in the middle panel, expand the `Geometry` menu and double-click \$area. The Expression field will be populated with `$area`. Click OK. Then, save your edits.
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-14.PNG")`
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-19.PNG")`
+```{r, fig.cap = "Calculate the parks' areas", fig.align="center", out.width = "90%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-14.PNG")
+```
 
-We now have an area column, but since it doesn't have any units associated with it, it's hard to understand what it means.
+Click OK. Then, save your edits.
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-22.PNG")`
+```{r, fig.align="center", out.width = "50%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-19.PNG")
+```
 
-To find the units, we can go to `Project --> Properties...` and then the General tab. We see that the units provided are in meters/square meters.
+### What are the units?
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-23.PNG")`
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-24.PNG")`
+Back in the Attribute Table, we now have an area column, but since it doesn't have any units associated with it, it's hard to understand what it means.
 
-To calculate the areas into acres, we can go back to the Field Calculator and update the new Area field we just created. This time, divide `$area` by 4047 to convert from square meters to acres. Click OK and save your edits once more. 
+```{r, fig.cap = "The Area column doesn't include any units", fig.align="center", out.width = "50%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-22.PNG")
+```
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-25.PNG")`
+To find the units, return to your map and go to to `Project -> Properties...` in the toolbar. 
+
+```{r, fig.cap = "Open the Properties Menu", fig.align="center", out.width = "50%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-23.PNG")
+```
+
+Go to the `General` tab and check the `Measurements` panel. We see that the units provided are in meters/square meters.
+
+```{r, fig.cap = "Calculate the parks' areas", fig.align="center", out.width = "90%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-24.PNG")
+```
+
+### Calculate the area in acres
+
+To calculate the areas into acres, return to the Attribute Table and re-open the Field Calculator. Check the `Update existing field` box and select the "Area" column that we created. Calculate the area again, but this time, divide it by 4047 to convert from square meters to acres.
+
+```{r, fig.cap = "Calculate the parks' areas in acres", fig.align="center", out.width = "90%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-25.PNG")
+```
+
+Click OK and save your edits once more. 
+ 
+```{r, fig.align="center", out.width = "50%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-19.PNG")
+```
 
 You've just successfully added a column to your data that provides the land area in acres for every park in Baltimore!
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-26.PNG")`
+```{r, fig.cap = "The Area column in acres", fig.align="center", out.width = "50%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-26.PNG")
+```
 
-**Disclaimer: Note that this section skipped discussing coordinate reference systems and projection systems for geographic data, as they are beyond the scope of this tutorial. For geographic analyses requiring more precise measurements, it's highly recommended that you project your data using a projection system appropriate for your study area. See [this tutorial](https://docs.qgis.org/testing/en/docs/user_manual/working_with_projections/working_with_projections.html) for more information. **
+**Note:** This section skipped discussion of coordinate reference systems and projection systems for geographic data, as they are beyond the scope of this tutorial. For geographic analyses requiring more precise measurements, it's highly recommended that you project your data using a projection system appropriate for your study area. See [this tutorial](https://docs.qgis.org/testing/en/docs/user_manual/working_with_projections/working_with_projections.html) for more information.
 
 ```{r eval = FALSE, echo = FALSE}
 Before we can get started on this question, we need to have a brief discussion about how QGIS handles _coordinate systems_ and _projections_. A _coordinate system_ is how a person, object, or place's location on Earth is represented. You're probably familiar longitude and latitude, which is typically used in the coordinate systems in GPS devices. For instance, Baltimore City Hall is located at a longitude of 39.2908° N and a latitude of 76.6106° W.
@@ -251,74 +417,153 @@ Now, let's go back to the Attribute Table and calculate the area again. This tim
 
 # Map OSM data
 
-## Updating layer aesthetics
+## Layer Aesthetics
 
 The last step in this tutorial is to stylize our map and prepare it for printing and presentation. You can double-click on any layer in the Layers panel to open its properties. Double-click the playgrounds polygon layer and navigate to the Symbology panel. 
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Styling-1.PNG")`
+```{r, fig.cap = "The Symbology panel for the playgrounds layer", fig.align="center", out.width = "90%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Styling-1.PNG")
+```
 
-Here, you can see a menu of different options for the modifying the layer's aesthetics, including its fill color, border, and transparency. Pre-set options are available at the bottom, and pressing the green plus icon provides several more options. Try modifying the playgrounds however you'd like (have fun with it!).
+Here, you can see a menu of different options for the modifying the layer's aesthetics, including its fill color, border, and transparency. Pre-set options are available at the bottom. Try modifying the playgrounds' aesthetics however you'd like (have fun with it!).
 
-That was an example of a simple fill - every playground in the layer has the same aesthetics, regardless of any differences among them. For the _parks_ polygon layer, let's try coloring each park based on its size. The bigger the park, the darker its shade of green will be. Open the Symbology menu for the parks polygon layer and switch the drop-down option at the top from "Single symbol" to "Graduated". In the Value field, add the Area column that we created earlier. Then, click the arrow to the right of the Color ramp drop-down menu and choose one of the options. Lastly, click Classify in the bottom-left of the menu and then OK.
+## Color the parks by size
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Styling-2.PNG")`
+That was an example of a simple fill - every playground in the layer has the same aesthetics, regardless of any differences among them. For the _parks_ polygon layer, let's try coloring each park based on its size. The bigger the park, the darker its shade of green will be. 
+
+1. Open the Symbology menu for the parks polygon layer and switch the drop-down option at the top from "Single symbol" to "Graduated". 
+2. In the `Value` field, add the "Area" column that we created earlier. Then, click the arrow to the right of the Color ramp drop-down menu and choose one of the options. 
+3. Lastly, click Classify in the bottom-left of the menu and then OK.
+
+```{r, fig.cap = "Color the parks based on their size", fig.align="center", out.width = "90%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Styling-2.PNG")
+```
 
 You should see that larger parks are darker and smaller parks are lighter.
 
+## Basemap aesthetics
+
 Note that you can also modify the aesthetics for your basemap layers. This can be helpful if you're using a satellite image basemap but don't want your map to look too busy.
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Styling-4.PNG")`
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Styling-5.PNG")`
+```{r, fig.cap = "Try modifying the transparency of your basemap layer", fig.align="center", out.width = "90%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Styling-4.PNG")
+```
 
-## Laying out the map
+```{r, fig.cap = "Map features now stand out more clearly", fig.align="center", out.width = "90%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Styling-5.PNG")
+```
 
-To this point, we've been using the QGIS window to navigate and explore our data. Now that we're turning to the task of laying out our final map, however, we need to use the Print Layout, which lets us preview how our map will look printed on the page. To open the Print Layout, go to `Project --> New Print Layout...` and enter a name for your map file.
+## Lay out and export the map
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Print-1.PNG")`
+### The Print Layout view
 
-You'll be greeted with a completely blank page. As a first step, right-click on the canvas (the white part of the screen). Change the paper Size to "Letter" and the Orientation to "Portait". You should see the canvas change as you click these options.
+To this point, we've been using the QGIS window to navigate and explore our data. Now that we're turning to the task of laying out our final map, however, we need to use the `Print Layout`, which lets us preview how our map will look printed on the page. To open the Print Layout, go to `Project -> New Print Layout...` and enter a name for your map file.
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Print-2.PNG")`
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Print-3.PNG")`
+```{r, fig.cap = "Open the Print Layout", fig.align="center", out.width = "50%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Print-1.PNG")
+```
 
-Now, click the Add Map button and then draw a box on your canvas that corresponds to where you'd like to see the map on your printed page. After you draw the box, you should see your map of Baltimore appear on the page.
+You'll be greeted with a completely blank page. As a first step, right-click on the canvas (the white part of the screen) and select `Page Properties...`
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Print-4.PNG")`
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Print-5.PNG")`
+```{r, fig.cap = "The blank Print Layout page", fig.align="center", out.width = "90%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Print-2.PNG")
+```
 
-The map will be zoomed into roughly where it was zoomed in on the main QGIS window. Still, it may not be zoomed or centered to your liking. To adjust the map, click the Move item content button and then click and drag on the map to adjust its extent. Use your scroll wheel to zoom in and out, and, if you're having trouble getting the zoom just right, adjust the Scale in the Item Properties panel on the right side of your screen.
+### Layout size and orientation
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Print-6.PNG")`
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Print-7.PNG")`
+Change the paper Size to "Letter" and the Orientation to "Portait". You should see the canvas change as you click these options.
 
-If you don't like how your updated map aesthetics look on the page, you can go back to the main QGIS window, adjust the aesthetics as you'd like, and then hit the Refresh button on the Print Layout view. This will update your map's appearance to match its appearance in the main window.
+```{r, fig.cap = "Modify the size and orientation of the layout", fig.align="center", out.width = "50%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Print-3.PNG")
+```
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Print-8.PNG")`
+### Add the map to the layout
 
-Once you've got your map layout looking just how you'd like it, we can add other components to the map like a title, legend, and scale bar. To add a title, click the Add label and draw a box where you'd like the title to go. You can use the Item Properties panel to change the text and its aesthetics.
+Now, click the `Add Map` button and then draw a box on your canvas that corresponds to where you'd like to see the map on your printed page. After you draw the box, you should see your map of Baltimore appear on the page.
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Print-9.PNG")`
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Print-10.PNG")`
+```{r, fig.cap = "Add the map to the layout", fig.align="center", out.width = "90%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Print-16.PNG")
+```
 
-Next, click the Add Legend and draw a box for your legend. By default, it will include all of the layers from your main QGIS window using their default names. These won't be very intuitive for your readers, so let's edit them!
+### Adjust the map's extent and zoom
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Print-11.PNG")`
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Print-12.PNG")`
+The map will be zoomed into roughly where it was zoomed in on the main QGIS window. Still, it may not be zoomed or centered to your liking. To adjust the map, click the `Move item content` button. Click and drag on the map to adjust its extent, and use your scroll wheel to zoom in and out.
+
+```{r, fig.cap = "Use the Move item content tool to adjust the map", fig.align="center", out.width = "20%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Print-6.PNG")
+```
+
+If you're having trouble getting the zoom just right, adjust the Scale in the Item Properties panel on the right side of your screen.
+
+```{r, fig.cap = "The Scale property lets you fine-tune the zoom level", fig.align="center", out.width = "50%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Print-7.PNG")
+```
+
+If you don't like how your updated map aesthetics look on the page, you can go back to the main QGIS window, adjust the aesthetics as you'd like, and then hit the `Refresh view` button on the Print Layout view. This will update your map's appearance to match its appearance in the main window.
+
+```{r, fig.cap = "The Refresh view button", fig.align="center", out.width = "40%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Print-8.PNG")
+```
+
+### Add a title
+
+Once you've got your map layout looking just how you'd like it, we can add other components to the map like a title, legend, and scale bar. To add a title, click the `Add label` button and draw a box where you'd like the title to go. 
+
+```{r, fig.cap = "Use the Add label tool to add a title or other text", fig.align="center", out.width = "15%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Print-9.PNG")
+```
+
+You can use the Item Properties panel to change the text and its aesthetics.
+
+```{r, fig.cap = "Adjust the title text and aesthetics in the Item Properties panel", fig.align="center", out.width = "60%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Print-10.PNG")
+```
+
+### Add a legend
+
+Next, click the `Add Legend` button and draw a box for your legend. 
+
+```{r, fig.cap = "Use the Add Legend tool to add a legend", fig.align="center", out.width = "15%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Print-11.PNG")
+```
+
+By default, it will include all of the layers from your main QGIS window using their default names. These won't be very intuitive for your readers, so let's edit them!
+
+```{r, fig.cap = "By default, the legend uses the names of the layers", fig.align="center", out.width = "90%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Print-12.PNG")
+```
 
 To do so, uncheck the Auto update box in the Item Properties panel. This will "unlink" the legend from your main QGIS window, allowing you to update the legend as you'd like. To remove layers (like basemaps), highlight the layer and click the red minus sign. To rename layers, double-click on the layer and modify the text.
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Print-13.PNG")`
+```{r, fig.cap = "Remove and rename legend items in the Item Properties panel", fig.align="center", out.width = "50%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Print-13.PNG")
+```
 
-Finally, let's add a scale bar. Click the Add Scale Bar button and draw a box. You can experiment with the options in the Item Properties panel to modify the units, size, style, and intervals of the scale bar.
+### Add a scale bar
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Print-14.PNG")`
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Print-15.PNG")`
+Finally, let's add a scale bar. Click the `Add Scale Bar` button and draw a box to place the scale bar
 
-Take some more time to explore the other buttons and features in the Print Layout view. Make any additional aesthetic tweaks that you would like until you're happy with your map. Once you're ready, the last step is for us to export the map. There are several options for export format, but probably the easiest is PDF. Click the Export as PDF button and then save the map with an informative title. When the PDF Export Options menu pops, click Save.
+```{r, fig.cap = "Use the Add Scale Bar tool to add a scale bar", fig.align="center", out.width = "15%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Print-14.PNG")
+```
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Export-1.PNG")`
+You can experiment with the options in the Item Properties panel to modify the units, size, style, and intervals of the scale bar.
+
+```{r, fig.cap = "Adjust scale bar aesthetics and labels in the Item Properties panel", fig.align="center", out.width = "50%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Print-15.PNG")
+```
+
+### Finalize and export the map!
+
+Take some more time to explore the other buttons and features in the Print Layout view. Make any additional aesthetic tweaks that you would like until you're happy with your map. Once you're ready, the last step is for us to export the map. There are several options for export format, but the easiest is probably PDF. Click the `Export as PDF` button and then save the map with an informative title. When the PDF Export Options menu pops up, click Save.
+
+```{r, fig.cap = "Export the map as PDF", fig.align="center", out.width = "60%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Export-1.PNG")
+```
 
 You should now be able to share the map and view it on any computer like a standard PDF. Congratulations! You just made your first map in QGIS with OpenStreetMap data.
 
-`r knitr::include_graphics(path = "~plots/~tutorial_images/Export-2.PNG")`
+```{r, fig.cap = "Your final map!", fig.align="center", out.width = "90%"} 
+knitr::include_graphics(path = "~plots/~tutorial_images/Export-2.PNG")
+```
 
