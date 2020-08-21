@@ -16,6 +16,7 @@ output:
 cache_state = TRUE
 
 knitr::opts_chunk$set(echo = FALSE, cache = cache_state, message = FALSE)
+knitr::opts_knit$set(root.dir = '..') 
 ```
 
 ```{r, results='asis', echo = F}

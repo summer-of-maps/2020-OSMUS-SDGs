@@ -57,13 +57,12 @@ grids_summary <- map2(OSM_grids_summary,
                       ~ cbind(.x, .y))
 
 ## 2. ----
-# NOT USED IN FINAL ANALYSIS
-# How many within a 0.5km buffer of the center of the grid cell?
-buffer_dist <- conv_unit(0.5,
+# How many within a 0.25mi buffer of the center of the grid cell?
+buffer_dist <- conv_unit(0.25,
       # see note in SDG Analysis markdown. Use the below if hex cell size changes
                          # 0.5 + 
                          #   conv_unit(find_hex_cellsize(cell_size), from = "ft", to = "km") / 4,
-                         from = "km",
+                         from = "mi",
                          to = "ft")
 
 buffers <- map2(grids,

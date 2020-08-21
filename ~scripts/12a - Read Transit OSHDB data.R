@@ -113,47 +113,6 @@ for (city in names(oshdb_user_histories)) {
 
 ## 3. ----
 
-# test1 <- oshdb_transit_histories$`Philadelphia, Pennsylvania` %>% 
-#   gather(key = "mode",
-#          value = "stop_count",
-#          bus:total) %>% 
-#   mutate(mode = factor(mode,
-#                        levels = c("bus", "tram", "train", "ferry", "total"))) %>% 
-#   ggplot(aes(color = mode,
-#              x = as.Date(timestamp),
-#              y = stop_count)) +
-#   geom_line(size = 1) +
-#   plotTheme() +
-#   scale_color_manual(name = "Mode",
-#                      breaks = c("bus", "tram", "train", "ferry", "total"),
-#                      values = c('#377eb8','#4daf4a','#984ea3', '#ff7f00', '#e41a1c'),
-#                      labels = c("Bus", "Tram / Streetcar", "Train / Subway", "Ferry / Water Taxi", "Total")) +
-#   scale_x_date(date_breaks = "2 years",
-#                labels = lubridate::year) +
-#   labs(title = "Transit Stops Mapped Over Time",
-#        caption = "Source: OSHDB, ohsome API",
-#        x = "Date",
-#        y = "Number of Stops") +
-#   theme(legend.position = "none")
-# 
-# 
-# test2 <- oshdb_user_histories$`Philadelphia, Pennsylvania` %>% 
-#   ggplot(aes(x = as.Date(toTimestamp),
-#              y = total)) +
-#   geom_line(size = 1,
-#             color = "#377eb8") +
-#   plotTheme() +
-#   scale_x_date(date_breaks = "2 years",
-#                labels = lubridate::year) +
-#   scale_y_continuous(breaks = scales::pretty_breaks()) +
-#   labs(title = "Unique Contributors to OSM Transit Features, 3-month Rolling Average",
-#        caption = "Source: OSHDB, ohsome API",
-#        x = "Date",
-#        y = "Average Contributors")
-#   
-# 
-# grid.arrange(test1, test2, ncol = 1)
-
 
 oshdb_plots <- map2(
   oshdb_transit_histories,
@@ -181,7 +140,7 @@ oshdb_plots <- map2(
            caption = "Source: OSHDB, ohsome API",
            x = "Date",
            y = "Number of Stops") +
-      theme(legend.position = "none")
+      theme(legend.position = "bottom")
     
     user_history <- .y %>% 
       ggplot(aes(x = as.Date(toTimestamp),
@@ -204,7 +163,7 @@ oshdb_plots <- map2(
   }
                     )
 
-map2(oshdb_plots,
+walk2(oshdb_plots,
      names(oshdb_plots),
      ~ ggsave(plot = .x,
               filename = paste0("~plots/Transit SDG/OSM Maps/",
@@ -215,10 +174,10 @@ map2(oshdb_plots,
               height = 5))
 
 
-
-
 ## 2. Export as rds ----
-# saveRDS(oshdb_transit_histories,
-#         "~objects/10/12a_oshdb_transit_histories.rds")
-# saveRDS(oshdb_user_histories,
-#         "~objects/10/12a_oshdb_user_histories.rds")
+saveRDS(oshdb_transit_histories,
+        "~objects/10/12a_oshdb_transit_histories.rds")
+saveRDS(oshdb_user_histories,
+        "~objects/10/12a_oshdb_user_histories.rds")
+saveRDS(oshdb_plots,
+        "~objects/10/oshdb_plots.rds")

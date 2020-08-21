@@ -5,17 +5,21 @@ This is the repository for the [OpenStreetMap US](https://www.openstreetmap.us/)
 * [Final presentation recording](https://drive.google.com/file/d/1p1Ah5jGqwYu9T0ZoUwC2Vuoxg3fY7hJW/view?usp=sharing)
 * [Project description](https://www.summerofmaps.com/projects/shortlist/2020-openstreetmap-us)
 
-# File Structure
+# Files
+
+## SDG Methodology Summary
+
+**SDG Methodology.html:** Summarizes the methodologies used to calculate the SDG indicators.
+
+## OSM QGIS tutorial
+
+**OSM QGIS tutorial.html:** The tutorial for downloading, manipulating, and mapping OSM data in QGIS. Also available on [TeachOSM](https://teachosm.org/).
 
 ## Code
 
 All scripts can be run in the order that they are numbered.
 
-### Report
-
-**SDG Analaysis.RMD:** The methodology report for measuring the SDG indicators.
-
-### Scripts
+### ~scripts
 
 **00 - Admin.R:** Load packages and define filepath for Dropbox data. Run this whenever starting an analysis task.
 
@@ -41,4 +45,4 @@ All intermediate objects are saved as `.rds` and are saved using the following f
 
 **Format:** `/~outputs/[scriptRange]/[script#]_[objectName].rds`
 
-**Example:** `/~outputs/10/11_BGs.rds` is object `BGs` produced in script `11 - Read Census data.R`.
+**Example:** `/~outputs/10/11_BGs.rds` is object `BGs` produced in script `11 - Read Census data.R.
