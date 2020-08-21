@@ -47,5 +47,5 @@ for (city in 1:length(parks_openData_list)) {
 #nothing to do
 
 ## 1(a). Export as rds ----
-saveRDS(parks_osmData_combined,
-        "~objects/20/23_parks_osmData_combined.rds")
+# saveRDS(parks_osmData_combined,
+#         "~objects/20/23_parks_osmData_combined.rds")

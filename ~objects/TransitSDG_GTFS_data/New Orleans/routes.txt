@@ -1,0 +1,42 @@
+route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_url,route_color,route_text_color
+10,1,10,Tchoupitoulas,,3,,ed99c2,000000
+100,1,100,Algiers Loop Owl,,3,,245685,FFFFFF
+101,1,101,Algiers Point,,3,,4fbded,FFFFFF
+102,1,102,General Meyer,,3,,cfaa78,000000
+106,1,106,Aurora,,3,,f2a800,000000
+108,1,108,Algiers Local,,3,,71c167,000000
+11,1,11,Magazine,,3,,9b5aa5,FFFFFF
+114,1,114,General DeGaulle-Sullen,,3,,d08313,000000
+115,1,115,General DeGaulle-Tullis,,3,,d08313,000000
+12,1,12,St. Charles Streetcar,,0,,006737,FFFFFF
+15,1,15,Freret,,3,,d6ed6b,000000
+16,1,16,S. Claiborne,,3,,692b91,FFFFFF
+2,1,2,Riverfront Streetcar,,0,,0174f3,FFFFFF
+201,1,201,Kenner Loop,,3,,86a7ce,000000
+202,1,202,Airport Express,,3,,ff00ff,000000
+27,1,27,Louisiana,,3,,4fbdff,000000
+28,1,28,M.L.King,,3,,d60c8c,000000
+32,1,32,Leonidas-Treme,,3,,8fd1c5,000000
+39,1,39,Tulane,,3,,f58025,000000
+45,1,45,Lakeview,,3,,2ab560,000000
+47,1,47,Canal Streetcar - Cemeteries,,0,,c32f3d,FFFFFF
+48,1,48,Canal Streetcar - City Park/Museum,,0,,87cb25,000000
+49,1,49,Rampart-St.Claude Streetcar,,0,,fdbb30,000000
+5,1,5,Marigny-Bywater,,3,,7d0349,FFFFFF
+51,1,51,St. Bernard-St.Anthony,,3,,a62188,FFFFFF
+52,1,52,St. Bernard-Paris Avenue,,3,,99aad1,000000
+55,1,55,Elysian Fields,,3,,51b948,000000
+57,1,57,Franklin,,3,,00b1b0,000000
+60,1,60,Hayne,,3,,af7022,000000
+62,1,62,Morrison Express,,3,,00b6de,000000
+63,1,63,New Orleans East Owl,,3,,1f2d84,FFFFFF
+64,1,64,Lake Forest Express,,3,,1f2d84,FFFFFF
+65,1,65,Read-Crowder Express,,3,,00873d,FFFFFF
+80,1,80,Desire-Louisa,,3,,f8b9ab,000000
+84,1,84,Galvez,,3,,b890c2,000000
+88,1,88,St. Claude/Jackson Barracks,,3,,001d5b,FFFFFF
+90,1,90,Carrollton,,3,,7a4028,FFFFFF
+91,1,91,Jackson-Esplanade,,3,,a99b06,000000
+94,1,94,Broad,,3,,ffc421,000000
+1,1,1,Algiers Point Ferry,,4,,00FFFF,000000
+4,1,4,Chalmette Ferry,,4,,C0C0C0,000000

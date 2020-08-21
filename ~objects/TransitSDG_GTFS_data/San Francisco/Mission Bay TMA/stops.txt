@@ -1,0 +1,38 @@
+stop_id,stop_code,platform_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id,stop_url,location_type,parent_station,stop_timezone,position,direction,wheelchair_boarding
+2335506,18,,409-499 Illinois Street,,37.766240679547,-122.38800265885,,,0,,America/Los_Angeles,,,0
+2335507,1,,1500 Owens Street,,37.769074345966,-122.3953613405,,,0,,America/Los_Angeles,,,0
+2335510,26,,Berry Street and King Street,,37.771809527009,-122.39843737986,,,0,,America/Los_Angeles,,,0
+2335511,14,,4th Street at Library,,37.775501821171,-122.39308823724,,,0,,America/Los_Angeles,,,0
+2335513,25,,Berry Street and King Street,,37.771759,-122.398387,,,0,,America/Los_Angeles,,,0
+2335514,13,,1300 4th Street,,37.772023,-122.391369,,,0,,America/Los_Angeles,,,0
+2335516,2,,Owens Street at Conference Center,,37.768054,-122.3938,,,0,,America/Los_Angeles,,,0
+2335517,4,,Berry Street and 5th Street,,37.774107,-122.395391,,,0,,America/Los_Angeles,,,0
+2335518,16,,Mission Bay Boulevard S at Nektar,,37.770694,-122.388846,,,0,,America/Los_Angeles,,,0
+2335520,8,,Berry Street and 5th Street,,37.774152,-122.395448,,,0,,America/Los_Angeles,,,0
+2335522,24,,TransBay (201 Folsom Street),,37.788806,-122.392452,,,0,,America/Los_Angeles,,,0
+2335530,27,,303 2nd Street,,37.785013,-122.395844,,,0,,America/Los_Angeles,,,0
+2335531,6,,BART (5th Street and  Market Street),,37.783906,-122.40787,,,0,,America/Los_Angeles,,,0
+2335532,29,,Berry Street at Mission Creek,,37.775582,-122.393544,,,0,,America/Los_Angeles,,,0
+2335533,28,,Harrison Street and 2nd Street,,37.784267,-122.395315,,,0,,America/Los_Angeles,,,0
+2430878,30,,Civic Center BART (9th and Market),,37.777415175163,-122.41602803586,,,0,,America/Los_Angeles,,,0
+2430879,31,,Long Bridge Street and El Dorado Street,,37.771915677068,-122.39331608827,,,0,,America/Los_Angeles,,,0
+2430880,32,,1500 Owens Street,,37.76913945881,-122.3956578751,,,0,,America/Los_Angeles,,,0
+2430881,33,,Long Bridge Street and El Dorado Street,,37.771998454187,-122.39348819538,,,0,,America/Los_Angeles,,,0
+2430882,34,,Mission Bay Boulevard North and 3rd Street,,37.771117,-122.390113,,,0,,America/Los_Angeles,,,0
+2430883,35,,1111 8th Street (CCA/Adobe),,37.767242457971,-122.40019635218,,,0,,America/Los_Angeles,,,0
+2430884,36,,2nd Street and Stevenson Street (Montgomery BART,,37.788853,-122.400708,,,0,,America/Los_Angeles,,,0
+2430885,37,,500 Howard Street (Transbay),,37.788350281447,-122.39637636905,,,0,,America/Los_Angeles,,,0
+2430991,39,,409-499 Illinois Street,,37.766231193653,-122.3881986008,,,0,,America/Los_Angeles,,,0
+2438985,40,,BART (Grove Street and Hyde Street),,37.778769,-122.415288,,,0,,America/Los_Angeles,,,0
+2452885,41,,16th Street and 4th Street,,37.766910305944,-122.39115422246,,,0,,America/Los_Angeles,,,0
+2452891,43,,Owens Street and Gene Friend Way,,37.768259147444,-122.39445188339,,,0,,America/Los_Angeles,,,0
+2452892,44,,Owens Street and Gene Friend Way,,37.768331185998,-122.3948415497,,,0,,America/Los_Angeles,,,0
+2502237,45,,Civic Center BART (8th and Market),,37.778487,-122.41461,,,0,,America/Los_Angeles,,,0
+2561390,,,7th @ Market (Yotel),,37.7803832,-122.4124932,,,0,,America/Los_Angeles,,,0
+2561394,,,1200 4th,,37.7725934955987,-122.391428773289,,,0,,America/Los_Angeles,,,0
+2561395,,,TFB @ 16th,,37.7670567481483,-122.38623989798,,,0,,America/Los_Angeles,,,0
+2561396,,,16th @ Illinois,,37.7670725581114,-122.388527758123,,,0,,America/Los_Angeles,,,0
+2561409,,,100 Hooper (Adobe),,37.7685285641995,-122.398964222184,,,0,,America/Los_Angeles,,,0
+2561414,,,TransBay (181 Fremont),,37.7896051767694,-122.395469417549,,,0,,America/Los_Angeles,,,0
+2561415,,,Mission @ Spear (Embarcadero),,37.7919901456108,-122.394674952471,,,0,,America/Los_Angeles,,,0
+2561419,,,22 Fourth St,,37.7853869,-122.4057418,,,0,,America/Los_Angeles,,,0

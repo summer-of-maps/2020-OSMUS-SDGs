@@ -28,8 +28,8 @@ pubTrans <- pmap(.l = list(buses, trams, rail, ferries),
 
 # 2. ----
 # (a)
-walkroads <- map2(walkroads,
-                  sdg_cities_list[1:3],
+walkroads <- map2(walkroads[c(1:4, 6)],
+                  sdg_cities_list[c(1:4, 6)],
                   ~ .x %>% 
                     dplyr::select(highway, geometry) %>% 
                     st_transform(crs = .y$proj))
@@ -40,7 +40,7 @@ walkroads[["Pennsylvania"]] <- PA_walkroads %>%
 
 # (b)
 pubTrans <- map2(pubTrans,
-              sdg_cities_list,
+              sdg_cities_list[1:6],
               ~ .x %>% 
                 st_transform(.x,
                              crs = .y$proj))

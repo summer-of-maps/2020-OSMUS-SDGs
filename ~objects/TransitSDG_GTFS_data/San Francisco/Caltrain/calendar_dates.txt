@@ -1,0 +1,19 @@
+service_id,date,holiday_name,exception_type
+c_20188_b_26823_d_31,20210215,President's Day - Manually Add Saturday,2
+c_20188_b_26823_d_31,20210118,Martin Luther King Jr Day - Manually Add Saturday,2
+c_20188_b_26823_d_31,20210101,New Year's Day - Manually Add Sunday,2
+c_20188_b_26823_d_31,20201225,Christmas Day - Manually Add Sunday,2
+c_20188_b_26823_d_31,20201127,Day After Thanksgiving - Manually Add Saturday,2
+c_20188_b_26823_d_31,20201126,Thanksgiving Day - Manually Add Sunday,2
+c_20188_b_26823_d_31,20200907,Labor Day - Manually Add Sunday,2
+c_16884_b_25771_d_32,20200704,Independence Day - Manually Add Sunday,2
+c_16884_b_25771_d_96,20210215,President's Day - Manually Add Saturday,1
+c_16884_b_25771_d_96,20210118,Martin Luther King Jr Day - Manually Add Saturday,1
+c_16884_b_25771_d_96,20210101,New Year's Day - Manually Add Sunday,1
+c_16884_b_25771_d_96,20201225,Christmas Day - Manually Add Sunday,1
+c_16884_b_25771_d_96,20201127,Day After Thanksgiving - Manually Add Saturday,1
+c_16884_b_25771_d_96,20201126,Thanksgiving Day - Manually Add Sunday,1
+c_16884_b_25771_d_96,20200907,Labor Day - Manually Add Sunday,1
+c_20188_b_26823_d_32,20210215,President's Day - Manually Add Saturday,1
+c_20188_b_26823_d_32,20210118,Martin Luther King Jr Day - Manually Add Saturday,1
+c_20188_b_26823_d_32,20201127,Day After Thanksgiving - Manually Add Saturday,1

@@ -1,0 +1,487 @@
+stop_id,accessibility_id,cardinal_direction,relative_position,stop_city
+40003,1,AT,AT,San Francisco
+40006,1,NW,NS,San Francisco
+40009,1,WE,FS,San Francisco
+40012,1,SW,FS,San Francisco
+40019,1,NE,FS,San Francisco
+40021,1,NW,NS,San Francisco
+40022,1,NW,FS,San Francisco
+40023,1,SE,FS,San Francisco
+40024,1,NW,FS,San Francisco
+40025,1,NW,NS,San Francisco
+40027,1,NW,NS,San Francisco
+40028,1,SE,NS,San Francisco
+40029,1,NW,NS,San Francisco
+40030,1,NE,FS,San Francisco
+40031,1,NW,NS,San Francisco
+40032,1,SE,NS,San Francisco
+40033,1,SW,NS,San Francisco
+40034,1,NE,NS,San Francisco
+40035,1,NW,NS,San Francisco
+40036,1,SE,NS,San Francisco
+40037,1,NW,AT,San Francisco
+40038,1,NE,AT,San Francisco
+40039,1,NE,FS,San Francisco
+40040,1,SW,FS,San Francisco
+40041,1,SW,NS,San Francisco
+40042,1,NE,NS,San Francisco
+40043,1,SW,NS,San Francisco
+40044,1,NW,FS,San Francisco
+40045,1,SW,NS,San Francisco
+40046,1,NE,NS,San Francisco
+40047,1,SW,FS,San Francisco
+40048,1,NE,FS,San Francisco
+40049,1,NW,NS,San Francisco
+40050,1,NE,FS,San Francisco
+40051,1,NW,NS,San Francisco
+40052,1,NE,FS,San Francisco
+40053,1,SW,FS,San Francisco
+40054,1,SW,FS,San Francisco
+40055,1,NW,NS,San Francisco
+40057,1,NE,NS,San Francisco
+40058,1,NW,NS,San Francisco
+40063,1,NW,NS,San Francisco
+40065,1,NW,FS,San Francisco
+40066,1,SW,FS,San Francisco
+40068,1,NE,NS,San Francisco
+40069,1,NE,NS,San Francisco
+40074,1,SE,NS,San Francisco
+40078,1,NE,FS,San Francisco
+40082,1,SE,NS,San Francisco
+40083,1,NW,NS,San Francisco
+40090,1,SW,FS,Sausalito
+40091,1,NE,FS,Sausalito
+40092,1,NE,OP,Sausalito
+40093,1,NW,NS,Sausalito
+40094,1,NW,NS,Sausalito
+40095,1,SE,NS,Sausalito
+40096,1,SW,FS,Sausalito
+40097,1,NE,FS,Sausalito
+40098,1,NW,NS,Sausalito
+40099,1,NE,FS,Sausalito
+40100,1,SE,NS,Sausalito
+40101,1,NW,OP,Sausalito
+40102,1,SE,NS,Sausalito
+40104,1,SW,FS,Sausalito
+40105,1,NE,FS,Sausalito
+40106,1,NW,OP,Sausalito
+40107,1,NE,FS,Sausalito
+40108,1,NW,NS,Sausalito
+40110,1,WE,AT,Sausalito
+40111,1,NE,AT,Sausalito
+40112,1,SE,AT,Sausalito
+40113,1,NW,FS,Marin City
+40129,1,NW,FS,Mill Valley
+40130,1,SW,NS,Mill Valley
+40131,1,NE,NS,Mill Valley
+40132,1,SW,NS,Mill Valley
+40133,1,NW,FS,Mill Valley
+40134,1,SE,FS,Mill Valley
+40135,1,NE,NS,Mill Valley
+40136,1,SW,NS,Mill Valley
+40137,1,NW,FS,Mill Valley
+40138,1,SW,NS,Mill Valley
+40139,1,NE,NS,Mill Valley
+40140,1,SE,FS,Mill Valley
+40141,1,SW,NS,Mill Valley
+40142,1,NE,NS,Mill Valley
+40143,1,NW,FS,Mill Valley
+40144,1,NE,FS,Mill Valley
+40145,1,SW,FS,Mill Valley
+40146,1,NE,FS,Mill Valley
+40147,1,SW,FS,Mill Valley
+40148,1,NE,OP,Mill Valley
+40149,1,NW,OP,Mill Valley
+40150,1,NE,FS,Mill Valley
+40151,1,SW,FS,Mill Valley
+40152,1,NE,OP,Mill Valley
+40153,1,SW,FS,Mill Valley
+40154,1,SE,OP,Mill Valley
+40155,1,SW,FS,Mill Valley
+40156,1,SE,OP,Mill Valley
+40157,1,SE,NS,Mill Valley
+40158,1,SW,NS,Strawberry
+40162,1,SW,AT,Mill Valley
+40164,1,NW,AT,Mill Valley
+40169,1,NE,FS,Mill Valley
+40170,1,SE,AT,Mill Valley
+40171,1,NE,FS,Mill Valley
+40172,1,SE,NS,Mill Valley
+40182,1,SE,FS,Strawberry
+40187,1,WE,AT,Strawberry
+40188,1,EA,AT,Strawberry
+40225,1,SE,OP,Larkspur
+40267,1,WE,AT,Corte Madera
+40268,1,EA,AT,Corte Madera
+40275,1,SE,FS,Corte Madera
+40276,1,NE,NS,Corte Madera
+40277,1,SE,FS,Corte Madera
+40278,1,NE,NS,Corte Madera
+40279,1,SE,FS,Corte Madera
+40280,1,NW,FS,Corte Madera
+40281,1,SE,FS,Corte Madera
+40295,1,NW,AT,Corte Madera
+40296,1,SE,AT,Corte Madera
+40297,1,SW,FS,Larkspur
+40298,1,NE,OP,Larkspur
+40299,1,SW,FS,Larkspur
+40300,1,NE,FS,Larkspur
+40301,1,NW,OP,Larkspur
+40302,1,NE,FS,Larkspur
+40303,1,SW,FS,Larkspur
+40304,1,NE,FS,Larkspur
+40305,1,NW,NS,Larkspur
+40306,1,NE,OP,Larkspur
+40307,1,SW,FS,Larkspur
+40308,1,SE,NS,Larkspur
+40315,1,SE,FS,Greenbrae
+40316,1,SE,OP,Greenbrae
+40317,1,NW,FS,Greenbrae
+40318,1,SE,FS,Greenbrae
+40319,1,NW,OP,Greenbrae
+40320,1,SE,FS,Greenbrae
+40321,1,NW,OP,Greenbrae
+40322,1,SE,FS,Greenbrae
+40323,1,NW,FS,Greenbrae
+40324,1,SW,FS,Greenbrae
+40325,1,NW,FS,Greenbrae
+40330,1,SE,OP,Kentfield
+40332,1,SO,AT,Kentfield
+40333,1,NW,FS,Kentfield
+40334,1,SW,OP,Kentfield
+40335,1,NE,NS,Kentfield
+40336,1,SE,OP,Kentfield
+40337,1,NE,NS,Kentfield
+40338,1,SE,FS,Kentfield
+40339,1,NW,FS,Kentfield
+40340,1,NW,FS,Kentfield
+40341,1,SW,FS,Ross
+40342,1,NE,OP,Ross
+40349,1,WE,AT,Kentfield
+40416,1,SE,FS,San Rafael
+40418,1,NE,NS,San Rafael
+40419,1,NE,OP,San Rafael
+40420,1,SE,FS,San Rafael
+40421,1,NE,OP,San Rafael
+40422,1,SW,NS,San Rafael
+40423,1,SE,FS,San Rafael
+40424,1,NW,FS,San Rafael
+40425,1,NW,FS,San Rafael
+40426,1,SE,FS,San Rafael
+40427,1,NW,FS,San Rafael
+40428,1,SE,OP,San Rafael
+40436,1,NW,FS,San Rafael
+40438,1,NE,NS,San Rafael
+40465,1,NO,AT,San Rafael
+40466,1,NW,NS,San Rafael
+40468,1,SE,FS,San Rafael
+40469,1,NO,AT,San Rafael
+40470,1,NE,NS,San Rafael
+40472,1,SE,FS,San Anselmo
+40473,1,SW,FS,San Anselmo
+40474,1,SE,FS,San Anselmo
+40475,1,NW,FS,San Anselmo
+40476,1,SE,FS,San Anselmo
+40478,1,NE,NS,San Anselmo
+40479,1,SE,FS,San Anselmo
+40480,1,NW,FS,San Anselmo
+40481,1,NW,FS,San Anselmo
+40482,1,NW,OP,San Anselmo
+40483,1,SW,NS,San Anselmo
+40484,1,SW,AT,San Anselmo
+40485,1,SW,FS,San Anselmo
+40486,1,NE,NS,San Anselmo
+40487,1,SO,FS,San Anselmo
+40488,1,NE,OP,San Anselmo
+40489,1,SE,FS,San Anselmo
+40490,1,NW,FS,San Anselmo
+40512,1,SE,NS,Fairfax
+40513,1,NE,NS,Fairfax
+40514,1,SW,NS,Fairfax
+40515,1,NW,FS,Fairfax
+40516,1,SO,AT,Fairfax
+40517,1,NO,OP,Fairfax
+40518,1,SW,OP,Fairfax
+40519,1,NW,FS,Fairfax
+40520,1,SE,FS,Fairfax
+40521,1,NE,NS,Fairfax
+40522,1,SE,FS,Fairfax
+40523,1,NE,OP,Fairfax
+40524,1,NW,FS,Fairfax
+40525,1,NE,NS,Fairfax
+40526,1,SE,FS,Fairfax
+40527,1,NW,FS,Fairfax
+40528,1,NW,NS,San Rafael
+40529,1,SE,NS,San Rafael
+40530,1,NW,NS,San Rafael
+40531,1,SE,NS,San Rafael
+40532,1,NW,NS,San Rafael
+40533,1,SE,NS,San Rafael
+40534,1,NW,NS,San Rafael
+40535,1,NE,OP,San Rafael
+40536,1,NW,NS,San Rafael
+40537,1,SE,NS,San Rafael
+40538,1,SE,NS,San Rafael
+40540,1,SW,NS,San Rafael
+40541,1,SW,FS,San Rafael
+40542,1,SW,NS,San Rafael
+40543,1,NW,FS,San Rafael
+40544,1,SE,OP,San Rafael
+40545,1,NW,FS,San Rafael
+40548,1,SE,OP,San Rafael
+40550,1,NE,FS,San Rafael
+40551,1,SE,FS,San Rafael
+40552,1,NE,NS,San Rafael
+40553,1,NW,FS,San Rafael
+40556,1,NW,NS,San Rafael
+40562,1,NW,NS,San Rafael
+40563,1,NE,FS,San Rafael
+40564,1,NW,AT,San Rafael
+40565,1,SE,OP,San Rafael
+40566,1,NW,NS,San Rafael
+40567,1,SE,OP,San Rafael
+40571,1,NW,NS,San Rafael
+40572,1,SE,OP,San Rafael
+40573,1,NW,NS,San Rafael
+40574,1,NE,OP,San Rafael
+40575,1,SW,FS,San Rafael
+40576,1,NE,OP,San Rafael
+40577,1,SE,OP,San Rafael
+40579,1,NW,FS,San Rafael
+40580,1,NE,FS,San Rafael
+40581,1,NW,AT,San Rafael
+40582,1,NE,AT,San Rafael
+40606,1,SW,AT,Marinwood
+40607,1,SE,AT,Marinwood
+40634,1,SE,NS,Marinwood
+40635,1,SW,OP,Marinwood
+40636,1,SO,OP,Marinwood
+40637,1,NW,FS,Marinwood
+40638,1,SE,FS,Marinwood
+40639,1,NW,FS,Marinwood
+40640,1,SW,NS,Marinwood
+40641,1,NW,FS,Marinwood
+40653,1,NE,OP,Marinwood
+40654,1,SW,FS,Marinwood
+40655,1,NW,FS,Novato
+40656,1,SW,NS,Novato
+40657,1,NW,FS,Novato
+40658,1,SE,FS,Novato
+40659,1,NE,FS,Novato
+40660,1,SE,OP,Novato
+40661,1,SW,FS,Novato
+40662,1,SE,NS,Novato
+40663,1,NW,FS,Novato
+40664,1,SW,NS,Novato
+40665,1,NE,NS,Novato
+40666,1,SE,OP,Novato
+40667,1,NE,NS,Novato
+40668,1,SW,NS,Novato
+40669,1,NW,FS,Novato
+40670,1,SW,NS,Novato
+40671,1,NW,FS,Novato
+40672,1,SE,FS,Novato
+40673,1,SW,FS,Novato
+40674,1,SE,NS,Novato
+40675,1,SE,FS,Novato
+40676,1,NW,OP,Novato
+40677,1,SW,OP,Novato
+40678,1,NW,FS,Novato
+40679,1,SE,OP,Novato
+40680,1,NW,OP,Novato
+40681,1,NW,NS,Novato
+40682,1,NW,OP,Novato
+40683,1,SW,OP,Novato
+40684,1,NW,FS,Novato
+40686,1,NE,FS,Novato
+40687,1,NW,FS,Novato
+40688,1,SE,NS,Novato
+40689,1,SW,FS,Novato
+40690,1,SE,FS,Novato
+40691,1,NW,FS,Novato
+40692,1,SE,OP,Novato
+40693,1,NW,FS,Novato
+40694,1,SW,FS,Novato
+40695,1,NE,FS,Novato
+40696,1,SO,FS,Novato
+40697,1,SO,NS,Novato
+40698,1,SE,FS,Novato
+40699,1,NE,NS,Novato
+40702,1,SW,FS,Novato
+40703,1,SE,NS,Novato
+40704,1,SW,OP,Novato
+40705,1,SE,NS,Novato
+40706,1,SW,FS,Novato
+40707,1,NE,OP,Novato
+40708,1,SW,FS,Novato
+40709,1,NE,FS,Novato
+40710,1,NW,NS,Novato
+40711,1,NE,FS,Novato
+40712,1,NW,NS,Novato
+40713,1,SE,NS,Novato
+40714,1,NW,FS,Novato
+40715,1,SE,OP,Novato
+40716,1,SW,NS,Novato
+40717,1,NE,NS,Novato
+40746,1,NE,AT,Novato
+40773,1,WE,AT,Novato
+40779,1,NW,NS,Novato
+40780,1,NE,FS,Novato
+40825,1,NE,FS,Petaluma
+40826,1,SW,FS,Petaluma
+40827,1,NE,FS,Petaluma
+40829,1,NE,FS,Petaluma
+40830,1,SW,OP,Petaluma
+40832,1,NE,FS,Petaluma
+40833,1,NW,NS,Petaluma
+40834,1,NE,OP,Petaluma
+40835,1,NW,NS,Petaluma
+40836,1,NE,OP,Petaluma
+40837,1,NW,NS,Petaluma
+40838,1,NE,FS,Petaluma
+40839,1,NW,NS,Petaluma
+40840,1,SW,FS,Petaluma
+40841,1,NE,OP,Petaluma
+40844,1,NW,NS,Petaluma
+40845,1,NE,FS,Petaluma
+40884,1,NW,OP,Rohnert Park
+40885,1,NE,FS,Rohnert Park
+40886,1,NW,NS,Rohnert Park
+40889,1,SW,FS,Rohnert Park
+40890,1,SE,NS,Rohnert Park
+40891,1,SW,OP,Rohnert Park
+40892,1,NE,FS,Rohnert Park
+40909,1,NW,NS,Cotati
+40910,1,NE,FS,Cotati
+40912,1,NE,FS,Cotati
+40913,1,SW,FS,Cotati
+40914,1,SE,OP,Cotati
+40915,1,NE,NS,Cotati
+40916,1,NW,OP,Cotati
+40917,1,SW,NS,Cotati
+40949,1,NW,AT,Santa Rosa
+40950,1,SW,NS,Santa Rosa
+40951,1,NW,FS,Santa Rosa
+40969,1,SE,AT,Santa Rosa
+40996,1,SW,OP,Santa Rosa
+40997,1,NE,FS,Santa Rosa
+40998,1,SW,FS,Santa Rosa
+40999,1,NE,FS,Santa Rosa
+41000,1,SE,NS,Sausalito
+41002,1,SW,NS,Novato
+41003,1,NE,NS,Novato
+41036,1,SW,FS,San Rafael
+41037,1,SE,NS,San Rafael
+41038,1,NW,FS,Mill Valley
+41042,1,SE,NS,Sausalito
+41044,1,SE,NS,Novato
+41045,1,SW,FS,Novato
+41046,1,SW,FS,Novato
+41047,1,NE,NS,Novato
+41048,1,NW,FS,Novato
+41049,1,SE,FS,Novato
+41051,1,EA,AT,Novato
+41074,1,NW,FS,Novato
+41075,1,SE,FS,Novato
+41078,1,NW,OP,Petaluma
+41089,1,SE,FS,San Rafael
+41090,1,NW,OP,San Rafael
+41091,1,NE,NS,San Rafael
+41092,1,NW,FS,San Rafael
+41093,1,NW,FS,San Rafael
+41094,1,NO,AT,San Rafael
+41095,1,NE,AT,San Rafael
+41098,1,SE,NS,Novato
+41099,1,SW,FS,Novato
+41151,1,SE,FS,San Francisco
+41152,1,SE,FS,San Francisco
+41153,1,SW,NS,San Francisco
+41154,1,SW,NS,San Francisco
+41172,1,NW,NS,Novato
+41186,1,SE,NS,San Francisco
+41191,1,SE,FS,San Francisco
+41203,3,NW,FS,Petaluma
+41205,3,NW,FS,Petaluma
+41206,3,SE,FS,Petaluma
+41207,3,NW,FS,Petaluma
+41208,3,SE,FS,Petaluma
+41209,3,EA,AT,Petaluma
+41217,3,SW,NS,Petaluma
+41218,3,NE,NS,Petaluma
+41300,3,AT,AT,San Rafael
+41301,3,SE,FS,San Rafael
+41302,3,NW,NS,San Rafael
+41360,3,NE,FS,San Anselmo
+41361,3,SW,FS,San Anselmo
+42003,1,NE,FS,San Francisco
+42004,3,NE,FS,San Francisco
+42005,1,SE,NS,San Francisco
+42006,1,NE,FS,San Francisco
+42007,1,NE,FS,San Francisco
+42009,1,NW,NS,Kentfield
+42010,1,NE,FS,Corte Madera
+42011,1,NE,AT,Novato
+42020,1,NE,OP,Kentfield
+42027,1,SE,AT,San Rafael
+42032,1,EA,AT,Marinwood
+42036,1,NE,FS,Petaluma
+42039,1,NE,AT,Rohnert Park
+42042,1,NE,FS,Rohnert Park
+42103,1,NW,NS,Sausalito
+42112,1,NW,AT,San Rafael
+42113,1,WE,AT,Marinwood
+42114,1,NW,NS,Novato
+42119,1,SW,AT,Rohnert Park
+42120,1,NW,OP,Petaluma
+42121,1,SW,FS,Rohnert Park
+42126,1,NO,AT,Santa Rosa
+42130,1,NE,NS,Strawberry
+42151,3,WE,AT,El Cerrito
+42152,3,NE,NS,Richmond
+42153,3,SW,OP,Richmond
+42154,3,NE,NS,Richmond
+42155,3,SE,FS,Richmond
+42160,3,SE,FS,Richmond
+42161,3,NE,NS,Richmond
+42162,3,SE,FS,Richmond
+42163,3,NE,NS,Richmond
+42183,3,WE,AT,El Cerrito
+42184,3,AT,AT,Oakland
+42185,3,AT,AT,Oakland
+42186,3,NE,NS,Oakland
+42187,3,SW,NS,Richmond
+42188,3,NW,OP,Richmond
+42200,1,SE,FS,San Francisco
+42201,1,SW,NS,San Francisco
+42202,1,SE,FS,San Francisco
+42203,1,SW,NS,San Francisco
+42204,1,SW,AT,San Francisco
+42206,1,NE,NS,San Francisco
+42207,1,NW,FS,San Francisco
+42208,1,NW,FS,San Francisco
+42209,1,NW,AT,San Francisco
+42210,1,SE,FS,San Francisco
+42211,3,SE,AT,Novato
+42213,3,SW,NS,San Francisco
+42215,3,SE,FS,San Francisco
+42229,3,EA,AT,San Francisco
+42233,3,EA,AT,San Francisco
+42234,3,EA,AT,San Francisco
+42236,3,NE,NS,San Francisco
+42237,3,NE,NS,San Francisco
+42238,3,SE,NS,San Francisco
+42244,3,SE,NS,San Francisco
+42246,3,SW,FS,San Francisco
+42247,3,SE,FS,San Francisco
+42248,3,NW,NS,San Francisco
+42249,3,WE,AT,San Francisco
+42250,3,NE,FS,San Francisco
+42251,3,NW,NS,San Francisco
+43000,3,AT,AT,San Francisco
+43003,3,AT,AT,Sausalito
+43004,3,AT,AT,Larkspur
+43007,3,,NS,Tiburon
+44001,3,SE,AT,San Rafael
+44002,3,SE,AT,San Rafael
+44003,3,NW,AT,San Rafael
+44113,3,NW,FS,Marin City

@@ -1,0 +1,4 @@
+service_id,service_description
+"72855","Richmond Route (06/15/2020) (Weekday)"
+"72856","Vallejo Routes (Reduced Services Effective 4/15/2020) (Weekday)"
+"75756","Alameda/Oakland Routes (Reduced Service effective 4/15/2020) (Weekday)"

@@ -1,0 +1,243 @@
+---
+title: "Analyzing Progress on UN SDG Indicators 11.2.1 (public transportation) and 11.7.1 (open space) with OSM"
+author: "Eugene Chong"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output:
+  html_document:
+    toc: true
+    toc_float: 
+      collapsed: false
+    toc_depth: 4
+    code_folding: hide
+---
+
+```{r setup, include=FALSE}
+cache_state = TRUE
+
+knitr::opts_chunk$set(echo = TRUE, cache = cache_state, message = FALSE)
+knitr::opts_knit$set(root.dir = '..') 
+# setwd(here::here())
+```
+
+
+# Introduction
+
+The descriptions of the indicators and monitoring frameworks come from [this UN document](https://sustainabledevelopment.un.org/content/documents/2013150612-FINAL-SDSN-Indicator-Report1.pdf).
+
+Both of these indicators are part of Sustainable Development Goal 11: Make cities and human settlements inclusive, safe, resilient and sustainable.
+
+# Admin
+
+Load packages, write utility functions, set options
+
+
+
+```{r packages, cache = FALSE}
+source("~scripts/00 - Admin.R") 
+source("~scripts/01 - Utility Functions.R")
+
+tmap_mode("view")
+tmap_options(basemaps = "Stamen.Terrain")
+```
+
+# Transit SDG (11.2.1) 
+
+SDG target 11.2 is `By 2030, provide access to safe, affordable, accessible and sustainable transport systems for all, improving road safety, notably by expanding public transport, with special attention to the needs of those in vulnerable situations, women, children, persons with disabilities and older persons.` [Source](https://sustainabledevelopment.un.org/content/documents/2013150612-FINAL-SDSN-Indicator-Report1.pdf).
+
+In separate reports, the UN has proposed two different indicators:
+
+1. **[Report 1:](https://unstats.un.org/sdgs/indicators/Global%20Indicator%20Framework%20after%20refinement_Eng.pdf)** `Proportion of population that has convenient access to public transport, by sex, age and persons with disabilities`. 
+2. **[Report 2:](https://sustainabledevelopment.un.org/content/documents/2013150612-FINAL-SDSN-Indicator-Report1.pdf)** `Percentage of people within 0.5 km of public transit running at least every 20 minutes`
+
+## Method
+
+What percentages of the total populations of Baltimore, Minneapolis, and New Orleans proper have access to public transit? 
+
+Public transit includes stops, platforms, and/or terminals for any buses, trams / trolleys / streetcars, light rail, metros / subways, and ferries mapped in OpenStreetMap for the cities. Access includes having at least _one_ such stop, platform, or terminal within 0.5km (defined three different ways, described below).
+
+Note that the UN indicator stipulates that the transit run at least every 20 minutes, but headway information (stored in the `interval=*` tag) is not well populated on OSM - only about [8,000 total uses](https://taginfo.openstreetmap.org/keys/interval) globally compared to over [190,000 bus routes mapped](https://taginfo.openstreetmap.org/tags/route=bus). Incorporating headways into the analysis requires an external reference dataset such as transit agency [GTFS feeds](http://transitfeeds.com/) (_using reference datasets probably relevant for the completion metrics work_).
+
+Methodology (for each city): 
+
+1. Download census block groups with population
+2. Split into 1/10th square mile hexagonal grid cells
+3. Interpolate population for each cell by area. If a cell is fully contained within a block group, then that cell receives a proportion of the block group's population that is equal to the proportion of the block group's area that the cell occupies (i.e., 1/10th square mile divided by block group's area). Where grid cells overlap multiple block groups, populations from the several block groups are allocated proportionally.
+4. Download transit point data from OSM. 
+
+    + buses stops
+    + tram stops
+    + subway and light rail stations / stops
+    + ferry terminals
+
+5. Find percentage of population within 0.5km to a transit stop.
+
+    + **Method 1:** Are there any stops within the grid cell? A hexagon with an area of 1/10th of a square mile has a diagonal length (corner-to-corner) of roughly 0.5km. If a transit stop is in one corner of the cell, a resident living at the far corner could access it (as the crow flies). 
+    + **Method 2:** Are there any stops within 0.5km of the centroid of the grid cell _as the crow flies_? Effectively, this assumes the grid cell's entire population lives at its centroid. 
+    + **Method 3:** Are there any stops with 0.5km of the centroid of the grid cell _by walking distance_? Still assumes the grid cell's population lives at its centroid, but leverages OSM road data and the [OpenSourceRoutingMachine (OSRM)](https://github.com/Project-OSRM/osrm-backend).
+
+### Method 1: 
+
+New Orleans has very few transit stops mapped, so an extremely low percentage of transit access is expected.
+
+```{r, results = "asis"}
+grids_summary <- readRDS("~objects/30/32_grids_summary.RDS")
+
+for(i in seq_along(grids_summary)) {
+  print(
+      kable(grids_summary[[i]], caption = names(grids_summary)[i], longtable = F, align = "l") %>%
+          kable_styling(font_size = 14, latex_options = "repeat_header", full_width = FALSE)
+  )
+}
+```
+
+An example of how the calculation was done for four of the grid cells
+
+```{r, cache = FALSE}
+grids <- readRDS("~objects/30/32_grids.RDS")
+pubTrans <- readRDS("~objects/20/22_pubTrans.RDS")
+
+tm_shape(grids$Baltimore[c(462, 498, 534, 572),]) + tm_polygons(col = "blue", alpha = 0.3) +
+  tm_shape(pubTrans$Baltimore) + tm_dots(col = "red")
+```
+  
+### Method 2: 
+
+This method is the broadest, so transit access is near 100% in Baltimore and Minneapolis.
+
+```{r, results = "asis"}
+buffers_summary <- readRDS("~objects/30/32_buffers_summary.RDS")
+
+for(i in seq_along(buffers_summary)) {
+  print(
+      kable(buffers_summary[[i]], caption = names(buffers_summary)[i], longtable = F, align = "l") %>%
+          kable_styling(font_size = 14, latex_options = "repeat_header", full_width = FALSE)
+  )
+}
+```
+
+Examples. The buffers are in orange, original grids in blue, bus stops in red.
+
+```{r, cache = FALSE}
+buffers <- readRDS("~objects/~large_files/32_buffers.RDS")
+centroid_tmp <- st_centroid(grids$Baltimore)
+
+
+tm_shape(buffers$Baltimore[c(462, 498, 534, 572),]) + tm_polygons(col = "orange", alpha = 0.5) +
+  # tm_shape(grids$Baltimore[c(462, 498, 534, 572),]) + tm_polygons(col = "blue", alpha = 0.3) +
+    tm_shape(centroid_tmp[c(462, 498, 534, 572),]) + tm_dots(col = "blue", size = 0.25) +
+
+  tm_shape(pubTrans$Baltimore) + tm_dots(col = "red")
+```
+
+### Method 3: 
+
+This method gives results somewhere in between
+
+```{r, results = "asis"}
+isometric_summary <- readRDS("~objects/30/32_isometric_summary.RDS")
+
+for(i in seq_along(isometric_summary)) {
+  print(
+      kable(isometric_summary[[i]], caption = names(isometric_summary)[i], longtable = F, align = "l") %>%
+          kable_styling(font_size = 14, latex_options = "repeat_header", full_width = FALSE)
+  )
+}
+```
+
+Examples. The original grids are in blue, the grid centroid in green, the 0.5km walking distance in orange, and the bus stops in red
+
+```{r, cache = FALSE}
+walkroads <- readRDS("~objects/20/~archive/22_walkroads.RDS")
+isometric_list <- readRDS("~objects/30/32_isometric_list.RDS")
+
+tmp <- st_intersection(walkroads$Baltimore,
+                       isometric_list$Baltimore[c(462, 498, 534, 572),])
+
+# centroid_tmp <- st_centroid(grids$Baltimore)
+
+# tm_shape(grids$Baltimore[c(462, 498, 534, 572),]) + tm_polygons(col = "blue", alpha = 0.3) +
+  tm_shape(tmp) + tm_lines(col = "orange", lwd = 4) +
+  tm_shape(centroid_tmp[c(462, 498, 534, 572),]) + tm_dots(col = "blue", size = 0.25) +
+  tm_shape(pubTrans$Baltimore) + tm_dots(col = "red")
+```
+
+# Open Space SDG (11.7.1)
+
+SDG target 11.7 is `By 2030, provide universal access to safe, inclusive and accessible, green and public spaces, particularly for women and children, older persons and persons with disabilities.` [Source](https://sustainabledevelopment.un.org/content/documents/2013150612-FINAL-SDSN-Indicator-Report1.pdf).
+
+Sufficient public space is critical for cities to function effectively and grow equitably. Public spaces, which the UN defines as any "streets, sidewalks, squares, gardens, parks, and conservation areas" available for public use, support necessary infrastructure like fire hydrants and roadways, and green spaces in particular provide important public health and environmental benefits. 
+
+To track progress made on this SDG, the UN has proposed the following indicator: `Area of public and green space as a proportion of total city space`. The UN's minimum standard for public space in urban areas is 45%, broken down into 30% for streets and sidewalks and 15% for green space.
+
+## Method
+
+What percentages of Baltimore, Minneapolis, New Orleans, Philadelphia, Houston, and San Francisco consist of publicly accessible green space?
+
+1. Download the following OpenStreetMap features. Collect only the polygon/multipolygon features, as areas cannot be calculated for point or line features. 
+
+  * **key=leisure**
+    + value=park
+    + value=dog_park
+    + value=garden
+    + value=nature_reserve
+    + value=pitch
+    + value=playground
+  * **key=place**, value=square
+  * **key=landuse**, value=cemetery
+
+2. Download the same features (to the extent possible) from each city's open data website. Some cities (e.g., Philadelphia) provide detailed land use maps that distinguish parks, ball fields, playgrounds, and cemeteries. Others (e.g. Houston) provide only shapefiles for city parks. These will serve as "control" datasets. How does this SDG indicator differ between measurements made on OSM data and municipality open data?
+
+3. Download US Census TIGER/Line boundaries and hydrologies for each city. Subtract the area of the hydrologies from the total area of the city to derive the land area for each city.
+
+4. Calculate the total area of park space features from OSM. Do the same for the open data features. Divide each sum by the city's land area.
+
+## Results
+
+```{r, include = FALSE}
+openSpace_results <- readRDS("~objects/30/33_openSpace_results.rds")
+```
+
+```{r}
+kable(openSpace_results) %>% 
+  kable_styling()
+```
+
+# Running list of questions / notes
+
+1. Each grid cell is 1/10th of a square mile. Any thoughts on how to calibrate that number? For context, Baltimore has 653 total block groups and 946 total grid cells using that size.
+
+2. As-the-crow-flies buffer. I set it as a 0.5km buffer from the cell's centroid, but that assumes the entire population of the cell lives at the centroid. Is there a better way to do it / is it worth doing so?
+
+3. Some of the census tracts cover water (like Baltimore Harbor), meaning some cell centroids fall in the water, and they need to be auto-snapped to a roadway for finding walk distances. Probably not a big deal, but maybe clipping the tracts with the water features first is a good idea.
+
+4. For the transit SDG, should we be looking at a larger area? Looking at a city proper might not be as useful as a whole state (at least in areas above a minimum population density) or a greater metro area.
+
+5. Repeat the transit analysis but with reference datasets for transit?   
+
+6. Check demographic/socio-economic averages among areas with and without transit. Might not be interesting given that transit access is over 90% in Baltimore and Minneapolis.
+
+# References
+
+## Installing a local OSRM server
+
+Instructions: https://github.com/Project-OSRM/osrm-backend
+OSM extracts: http://download.geofabrik.de/
+
+Example uses Minnesota
+
+```{bash, eval = FALSE}
+# download
+wget http://download.geofabrik.de/north-america/us/minnesota-latest.osm.pbf -outfile C:\Users\echong\Documents\SummerOfMaps\OSMUS\OSRMdata\Minnesota\minnesota-latest.osm.pbf
+
+# extra using foot.lua
+docker run -t -v "${PWD}:/data" osrm/osrm-backend osrm-extract -p "/opt/foot.lua" "/data/minnesota-latest.osm.pbf"
+
+# partition and custome
+docker run -t -v "${PWD}:/data" osrm/osrm-backend osrm-partition "/data/minnesota-latest.osrm"
+docker run -t -v "${PWD}:/data" osrm/osrm-backend osrm-customize "/data/minnesota-latest.osrm"
+
+# launch!
+docker run -t -i -p 5000:5000 -v "${PWD}:/data" osrm/osrm-backend osrm-routed --algorithm mld /data/minnesota-latest.osrm
+```
+
+

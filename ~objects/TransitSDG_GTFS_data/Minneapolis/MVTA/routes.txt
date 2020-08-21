@@ -1,0 +1,22 @@
+agency_id,route_id,route_short_name,route_long_name,route_desc,route_type,route_url,route_color,route_text_color
+3,411-77,ML,"Mystic Lake Shuttle",Local Weekday-Saturday-Sunday,3,http://www.mysticlake.com/free-shuttle,800080,FFFFFF
+1,420-77,420,"Rosemount-Apple Valley Flex",Flex Weekday-Only,3,http://www.mvta.com/bus_route_information_2.html?routeId=420,5C5D5F,FFFFFF
+1,436-77,436,"Eagan Hwy 55 Rev Comm",Local Peak-Only,3,http://www.mvta.com/bus_route_information_2.html?routeId=436,008641,FFFFFF
+1,440-77,440,"Apple Valley-Cedar Grove-VA Hospital",Local Weekday-Only,3,http://www.mvta.com/bus_route_information_2.html?routeId=440,89564F,FFFFFF
+1,442-77,442,"Burnsville Center-Apple Valley",Local Weekday-Only,3,http://www.mvta.com/bus_route_information_2.html?routeId=442,71BF44,FFFFFF
+1,444-77,444,"Savage-Burnsville-Mall of America",Local Weekday-Saturday-Sunday,3,http://www.mvta.com/bus_route_information_2.html?routeId=444,89564F,FFFFFF
+1,445-77,445,"Eagan-Cedar Grove",Local Weekday-Saturday-Sunday,3,http://www.mvta.com/bus_route_information_2.html?routeId=445,71BF44,FFFFFF
+1,446-77,446,"Eagan-46th Street LRT",Local Weekday-Only,3,http://www.mvta.com/bus_route_information_2.html?routeId=446,6C723F,FFFFFF
+1,460-77,460,"Burnsville-Minneapolis",Express Peak-Only,3,http://www.mvta.com/bus_route_information_2.html?routeId=460,92278F,FFFFFF
+1,470-77,470,"Eagan-Minneapolis",Express Peak-Only,3,http://www.mvta.com/bus_route_information_2.html?routeId=470,92278F,FFFFFF
+1,476-77,476,"Palomino Hills-Minneapolis",Express Peak-Only,3,http://www.mvta.com/bus_route_information_2.html?routeId=476,00AEEF,FFFFFF
+1,477-77,477,"Lakeville/Apple Valley-Mpls",Express Peak-Only,3,http://www.mvta.com/bus_route_information_2.html?routeId=477,92278F,FFFFFF
+1,480-77,480,"Apple Valley/Burnsville-St Paul",Express Peak-Only,3,http://www.mvta.com/bus_route_information_2.html?routeId=480,ED2028,FFFFFF
+1,484-77,484,"Eagan/Rosemount-St Paul",Express Peak-Only,3,http://www.mvta.com/bus_route_information_2.html?routeId=484,00AEEF,FFFFFF
+1,490-77,490,"Prior Lake-Shakopee-Minneapolis",Express Peak-Only,3,http://www.mvta.com/bus_route_information_2.html?routeId=490,ED2028,FFFFFF
+1,493-77,493,"Shakopee-Minneapolis",Express Peak-Only,3,http://www.mvta.com/bus_route_information_2.html?routeId=493,EC008C,FFFFFF
+1,495-77,495,"Shakopee-Burnsville-Mall of America",Express Peak-Only,3,http://www.mvta.com/bus_route_information_2.html?routeId=495,EC008C,FFFFFF
+1,497-77,497,"Downtown Shakopee",Local Weekday-Only,3,http://www.mvta.com/bus_route_information_2.html?routeId=497,008641,FFFFFF
+1,498-77,498,"Marschall Road - Golden Triangle",Express Peak-Only,3,http://www.mvta.com/bus_route_information_2.html?routeId=498,EC008C,FFFFFF
+1,499-77,499,"Shakopee-Southbridge",Local Weekday-Only,3,http://www.mvta.com/bus_route_information_2.html?routeId=499,89564F,FFFFFF
+2,903-77,RED,"METRO Red Line",BRT Weekday-Saturday-Sunday,3,http://www.mvta.com/bus_route_information_2.html?routeId=903,FF0000,FFFFFF

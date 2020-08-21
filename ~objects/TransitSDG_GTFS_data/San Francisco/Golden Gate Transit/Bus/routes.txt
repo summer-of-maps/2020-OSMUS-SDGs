@@ -1,0 +1,18 @@
+route_id,route_short_name,route_long_name,route_desc,route_type,route_url,route_color,route_text_color
+101-224,101,"Santa Rosa - San Francisco",,3,"http://goldengatetransit.org/schedules/current/route_101.php",3366FF,FFFFFF
+18-224,18,"College of Marin - San Francisco",,3,"http://goldengatetransit.org/schedules/current/route_18.php",CC3333,FFFFFF
+24-224,24,"Fairfax/Manor - San Francisco",,3,"http://goldengatetransit.org/schedules/current/route_24.php",CC3333,FFFFFF
+27-224,27,"San Anselmo -San Rafael - San Francisco",,3,"http://goldengatetransit.org/schedules/current/route_27.php",CC3333,FFFFFF
+30-224,30,"San Rafael - San Francisco",,3,"",3366FF,FFFFFF
+38-224,38,"Terra Linda - San Francisco",,3,"http://goldengatetransit.org/schedules/current/route_38.php",CC3333,FFFFFF
+40-224,40,"Del Norte BART Station - San Rafael",,3,"http://goldengatetransit.org/schedules/current/route_40.php",3366FF,FFFFFF
+4-224,4,"Mill Valley - San Francisco Financial District",,3,"http://goldengatetransit.org/schedules/current/route_4.php",CC3333,FFFFFF
+54-224,54,"Novato/San Marin - San Francisco",,3,"http://goldengatetransit.org/schedules/current/route_54.php",CC3333,FFFFFF
+56X-224,56X,"San Marin - Novato -San Francisco",,3,"",CC3333,FFFFFF
+70-224,70,"Novato - San Francisco",,3,"http://goldengatetransit.org/schedules/current/route_70.php",3366FF,FFFFFF
+704-224,704,"BART Bus Bridge - Del Norte",,3,"",CC3333,FFFFFF
+705-224,705,"BART Bus Bridge - MacArthur & 19th",,3,"",CC3333,FFFFFF
+72-224,72,"Santa Rosa - San Francisco",,3,"http://goldengatetransit.org/schedules/current/route_72.php",CC3333,FFFFFF
+LF-220,LF,"Larkspur - San Francisco Ferry",,4,"http://goldengateferry.org/schedules/Larkspur.php",0000FF,FFFFFF
+SF-220,SF,"Sausalito - San Francisco Ferry",,4,"http://goldengateferry.org/schedules/Sausalito.php",0000FF,FFFFFF
+TF-220,TF,"Tiburon - San Francisco Ferry",,4,"",0000FF,FFFFFF

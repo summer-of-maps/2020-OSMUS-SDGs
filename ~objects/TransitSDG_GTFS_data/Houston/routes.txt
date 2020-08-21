@@ -1,0 +1,103 @@
+route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_url,route_color,route_text_color
+38772,,002,BELLAIRE,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n002-Bellaire.pdf,004080,FFFFFF
+38773,,003,LANGLEY - LITTLE YORK,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n003-Langley-Little-York.pdf,004080,FFFFFF
+38774,,004,BEECHNUT,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n004-Beechnut.pdf,004080,FFFFFF
+38775,,005,SOUTHMORE,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n005-Southmore.pdf,004080,FFFFFF
+38776,,006,JENSEN / GREENS,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n006-Jensen-Greens.pdf,004080,FFFFFF
+38777,,007,WEST AIRPORT,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n007-West-Airport.pdf,004080,FFFFFF
+38778,,008,WEST BELLFORT,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n008-West-Bellfort.pdf,004080,FFFFFF
+38779,,009,GULFTON / HOLMAN,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n009-Gulfton-Holman.pdf,004080,FFFFFF
+38780,,010,WILLOWBEND,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n010-Willowbend.pdf,004080,FFFFFF
+38781,,011,ALMEDA / LYONS,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n011-Almeda-Lyons.pdf,004080,FFFFFF
+38782,,014,HIRAM CLARKE,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n014-Hiram-Clarke.pdf,004080,FFFFFF
+38783,,020,CANAL / MEMORIAL,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n020-Canal-Memorial.pdf,004080,FFFFFF
+38784,,023,CLAY - W 43RD,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n023-Clay-West-43rd.pdf,004080,FFFFFF
+38785,,025,RICHMOND,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n025-Richmond.pdf,004080,FFFFFF
+38786,,026,LONG POINT / CAVALCADE,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n026-Long-Point-Cavalcade.pdf,004080,FFFFFF
+38787,,027,SHEPHERD,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n027-Shepherd.pdf,004080,FFFFFF
+38788,,028,OST - WAYSIDE,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n028-OST-Wayside.pdf,004080,FFFFFF
+38789,,029,CULLEN / HIRSCH,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n029-Cullen-Hirsch.pdf,004080,FFFFFF
+38790,,030,CLINTON / ELLA,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n030-Clinton-Ella.pdf,004080,FFFFFF
+38791,,032,RENWICK / SAN FELIPE,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n032-Renwick-SanFelipe.pdf,004080,FFFFFF
+38792,,033,POST OAK,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n033-Post-Oak.pdf,004080,FFFFFF
+38793,,036,KEMPWOOD,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n036-Kempwood.pdf,004080,FFFFFF
+38794,,038,MANCHESTER-LAWNDALE,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n038-Manchester-Lawndale.pdf,004080,FFFFFF
+38795,,039,KATY FREEWAY,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n039-Katy-Freeway.pdf,004080,FFFFFF
+38796,,040,TELEPHONE / HEIGHTS,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n040-Telephone-Heights.pdf,004080,FFFFFF
+38797,,041,KIRBY / POLK,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n041-Kirby-Polk.pdf,004080,FFFFFF
+38798,,044,ACRES HOMES,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n044-Acres-Homes.pdf,004080,FFFFFF
+38799,,045,TIDWELL,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n045-W-Tidwell.pdf,004080,FFFFFF
+38800,,046,GESSNER,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n046-Gessner.pdf,004080,FFFFFF
+38801,,047,HILLCROFT,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n047-Hillcroft.pdf,004080,FFFFFF
+38802,,048,MARKET,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n048-Market.pdf,004080,FFFFFF
+38803,,049,CHIMNEY ROCK / S POST OAK,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n049-Chimney-Rock-S-Post-Oak.pdf,004080,FFFFFF
+38804,,050,BROADWAY,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n050-Broadway.pdf,004080,FFFFFF
+38805,,051,HARDY- KELLEY,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n051-Hardy-Kelley.pdf,004080,FFFFFF
+38806,,052,HARDY- LEY,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n052-Hardy-Ley.pdf,004080,FFFFFF
+38807,,054,SCOTT,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n054-Scott.pdf,004080,FFFFFF
+38808,,056,AIRLINE / MONTROSE,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n056-Airline-Montrose.pdf,004080,FFFFFF
+38809,,058,HAMMERLY,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n058-Hammerly.pdf,004080,FFFFFF
+38810,,059,ALDINE MAIL,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n059-Aldine-Mail.pdf,004080,FFFFFF
+38811,,060,CAMBRIDGE,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n060-Cambridge.pdf,004080,FFFFFF
+38812,,063,FONDREN,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n063-Fondren.pdf,004080,FFFFFF
+38813,,064,LINCOLN CITY,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n064-Lincoln-City.pdf,004080,FFFFFF
+38814,,065,BISSONNET,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n065-Bissonnet.pdf,004080,FFFFFF
+38815,,066,QUITMAN,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n066-Quitman.pdf,004080,FFFFFF
+38816,,067,DAIRY ASHFORD,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n067-Dairy-Ashford.pdf,004080,FFFFFF
+38817,,068,BRAESWOOD,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n068-Braeswood.pdf,004080,FFFFFF
+38818,,070,MEMORIAL,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n070-Memorial.pdf,004080,FFFFFF
+38819,,071,COTTAGE GROVE,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n071-Cottage-Grove.pdf,004080,FFFFFF
+38820,,072,WESTVIEW,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n072-Westview.pdf,004080,FFFFFF
+38821,,073,BELLFORT,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n073-Bellfort.pdf,004080,FFFFFF
+38822,,075,ELDRIDGE,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n075-Eldridge.pdf,004080,FFFFFF
+38823,,076,EVERGREEN,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n076-Evergreen.pdf,004080,FFFFFF
+38824,,077,HOMESTEAD,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n077-Homestead.pdf,004080,FFFFFF
+38825,,078,WAYSIDE,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n078-Wayside.pdf,004080,FFFFFF
+38826,,079,IRVINGTON,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n079-Irvington.pdf,004080,FFFFFF
+38827,,080,MLK / LOCKWOOD,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n080-MLK-Lockwood.pdf,004080,FFFFFF
+38828,,082,WESTHEIMER,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n082-Westheimer.pdf,004080,FFFFFF
+38829,,083,LEE ROAD - JFK,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n083-Lee-Road-JFK.pdf,004080,FFFFFF
+38830,,084,BUFFALO SPEEDWAY,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n084-Buffalo-Speedway.pdf,004080,FFFFFF
+38831,,085,ANTOINE / WASHINGTON,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n085-Antoine-Washington.pdf,004080,FFFFFF
+38832,,086,FM 1960 / IMPERIAL VALLEY,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n086-FM-1960-Imperial-Valley.pdf,004080,FFFFFF
+38833,,087,SUNNYSIDE,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n087-Sunnyside.pdf,004080,FFFFFF
+38834,,088,SAGEMONT,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n088-Sagemont.pdf,004080,FFFFFF
+38835,,089,DACOMA,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n089-Dacoma.pdf,004080,FFFFFF
+38836,,096,VETERANS MEMORIAL,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n096-Veterans-Memorial.pdf,004080,FFFFFF
+38837,,097,SETTEGAST,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n097-Settegast.pdf,004080,FFFFFF
+38838,,098,BRIARGATE,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n098-Briargate.pdf,004080,FFFFFF
+38839,,099,ELLA - FM 1960,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n099-Ella-FM-1960.pdf,004080,FFFFFF
+38840,,102,BUSH IAH EXPRESS,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n102-Bush-IAH-Express.pdf,004080,FFFFFF
+38841,,108,VETERANS MEMORIAL EXPRESS,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n108-Veterans-Memorial-Express.pdf,004080,FFFFFF
+38842,,137,NORTHSHORE EXPRESS,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n137-Northshore-Express.pdf,004080,FFFFFF
+38843,,151,WESTPARK EXPRESS,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n151-Westpark-Express.pdf,004080,FFFFFF
+38844,,152,HARWIN EXPRESS,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n152-Harwin-Express.pdf,004080,FFFFFF
+38845,,153,HARWIN EXPRESS,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n153-Harwin-Express.pdf,004080,FFFFFF
+38846,,160,MEMORIAL CITY EXPRESS,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n160-Memorial-Express.pdf,004080,FFFFFF
+38847,,161,WILCREST EXPRESS,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n161-Wilcrest-Express.pdf,004080,FFFFFF
+38848,,162,MEMORIAL EXPRESS,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n162-Memorial-Express.pdf,004080,FFFFFF
+38849,,170,MISSOURI CITY EXPRESS,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/tmccorridor.pdf,004080,FFFFFF
+38850,,171,FORTBEND TOWN CENTER,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/tmccorridor.pdf,004080,FFFFFF
+38851,,209,KUYKENDAHL/SPRING P&R,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/northcorridor.pdf,004080,FFFFFF
+38852,,217,CYPRESS P&R,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/nwcorridor.pdf,004080,FFFFFF
+38853,,219,W.L.YORK/NW STATION/CYPRESS,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/nwcorridor.pdf,004080,FFFFFF
+38854,,222,GRAND PARKWAY P&R,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/katycorridor.pdf,004080,FFFFFF
+38855,,229,ADDICKS/KINGSLAND/GRAND PARKWAY P&R,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/katycorridor.pdf,004080,FFFFFF
+38856,,236,MAXEY P&R,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/eastcorridor.pdf,004080,FFFFFF
+38857,,237,BAYTOWN P&R,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/eastcorridor.pdf,004080,FFFFFF
+38858,,249,MONROE/FUQUA/EL DORADO/BAY AREA P&R,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/gulfcorridor.pdf,004080,FFFFFF
+38859,,259,EASTEX/TOWNSEN/KINGWOOD P&R,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/eastexcorridor.pdf,004080,FFFFFF
+38860,,265,WEST BELLFORT P&R,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/swcorridor.pdf,004080,FFFFFF
+38861,,269,HILLCROFT/WESTWOOD/W. BELLFORT P&R,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/swcorridor.pdf,004080,FFFFFF
+38862,,291,CONROE P&R,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/291-Conroe-ParkRide.pdf,004080,FFFFFF
+38863,,292,WBELLFORT/WESTWOOD/TMC P&R,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/tmccorridor.pdf,004080,FFFFFF
+38864,,297,SOUTH POINT/MONROE/TMC P&R,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/tmccorridor.pdf,004080,FFFFFF
+38865,,298,KINGSLAND/ADDICKS/NWTC/TMC P&R,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/tmccorridor.pdf,004080,FFFFFF
+38873,,360,PEERLESS SHUTTLE,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n360-Peerless-Shuttle.pdf,004080,FFFFFF
+38875,,399,KUYKENDAHL SHUTTLE,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n399-Kuykendahl-Shuttle.pdf,004080,FFFFFF
+38876,,402,BELLAIRE QUICKLINE,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/n402-Bellaire-QL.pdf,004080,FFFFFF
+38877,,418,JURY SHUTTLE,,3,https://www.ridemetro.org/MetroPDFs/Schedules/BusSchedules/418-Jury-Shuttle-Flier.pdf,FF0000,000000
+38878,,433,SILVER LINE,,3,,C0C0C0,FFFFFF
+38884,,700,METRORAIL RED LINE,,0,https://www.ridemetro.org/Pages/RedLine.aspx,EF0000,FFFFFF
+38886,,800,METRORAIL GREEN LINE,,0,https://www.ridemetro.org/Pages/GreenLine.aspx,3E7E00,FFFFFF
+38887,,900,METRORAIL PURPLE LINE,,0,https://www.ridemetro.org/Pages/PurpleLine.aspx,40007E,FFFFFF

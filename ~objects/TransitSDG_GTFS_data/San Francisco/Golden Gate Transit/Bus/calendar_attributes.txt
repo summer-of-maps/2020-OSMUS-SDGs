@@ -1,0 +1,5 @@
+service_id,service_description
+20JULY-01-SAT-Saturday-03,"Saturday"
+20JULY-01-SUN-Sunday-03,"Sunday"
+20JULY-01-WKDY-Weekday-03,"Weekday"
+20JULY-FerryMVS-Weekday-01,"Weekday"

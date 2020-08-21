@@ -21,6 +21,7 @@ dryLand_list <- readRDS("~objects/10/14_dryLand_list.rds")
 hydrology_list <- readRDS("~objects/10/14_hydrology_list.rds")
 road_list <- readRDS("~objects/10/14_road_list.rds")
 openSpace_results <- readRDS("~objects/30/33_openSpace_results.rds")
+context_bbox_list <- readRDS("~objects/10/14_context_bbox_list.rds")
 
 OpenSpace_OSM_mapList <- vector("list", length(bbox_sfs)) %>% 
   set_names(names(bbox_sfs))
@@ -62,6 +63,55 @@ OpenSpace_OSM_mapList$`Baltimore, Maryland` <- ggplot() +
   mapTheme() +
   labs(title = "OpenStreetMap Public Space",
        subtitle = paste0(openSpace_results$OSM_sqMiles[1], " square miles of public space"))
+
+balt_scale_bar <- ggplot() +
+  geom_sf(data = dryLand_list$`Baltimore, Maryland` %>% st_transform(4326),
+          fill = "#f0f0f0",
+          # alpha = 0.5,
+          color = NA) +
+  geom_sf(data = bbox_sfs$`Baltimore, Maryland` %>% st_transform(4326),
+          fill = "#E1E1E1",
+          color = NA) +
+  geom_sf(data = parks_osmData_combined$`Baltimore, Maryland` %>% st_transform(4326),
+          aes(fill = parkType),
+          size = 0.01) +
+  geom_sf(data = hydrology_list$`Baltimore, Maryland` %>% st_transform(4326),
+          color = NA,
+          fill = "#97DBF2") +
+  geom_sf(data = road_list$`Baltimore, Maryland` %>% st_transform(4326),
+          aes(size = factor(RTTYP,
+                            levels = c("M", "S", "U", "I")),
+              color = factor(RTTYP,
+                             levels = c("M", "S", "U", "I")))) +
+  geom_sf(data = bbox_sfs$`Baltimore, Maryland` %>% st_transform(4326),
+          fill = NA,
+          color = "black",
+          size = 0.01) +
+  scale_fill_manual(name = "Open Space",
+                    labels = c("Park", "Cemetery", "Nature Reserve / Garden", "Playground / Square"),
+                    breaks = c("Park", "Cemetery", "Reserve/Garden", "Playground/Square"),
+                    values = c("#41ab5d", "#c7e9c0", "#006d2c", "#807dba")) +
+  scale_color_manual(guide = FALSE,
+                     breaks = c("I", "S", "U", "M"),
+                     values = c("#feb24c", "#feb24c", "#F7F7F7", "#F7F7F7")) +
+  scale_size_manual(guide = FALSE,
+                    breaks = c("I", "S", "U", "M"),
+                    values = c(0.5, 0.25, 0.25, 0.25)) +
+  mapTheme() +
+  labs(title = "OpenStreetMap Public Space",
+       subtitle = paste0(openSpace_results$OSM_sqMiles[1], " square miles of public space")) +
+  scalebar(bbox_sfs$`Baltimore, Maryland` %>% st_transform(4326),
+           dist = 2,
+           transform = T,
+           dist_unit = "mi")
+
+ggsave(plot = balt_scale_bar,
+       filename = "~plots/Open Space SDG/Scale Bars/Baltimore_scaleBar.pdf",
+       units = "in",
+       width = 8.5,
+       height = 11)
+
+
 
 # ggsave(plot = OpenSpace_OSM_mapList$`Baltimore, Maryland`,
 #        filename = "~plots/Open Space SDG/OSM Maps/test.pdf",
@@ -107,6 +157,53 @@ OpenSpace_OSM_mapList$`Minneapolis, Minnesota` <- ggplot() +
   labs(title = "OpenStreetMap Public Space",
        subtitle = paste0(openSpace_results$OSM_sqMiles[2], " square miles of public space"))
 
+mpls_scale_bar <- ggplot() +
+  geom_sf(data = dryLand_list$`Minneapolis, Minnesota` %>% st_transform(4326),
+          fill = "#f0f0f0",
+          # alpha = 0.5,
+          color = NA) +
+  geom_sf(data = bbox_sfs$`Minneapolis, Minnesota` %>% st_transform(4326),
+          fill = "#E1E1E1",
+          color = NA) +
+  geom_sf(data = parks_osmData_combined$`Minneapolis, Minnesota` %>% st_transform(4326),
+          aes(fill = parkType),
+          size = 0.01) +
+  geom_sf(data = hydrology_list$`Minneapolis, Minnesota` %>% st_transform(4326),
+          color = NA,
+          fill = "#97DBF2") +
+  geom_sf(data = road_list$`Minneapolis, Minnesota` %>% st_transform(4326),
+          aes(size = factor(RTTYP,
+                            levels = c("C", "M", "S", "U", "I")),
+              color = factor(RTTYP,
+                             levels = c("C", "M", "S", "U", "I")))) +
+  geom_sf(data = bbox_sfs$`Minneapolis, Minnesota` %>% st_transform(4326),
+          fill = NA,
+          color = "black",
+          size = 0.01) +
+  scale_fill_manual(name = "Open Space",
+                    labels = c("Park", "Cemetery", "Nature Reserve / Garden", "Playground / Square"),
+                    breaks = c("Park", "Cemetery", "Reserve/Garden", "Playground/Square"),
+                    values = c("#41ab5d", "#c7e9c0", "#006d2c", "#807dba")) +
+  scale_color_manual(guide = FALSE,
+                     breaks = c("C", "I", "S", "U", "M"),
+                     values = c("#F7F7F7", "#feb24c", "#feb24c", "#feb24c", "#F7F7F7")) +
+  scale_size_manual(guide = FALSE,
+                    breaks = c("C", "I", "S", "U", "M"),
+                    values = c(0.25, 0.5, 0.25, 0.25, 0.25)) +
+  mapTheme() +
+  labs(title = "OpenStreetMap Public Space",
+       subtitle = paste0(openSpace_results$OSM_sqMiles[2], " square miles of public space")) +
+  scalebar(bbox_sfs$`Minneapolis, Minnesota` %>% st_transform(4326),
+           dist = 2,
+           transform = T,
+           dist_unit = "mi")
+
+ggsave(plot = mpls_scale_bar,
+       filename = "~plots/Open Space SDG/Scale Bars/Minneapolis_scaleBar.pdf",
+       units = "in",
+       width = 8.5,
+       height = 11)
+
 # New Orleans ----
 OpenSpace_OSM_mapList$`New Orleans, Louisiana` <- ggplot() +
   geom_sf(data = dryLand_list$`New Orleans, Louisiana`,
@@ -144,6 +241,53 @@ OpenSpace_OSM_mapList$`New Orleans, Louisiana` <- ggplot() +
   mapTheme() +
   labs(title = "OpenStreetMap Public Space",
        subtitle = paste0(openSpace_results$OSM_sqMiles[3], " square miles of public space"))
+
+nola_scale_bar <- ggplot() +
+  geom_sf(data = dryLand_list$`New Orleans, Louisiana` %>% st_transform(4326),
+          fill = "#f0f0f0",
+          # alpha = 0.5,
+          color = NA) +
+  geom_sf(data = bbox_sfs$`New Orleans, Louisiana` %>% st_transform(4326),
+          fill = "#E1E1E1",
+          color = NA) +
+  geom_sf(data = parks_osmData_combined$`New Orleans, Louisiana` %>% st_transform(4326),
+          aes(fill = parkType),
+          size = 0.01) +
+  geom_sf(data = hydrology_list$`New Orleans, Louisiana` %>% st_transform(4326),
+          color = NA,
+          fill = "#97DBF2") +
+  geom_sf(data = road_list$`New Orleans, Louisiana` %>% st_transform(4326),
+          aes(size = factor(RTTYP,
+                            levels = c("M", "S", "U", "I")),
+              color = factor(RTTYP,
+                             levels = c("M", "S", "U", "I")))) +
+  geom_sf(data = bbox_sfs$`New Orleans, Louisiana` %>% st_transform(4326),
+          fill = NA,
+          color = "black",
+          size = 0.01) +
+  scale_fill_manual(name = "Open Space",
+                    labels = c("Park", "Cemetery", "Nature Reserve / Garden", "Playground / Square"),
+                    breaks = c("Park", "Cemetery", "Reserve/Garden", "Playground/Square"),
+                    values = c("#41ab5d", "#c7e9c0", "#006d2c", "#807dba")) +
+  scale_color_manual(guide = FALSE,
+                     breaks = c("I", "S", "U", "M"),
+                     values = c("#feb24c", "#feb24c", "#feb24c", "#F7F7F7")) +
+  scale_size_manual(guide = FALSE,
+                    breaks = c("I", "S", "U", "M"),
+                    values = c(0.5, 0.25, 0.25, 0.25)) +
+  mapTheme() +
+  labs(title = "OpenStreetMap Public Space",
+       subtitle = paste0(openSpace_results$OSM_sqMiles[3], " square miles of public space")) +
+  scalebar(bbox_sfs$`New Orleans, Louisiana` %>% st_transform(4326),
+           dist = 2,
+           transform = T,
+           dist_unit = "mi")
+
+ggsave(plot = nola_scale_bar,
+       filename = "~plots/Open Space SDG/Scale Bars/NewOrleans_scaleBar.pdf",
+       units = "in",
+       width = 8.5,
+       height = 11)
 
 
 # Philadelphia ----
@@ -184,6 +328,53 @@ OpenSpace_OSM_mapList$`Philadelphia, Pennsylvania` <- ggplot() +
   labs(title = "OpenStreetMap Public Space",
        subtitle = paste0(openSpace_results$OSM_sqMiles[4], " square miles of public space"))
 
+phl_scale_bar <- ggplot() +
+  geom_sf(data = dryLand_list$`Philadelphia, Pennsylvania` %>% st_transform(4326),
+          fill = "#f0f0f0",
+          # alpha = 0.5,
+          color = NA) +
+  geom_sf(data = bbox_sfs$`Philadelphia, Pennsylvania` %>% st_transform(4326),
+          fill = "#E1E1E1",
+          color = NA) +
+  geom_sf(data = parks_osmData_combined$`Philadelphia, Pennsylvania` %>% st_transform(4326),
+          aes(fill = parkType),
+          size = 0.01) +
+  geom_sf(data = hydrology_list$`Philadelphia, Pennsylvania` %>% st_transform(4326),
+          color = NA,
+          fill = "#97DBF2") +
+  geom_sf(data = road_list$`Philadelphia, Pennsylvania` %>% st_transform(4326),
+          aes(size = factor(RTTYP,
+                            levels = c("O", "M", "S", "U", "I")),
+              color = factor(RTTYP,
+                             levels = c("O", "M", "S", "U", "I")))) +
+  geom_sf(data = bbox_sfs$`Philadelphia, Pennsylvania` %>% st_transform(4326),
+          fill = NA,
+          color = "black",
+          size = 0.01) +
+  scale_fill_manual(name = "Open Space",
+                    labels = c("Park", "Cemetery", "Nature Reserve / Garden", "Playground / Square"),
+                    breaks = c("Park", "Cemetery", "Reserve/Garden", "Playground/Square"),
+                    values = c("#41ab5d", "#c7e9c0", "#006d2c", "#807dba")) +
+  scale_color_manual(guide = FALSE,
+                     breaks = c("O", "I", "S", "U", "M"),
+                     values = c("#F7F7F7", "#feb24c", "#feb24c", "#feb24c", "#F7F7F7")) +
+  scale_size_manual(guide = FALSE,
+                    breaks = c("O", "I", "S", "U", "M"),
+                    values = c(0.25, 0.5, 0.25, 0.25, 0.25)) +
+  mapTheme() +
+  labs(title = "OpenStreetMap Public Space",
+       subtitle = paste0(openSpace_results$OSM_sqMiles[4], " square miles of public space")) +
+  scalebar(bbox_sfs$`Philadelphia, Pennsylvania` %>% st_transform(4326),
+           dist = 2,
+           transform = T,
+           dist_unit = "mi")
+
+ggsave(plot = phl_scale_bar,
+       filename = "~plots/Open Space SDG/Scale Bars/Philadelphia_scaleBar.pdf",
+       units = "in",
+       width = 8.5,
+       height = 11)
+
 # Houston ----
 OpenSpace_OSM_mapList$`Houston, Texas` <- ggplot() +
   geom_sf(data = dryLand_list$`Houston, Texas`,
@@ -222,6 +413,53 @@ OpenSpace_OSM_mapList$`Houston, Texas` <- ggplot() +
   labs(title = "OpenStreetMap Public Space",
        subtitle = paste0(openSpace_results$OSM_sqMiles[5], " square miles of public space"))
 
+hou_scale_bar <- ggplot() +
+  geom_sf(data = dryLand_list$`Houston, Texas` %>% st_transform(4326),
+          fill = "#f0f0f0",
+          # alpha = 0.5,
+          color = NA) +
+  geom_sf(data = bbox_sfs$`Houston, Texas` %>% st_transform(4326),
+          fill = "#E1E1E1",
+          color = NA) +
+  geom_sf(data = parks_osmData_combined$`Houston, Texas` %>% st_transform(4326),
+          aes(fill = parkType),
+          size = 0.01) +
+  geom_sf(data = hydrology_list$`Houston, Texas` %>% st_transform(4326),
+          color = NA,
+          fill = "#97DBF2") +
+  geom_sf(data = road_list$`Houston, Texas` %>% st_transform(4326),
+          aes(size = factor(RTTYP,
+                            levels = c("C", "O", "M", "S", "U", "I")),
+              color = factor(RTTYP,
+                             levels = c("C", "O", "M", "S", "U", "I")))) +
+  geom_sf(data = bbox_sfs$`Houston, Texas` %>% st_transform(4326),
+          fill = NA,
+          color = "black",
+          size = 0.01) +
+  scale_fill_manual(name = "Open Space",
+                    labels = c("Park", "Cemetery", "Nature Reserve / Garden", "Playground / Square"),
+                    breaks = c("Park", "Cemetery", "Reserve/Garden", "Playground/Square"),
+                    values = c("#41ab5d", "#c7e9c0", "#006d2c", "#807dba")) +
+  scale_color_manual(guide = FALSE,
+                     breaks = c("C", "O", "I", "S", "U", "M"),
+                     values = c("#F7F7F7", "#F7F7F7", "#feb24c", "#feb24c", "#feb24c", "#F7F7F7")) +
+  scale_size_manual(guide = FALSE,
+                    breaks = c("C", "O", "I", "S", "U", "M"),
+                    values = c(0.25, 0.25, 0.5, 0.25, 0.25, 0.25)) +
+  mapTheme() +
+  labs(title = "OpenStreetMap Public Space",
+       subtitle = paste0(openSpace_results$OSM_sqMiles[5], " square miles of public space")) +
+  scalebar(bbox_sfs$`Houston, Texas` %>% st_transform(4326),
+           dist = 2,
+           transform = T,
+           dist_unit = "mi")
+
+ggsave(plot = hou_scale_bar,
+       filename = "~plots/Open Space SDG/Scale Bars/Houston_scaleBar.pdf",
+       units = "in",
+       width = 8.5,
+       height = 11)
+
 # San Francisco ----
 OpenSpace_OSM_mapList$`San Francisco, California` <- ggplot() +
   geom_sf(data = dryLand_list$`San Francisco, California`,
@@ -259,6 +497,53 @@ OpenSpace_OSM_mapList$`San Francisco, California` <- ggplot() +
   mapTheme() +
   labs(title = "OpenStreetMap Public Space",
        subtitle = paste0(openSpace_results$OSM_sqMiles[6], " square miles of public space"))
+
+sf_scale_bar <- ggplot() +
+  geom_sf(data = dryLand_list$`San Francisco, California` %>% st_transform(4326),
+          fill = "#E1E1E1",
+          # alpha = 0.5,
+          color = NA) +
+  geom_sf(data = bbox_sfs$`San Francisco, California` %>% st_transform(4326),
+          fill = "#E1E1E1",
+          color = NA) +
+  geom_sf(data = parks_osmData_combined$`San Francisco, California` %>% st_transform(4326),
+          aes(fill = parkType),
+          size = 0.01) +
+  geom_sf(data = hydrology_list$`San Francisco, California` %>% st_transform(4326),
+          color = NA,
+          fill = "#97DBF2") +
+  geom_sf(data = road_list$`San Francisco, California` %>% st_transform(4326),
+          aes(size = factor(RTTYP,
+                            levels = c("M", "S", "U", "I")),
+              color = factor(RTTYP,
+                             levels = c("M", "S", "U", "I")))) +
+  geom_sf(data = bbox_sfs$`San Francisco, California` %>% st_transform(4326),
+          fill = NA,
+          color = "black",
+          size = 0.01) +
+  scale_fill_manual(name = "Open Space",
+                    labels = c("Park", "Cemetery", "Nature Reserve / Garden", "Playground / Square"),
+                    breaks = c("Park", "Cemetery", "Reserve/Garden", "Playground/Square"),
+                    values = c("#41ab5d", "#c7e9c0", "#006d2c", "#807dba")) +
+  scale_color_manual(guide = FALSE,
+                     breaks = c("I", "S", "U", "M"),
+                     values = c("#feb24c", "#feb24c", "#feb24c", "#F7F7F7")) +
+  scale_size_manual(guide = FALSE,
+                    breaks = c("I", "S", "U", "M"),
+                    values = c(0.5, 0.25, 0.25, 0.25)) +
+  mapTheme() +
+  labs(title = "OpenStreetMap Public Space",
+       subtitle = paste0(openSpace_results$OSM_sqMiles[6], " square miles of public space")) +
+  scalebar(bbox_sfs$`San Francisco, California` %>% st_transform(4326),
+           dist = 2,
+           transform = T,
+           dist_unit = "mi")
+
+ggsave(plot = sf_scale_bar,
+       filename = "~plots/Open Space SDG/Scale Bars/SanFrancisco_scaleBar.pdf",
+       units = "in",
+       width = 8.5,
+       height = 11)
 
 ## 2. ----
 OpenSpace_openData_mapList <- vector("list", length(bbox_sfs)) %>% 

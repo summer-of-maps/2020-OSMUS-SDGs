@@ -328,7 +328,7 @@ knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-19.PNG")
 
 Back in the Attribute Table, we now have an area column, but since it doesn't have any units associated with it, it's hard to understand what it means.
 
-```{r, fig.cap = "The Area column doesn't include any units", fig.align="center", out.width = "50%"} 
+```{r, fig.cap = "The Area column doesn't include any units", fig.align="center", out.width = "25%"} 
 knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-22.PNG")
 ```
 
@@ -360,8 +360,8 @@ knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-19.PNG")
 
 You've just successfully added a column to your data that provides the land area in acres for every park in Baltimore!
 
-```{r, fig.cap = "The Area column in acres", fig.align="center", out.width = "50%"} 
-knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-26.PNG")
+```{r, fig.cap = "The Area column in acres", fig.align="center", out.width = "25%"}
+knitr::include_graphics(path = "~plots/~tutorial_images/Analysis-26.PNG") 
 ```
 
 **Note:** This section skipped discussion of coordinate reference systems and projection systems for geographic data, as they are beyond the scope of this tutorial. For geographic analyses requiring more precise measurements, it's highly recommended that you project your data using a projection system appropriate for your study area. See [this tutorial](https://docs.qgis.org/testing/en/docs/user_manual/working_with_projections/working_with_projections.html) for more information.

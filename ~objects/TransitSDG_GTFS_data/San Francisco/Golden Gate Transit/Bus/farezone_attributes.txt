@@ -1,0 +1,8 @@
+zone_id,zone_name
+1,San Francisco
+2,Sausalito-Marin City-Mill Valley
+3,CorteMadera-SanRafael-Marinwood
+4,Ignacio-Novato-San Marin
+5,Petaluma-Cotati-Rohnert Park
+6,Santa Rosa
+7,East Bay

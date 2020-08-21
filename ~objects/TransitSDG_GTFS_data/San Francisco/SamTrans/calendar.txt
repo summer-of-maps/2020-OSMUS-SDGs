@@ -1,0 +1,6 @@
+service_id,monday,tuesday,wednesday,thursday,friday,saturday,sunday,start_date,end_date
+132-Blocks-Sunday-50,0,0,0,0,0,0,1,20200426,20200809
+132-Blocks-Weekday-50,1,1,1,1,1,0,0,20200427,20200501
+132-Blocks-Saturday-50,0,0,0,0,0,1,0,20200502,20200815
+132-Blocks-Weekday-51,1,1,1,1,1,0,0,20200504,20200522
+132-Blocks-Weekday-52,1,1,1,1,1,0,0,20200525,20200814

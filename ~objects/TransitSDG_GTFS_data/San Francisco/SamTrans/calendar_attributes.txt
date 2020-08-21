@@ -1,0 +1,6 @@
+service_id,service_description
+132-Blocks-Sunday-50,Sunday
+132-Blocks-Weekday-50,Weekday
+132-Blocks-Saturday-50,Saturday
+132-Blocks-Weekday-51,Weekday
+132-Blocks-Weekday-52,Weekday

@@ -8,7 +8,15 @@
 # 4. Calculates percentages and combines into a summary table
 #
 # Exports: 
-# 1. 
+# 1. land_list as 33_land_list.rds
+# 2. landArea_list as 33_landArea_list.rds
+# 3. parks_osmArea_list as 33_parks_osmArea_list.rds
+# 4. parks_openDataArea_list as 33_parks_openDataArea_list.rds
+# 5. parks_overlap_list as 33_parks_overlap_list.rds
+# 6. parks_osmOnly_list as 33_parks_osmOnly_list.rds
+# 7. parks_openDataOnly_list as 33_parks_openDataOnly_list.rds
+# 8. parks_comparison_list as 33_parks_comparison_list.rds
+# 9. openSpace_results as 33_openSpace_results.rds
 # 
 # To-do:
 #
@@ -119,29 +127,29 @@ openSpace_results <- pmap_dfr(
 )
 
 ## 1. Export as rds ----
-saveRDS(land_list, 
-        file = "~objects/30/33_land_list.rds")
-saveRDS(landArea_list, 
-        file = "~objects/30/33_landArea_list.rds")
+# saveRDS(land_list, 
+#         file = "~objects/30/33_land_list.rds")
+# saveRDS(landArea_list, 
+#         file = "~objects/30/33_landArea_list.rds")
 
 ## 2a. Export as rds ----
-saveRDS(parks_osmArea_list, 
-        file = "~objects/30/33_parks_osmArea_list.rds")
+# saveRDS(parks_osmArea_list, 
+#         file = "~objects/30/33_parks_osmArea_list.rds")
 
 ## 2b. Export as rds ----
-saveRDS(parks_openDataArea_list, 
-        file = "~objects/30/33_parks_openDataArea_list.rds")
+# saveRDS(parks_openDataArea_list, 
+#         file = "~objects/30/33_parks_openDataArea_list.rds")
 
 ## 3. Export as rds ----
-saveRDS(parks_overlap_list,
-        "~objects/30/33_parks_overlap_list.rds")
-saveRDS(parks_osmOnly_list,
-        "~objects/30/33_parks_osmOnly_list.rds")
-saveRDS(parks_openDataOnly_list,
-        "~objects/30/33_parks_openDataOnly_list.rds")
-saveRDS(parks_comparison_list,
-        "~objects/30/33_parks_comparison_list.rds")
+# saveRDS(parks_overlap_list,
+#         "~objects/30/33_parks_overlap_list.rds")
+# saveRDS(parks_osmOnly_list,
+#         "~objects/30/33_parks_osmOnly_list.rds")
+# saveRDS(parks_openDataOnly_list,
+#         "~objects/30/33_parks_openDataOnly_list.rds")
+# saveRDS(parks_comparison_list,
+#         "~objects/30/33_parks_comparison_list.rds")
 
 ## 4. Export as rds ----
-saveRDS(openSpace_results, 
-        file = "~objects/30/33_openSpace_results.rds")
+# saveRDS(openSpace_results, 
+#         file = "~objects/30/33_openSpace_results.rds")

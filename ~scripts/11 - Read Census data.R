@@ -5,7 +5,10 @@
 #   (a) Baltimore
 #   (b) Minneapolis
 #   (c) New Orleans
-#   (d) Pennsylvania
+#   (d) Philadelphia
+#   (e) Houston
+#   (f) San Francisco
+#   (g) Pennsylvania
 # 3. Combines them
 #
 # Exports: 
@@ -162,6 +165,102 @@ nola_BGs <- get_acs(geography = "block group",
                      names = census_colNames,
                      drop_MOE = TRUE)
 
+# (d) Philadelphia
+# tracts
+phl_tracts <- get_acs(geography = "tract",
+                       variables = census_vars, # population
+                       year = 2018,
+                       state = "Pennsylvania",
+                       county = "Philadelphia",
+                       survey = "acs5",
+                       output = "wide",
+                       geometry = TRUE) %>% 
+  st_transform(sdg_cities_list$`Philadelphia, Pennsylvania`$proj) %>% 
+  rename_census_cols(x = .,
+                     vars = census_vars,
+                     names = census_colNames,
+                     drop_MOE = TRUE)
+
+# block groups
+phl_BGs <- get_acs(geography = "block group",
+                    variables = census_vars, # population
+                    year = 2018,
+                   state = "Pennsylvania",
+                   county = "Philadelphia",
+                    survey = "acs5",
+                    output = "wide",
+                    geometry = TRUE) %>% 
+  st_transform(sdg_cities_list$`Philadelphia, Pennsylvania`$proj) %>% 
+  rename_census_cols(x = .,
+                     vars = census_vars,
+                     names = census_colNames,
+                     drop_MOE = TRUE)
+
+# (e) Houston
+# tracts
+hou_tracts <- get_acs(geography = "tract",
+                       variables = census_vars, # population
+                       year = 2018,
+                       state = "Texas",
+                       survey = "acs5",
+                       output = "wide",
+                       geometry = TRUE) %>% 
+  st_transform(sdg_cities_list$`Houston, Texas`$proj) %>% 
+  .[bbox_sfs$`Houston, Texas`,] %>% 
+  rename_census_cols(x = .,
+                     vars = census_vars,
+                     names = census_colNames,
+                     drop_MOE = TRUE)
+
+# block groups
+hou_BGs <- get_acs(geography = "block group",
+                    variables = census_vars, # population
+                    year = 2018,
+                    state = "Texas",
+                    county = c("Harris County", "Fort Bend", "Montgomery"),
+                    survey = "acs5",
+                    output = "wide",
+                    geometry = TRUE) %>% 
+  st_transform(sdg_cities_list$`Houston, Texas`$proj) %>% 
+  .[bbox_sfs$`Houston, Texas`,] %>% 
+  rename_census_cols(x = .,
+                     vars = census_vars,
+                     names = census_colNames,
+                     drop_MOE = TRUE)
+
+# (f) San Francisco
+# tracts
+sf_tracts <- get_acs(geography = "tract",
+                       variables = census_vars, # population
+                       year = 2018,
+                       state = "California",
+                       county = "San Francisco",
+                       survey = "acs5",
+                       output = "wide",
+                       geometry = TRUE) %>% 
+  st_transform(sdg_cities_list$`San Francisco, California`$proj) %>% 
+  .[bbox_sfs$`San Francisco, California`,] %>% 
+  rename_census_cols(x = .,
+                     vars = census_vars,
+                     names = census_colNames,
+                     drop_MOE = TRUE)
+
+# block groups
+sf_BGs <- get_acs(geography = "block group",
+                    variables = census_vars, # population
+                    year = 2018,
+                    state = "California",
+                  county = "San Francisco",
+                  survey = "acs5",
+                    output = "wide",
+                    geometry = TRUE) %>% 
+  st_transform(sdg_cities_list$`San Francisco, California`$proj) %>% 
+  .[bbox_sfs$`San Francisco, California`,] %>% 
+  rename_census_cols(x = .,
+                     vars = census_vars,
+                     names = census_colNames,
+                     drop_MOE = TRUE)
+
 # (d) Pennsylvania
 # tracts
 PA_tracts <- get_acs(geography = "tract",
@@ -191,20 +290,26 @@ PA_BGs <- get_acs(geography = "block group",
                      names = census_colNames,
                      drop_MOE = TRUE) %>% 
   .[!st_is_empty(.), , drop = FALSE]
+
 ## 3. ----
 tracts <- list("Baltimore" = balt_tracts,
                "Minneapolis" = mpls_tracts,
                "New Orleans" = nola_tracts,
+               "Philadelphia" = phl_tracts,
+               "Houston" = hou_tracts,
+               "San Francisco" = sf_tracts,
                "Pennsylvania" = PA_tracts)
 
 BGs <- list("Baltimore" = balt_BGs,
             "Minneapolis" = mpls_BGs,
             "New Orleans" = nola_BGs,
+            "Philadelphia" = phl_BGs,
+            "Houston" = hou_BGs,
+            "San Francisco" = sf_BGs,
             "Pennsylvania" = PA_BGs)
 
 
 ## 1. Export as RDS ----
-# (a)
 # saveRDS(tracts,
 #         file = "~objects/10/11_tracts.RDS")
 # saveRDS(BGs,

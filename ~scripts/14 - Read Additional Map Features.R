@@ -10,11 +10,12 @@
 # Exports: 
 # 1. hydrology_list as 14_hydrology_list.rds
 # 2. road_list as 14_road_list.rds
+# 3. dryLand_list as 14_dryLand_list.rds
+# 4. context_bbox_list as 14_context_bbox_list.rds
 # 
 # To-do:
 # 1. 
 ##########################################################################
-
 
 ## 1. ----
 source("~scripts/10 - Data admin.R")
@@ -366,9 +367,11 @@ dryLand_list$`San Francisco, California` <- counties(state = "California",
   st_intersection(context_bbox_list$`San Francisco, California`)
 
 ## 2a. Export as rds ----
-saveRDS(hydrology_list,
-        "~objects/10/14_hydrology_list.rds")
-saveRDS(road_list,
-        "~objects/10/14_road_list.rds")
-saveRDS(dryLand_list,
-        "~objects/10/14_dryLand_list.rds")
+# saveRDS(hydrology_list,
+#         "~objects/10/14_hydrology_list.rds")
+# saveRDS(road_list,
+#         "~objects/10/14_road_list.rds")
+# saveRDS(dryLand_list,
+#         "~objects/10/14_dryLand_list.rds")
+# saveRDS(context_bbox_list,
+#         "~objects/10/14_context_bbox_list.rds")

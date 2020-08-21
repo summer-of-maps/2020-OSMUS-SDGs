@@ -1,7 +1,6 @@
 ##########################################################################
 # This script assigns any variables used when collecting OSM data for both SDGs:
 # 1. Define the geographic areas for the cities of interest and adds them to a list bbox_sfs
-#     (IS THIS NEEDED?)
 # 2. Bounding boxes for each sdg city for querying OSM features in a list bbox_mats
 #
 # Exports: 
@@ -18,11 +17,16 @@ bbox_sfs <- vector("list",
   set_names(names(sdg_cities_list))
 
 # Baltimore
-bbox_sfs$`Baltimore, Maryland` <- places("Maryland",
-               year = 2018,
-               class = "sf",
-               cb = TRUE) %>% 
-  filter(NAME == "Baltimore") %>% 
+# bbox_sfs$`Baltimore, Maryland` <- places("Maryland",
+#                year = 2018,
+#                class = "sf",
+#                cb = TRUE) %>% 
+#   filter(NAME == "Baltimore") %>% 
+#   st_transform(sdg_cities_list$`Baltimore, Maryland`$proj) %>% 
+#   st_cast("POLYGON")
+
+bbox_sfs$`Baltimore, Maryland` <- counties("Maryland", class = "sf") %>% 
+  filter(NAMELSAD == "Baltimore city") %>% 
   st_transform(sdg_cities_list$`Baltimore, Maryland`$proj) %>% 
   st_cast("POLYGON")
 
@@ -81,19 +85,6 @@ bbox_sfs$Pennsylvania <- states(year = 2018,
   filter(NAME == "Pennsylvania") %>% 
   st_transform(sdg_cities_list$Pennsylvania$proj) %>% 
   st_cast("POLYGON")
-
-# sf bboxes for trimming OSM features
-# bbox_sfs <- vector("list",
-#                    length(sdg_cities_list)) %>% 
-#   set_names(names(sdg_cities_list))
-# 
-# bbox_sfs$`Baltimore, Maryland` <- balt
-# bbox_sfs$`Minneapolis, Minnesota` <- mpls
-# bbox_sfs$`New Orleans, Louisiana` <- nola
-# bbox_sfs$`Philadelphia, Pennsylvania` <- phl
-# bbox_sfs$`Houston, Texas` <- hou
-# bbox_sfs$`San Francisco, California` <- sf
-# bbox_sfs$Pennsylvania <- pa
 
 ## 2. ---- 
 # matrix bboxes for querying OSM features

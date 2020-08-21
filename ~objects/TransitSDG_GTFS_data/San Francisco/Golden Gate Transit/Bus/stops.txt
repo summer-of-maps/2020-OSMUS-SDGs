@@ -1,0 +1,487 @@
+stop_id,stop_code,stop_name,stop_desc,stop_lat,stop_lon,zone_id
+40003,40003,"Salesforce Transit Center-Bus Plaza Bay A",,  37.790076,-122.396058,1
+40006,40006,"Folsom St & 2nd St",,  37.785438,-122.396756,1
+40009,40009,"Howard St & 2nd St",,  37.786679,-122.398456,1
+40012,40012,"4th St & Folsom St",,  37.781725,-122.400894,1
+40019,40019,"7th St & Market St",,  37.780729,-122.412749,1
+40021,40021,"Hyde St & McAllister St",,  37.781287,-122.415388,1
+40022,40022,"McAllister St & Hyde St",,  37.780730,-122.415556,1
+40023,40023,"SF Civic Center-Golden Gate Ave & Polk St",,  37.781196,-122.418609,1
+40024,40024,"SF Civic Center-McAllister St & Polk St",,  37.780288,-122.418832,1
+40025,40025,"Van Ness Ave & O'Farrell St",,  37.784809,-122.421400,1
+40027,40027,"Van Ness Ave & Sutter St",,  37.787611,-122.421956,1
+40028,40028,"Van Ness Ave & Bush St",,  37.788411,-122.421794,1
+40029,40029,"Van Ness Ave & Sacramento St",,  37.791349,-122.422719,1
+40030,40030,"Van Ness Ave & Clay St",,  37.792353,-122.422578,1
+40031,40031,"Van Ness Ave & Filbert St",,  37.799547,-122.424348,1
+40032,40032,"Van Ness Ave & Union St",,  37.798482,-122.423836,1
+40033,40033,"Lombard St & Fillmore St",,  37.799722,-122.436403,1
+40034,40034,"Lombard St & Fillmore St",,  37.799970,-122.435906,1
+40035,40035,"Richardson Ave & Lyon St",,  37.800480,-122.447514,1
+40036,40036,"Richardson Ave & Francisco St",,  37.800251,-122.446737,1
+40037,40037,"Golden Gate Bridge Toll Plaza",,  37.806715,-122.475476,1
+40038,40038,"Golden Gate Bridge Toll Plaza",,  37.807365,-122.475262,1
+40039,40039,"Van Ness Ave & Chestnut St",,  37.802443,-122.424638,1
+40040,40040,"Van Ness Ave & Chestnut St",,  37.802086,-122.424847,1
+40041,40041,"North Point St & Hyde St",,  37.805668,-122.420549,1
+40042,40042,"North Point St & Hyde St",,  37.805825,-122.419927,1
+40043,40043,"North Point St & Jones St",,  37.806068,-122.417191,1
+40044,40044,"North Point St & Jones St",,  37.806151,-122.417564,1
+40045,40045,"North Point St & Stockton St",,  37.806898,-122.410622,1
+40046,40046,"North Point St & Stockton St",,  37.807058,-122.410150,1
+40047,40047,"Battery St & Filbert St",,  37.802125,-122.401847,1
+40048,40048,"Sansome St & Filbert St",,  37.802329,-122.402956,1
+40049,40049,"Battery St & Jackson St",,  37.796852,-122.400801,1
+40050,40050,"Sansome St & Pacific Ave",,  37.797672,-122.402024,1
+40051,40051,"Battery St & Sacramento St",,  37.794220,-122.400245,1
+40052,40052,"Sansome St & Sacramento St",,  37.794252,-122.401339,1
+40053,40053,"Battery St & Pine St",,  37.791977,-122.399797,1
+40054,40054,"1st St & Mission St",,  37.789536,-122.397367,1
+40055,40055,"The Embarcadero & Bay St",,  37.806607,-122.406061,1
+40057,40057,"Fremont St & Mission St",,  37.790629,-122.396843,1
+40058,40058,"Battery St & Green St",,  37.800531,-122.401533,1
+40063,40063,"Van Ness Ave & Chestnut St",,  37.802339,-122.424900,1
+40065,40065,"North Point St & Polk St",,  37.805315,-122.423899,1
+40066,40066,"Battery St & Broadway",,  37.798290,-122.401079,1
+40068,40068,"Howard St & Fremont St",,  37.789476,-122.394961,1
+40069,40069,"Pine St & Battery St",,  37.792382,-122.399288,1
+40074,40074,"Fremont St & Mission St",,  37.790422,-122.396574,1
+40078,40078,"Van Ness Ave & Vallejo St",,  37.796861,-122.423502,1
+40082,40082,"Sansome St & Lombard St",,  37.803954,-122.403287,1
+40083,40083,"Hyde St & Grove St",,  37.779548,-122.415178,1
+40090,40090,"Bridgeway & Ebbtide St",,  37.870220,-122.503700,2
+40091,40091,"Bridgeway & Gate 5 Rd",,  37.871156,-122.503872,2
+40092,40092,"Bridgeway & Nevada St",,  37.865462,-122.499229,2
+40093,40093,"Bridgeway & Nevada St",,  37.865279,-122.499369,2
+40094,40094,"Bridgeway & Easterby St",,  37.861785,-122.493880,2
+40095,40095,"Bridgeway & Easterby St",,  37.861969,-122.493621,2
+40096,40096,"Bridgeway & Napa St",,  37.861065,-122.489316,2
+40097,40097,"Bridgeway & Napa St",,  37.861559,-122.489930,2
+40098,40098,"Bridgeway & Pine St",,  37.859270,-122.485272,2
+40099,40099,"Bridgeway & Turney St",,  37.859658,-122.485897,2
+40100,40100,"Bridgeway & Caledonia Ave",,  37.858607,-122.483297,2
+40101,40101,"Bridgeway & El Portal",,  37.855904,-122.479615,2
+40102,40102,"Bridgeway & Bay St",,  37.856832,-122.480225,2
+40104,40104,"2nd St & Main St",,  37.848732,-122.480841,2
+40105,40105,"2nd St & Main St",,  37.849061,-122.480701,2
+40106,40106,"Alexander Ave & East Rd",,  37.844055,-122.478138,2
+40107,40107,"Alexander Ave & East Rd",,  37.844908,-122.477806,2
+40108,40108,"Alexander Ave & Danes Dr",,  37.838065,-122.483114,2
+40110,40110,"Spencer Ave Bus Pad",,  37.853380,-122.493211,2
+40111,40111,"Spencer Ave Bus Pad",,  37.852053,-122.490685,2
+40112,40112,"Hwy 101 & Monte Mar Dr",,  37.854201,-122.492861,2
+40113,40113,"Donahue St & Terners Dr",,  37.872277,-122.511577,2
+40129,40129,"E Blithedale Ave & Tower Dr",,  37.903688,-122.519162,2
+40130,40130,"E Blithedale Ave & Kipling Dr",,  37.903466,-122.519204,2
+40131,40131,"E Blithedale Ave & Lomita Dr",,  37.901039,-122.526246,2
+40132,40132,"E Blithedale Ave & Roque Moraes Dr",,  37.900263,-122.527689,2
+40133,40133,"E Blithedale Ave & Mesa Ave",,  37.901838,-122.532652,2
+40134,40134,"E Blithedale Ave & Nelson Ave",,  37.900667,-122.529940,2
+40135,40135,"E Blithedale Ave & Alta Vista Ave",,  37.903569,-122.536354,2
+40136,40136,"E Blithedale Ave & Hilarita Ave",,  37.901709,-122.532634,2
+40137,40137,"E Blithedale Ave & East Dr",,  37.903808,-122.538665,2
+40138,40138,"E Blithedale Ave & Elm Ave",,  37.902078,-122.533493,2
+40139,40139,"E Blithedale Ave & Mountain View Ave",,  37.905048,-122.543629,2
+40140,40140,"E Blithedale Ave & Walnut Ave",,  37.903731,-122.539545,2
+40141,40141,"E Blithedale Ave & Hill St",,  37.905260,-122.544181,2
+40142,40142,"Mill Valley Depot-Sunnyside Ave & Miller Ave",,  37.905662,-122.547407,2
+40143,40143,"Miller Ave & Una Way",,  37.901406,-122.541756,2
+40144,40144,"Miller Ave & Park Ave",,  37.901618,-122.541517,2
+40145,40145,"Miller Ave & Montford Ave",,  37.897587,-122.537285,2
+40146,40146,"Miller Ave & Locust Ave",,  37.898730,-122.538237,2
+40147,40147,"Miller Ave & Reed St",,  37.895097,-122.534418,2
+40148,40148,"Miller Ave & Reed St",,  37.895608,-122.534553,2
+40149,40149,"Miller Ave & Camino Alto",,  37.892900,-122.530630,2
+40150,40150,"Miller Ave & Camino Alto",,  37.893709,-122.531471,2
+40151,40151,"Almonte Blvd & Miller Ave",,  37.887187,-122.524833,2
+40152,40152,"Almonte Blvd & Miller Ave",,  37.887569,-122.524750,2
+40153,40153,"Almonte Blvd & Rosemont Ave",,  37.883988,-122.524839,2
+40154,40154,"Almonte Blvd & Rosemont Ave",,  37.883823,-122.524623,2
+40155,40155,"Tam Junction-Shoreline Hwy & Almonte Blvd",,  37.881393,-122.524629,2
+40156,40156,"Tam Junction-Shoreline Hwy & Almonte Blvd",,  37.881469,-122.524478,2
+40157,40157,"Mill Valley Depot-Miller Ave & Sunnyside Ave",,  37.905514,-122.547370,2
+40158,40158,"Strawberry-Reed Blvd & Belvedere Dr",,  37.898611,-122.513272,2
+40162,40162,"Manzanita Park & Ride Lot",,  37.879611,-122.516368,2
+40164,40164,"Tiburon Wye Bus Pad",,  37.903757,-122.516088,2
+40169,40169,"Shoreline Hwy & Pohono St",,  37.879771,-122.515307,2
+40170,40170,"Tiburon Wye Bus Pad",,  37.901905,-122.515461,2
+40171,40171,"Tiburon Blvd & Hwy 101",,  37.902814,-122.514787,2
+40172,40172,"Tiburon Blvd & Hwy 101",,  37.902489,-122.513783,2
+40182,40182,"Reed Blvd & Redwood Hwy",,  37.900894,-122.514935,2
+40187,40187,"Seminary Dr Bus Pad",,  37.889474,-122.517121,2
+40188,40188,"Seminary Dr Bus Pad",,  37.888568,-122.516364,2
+40225,40225,"Magnolia Ave & Frances Ave",,  37.946961,-122.546361,3
+40267,40267,"Lucky Dr Bus Pad",,  37.937820,-122.517029,3
+40268,40268,"Lucky Dr Bus Pad",,  37.938656,-122.516113,3
+40275,40275,"Redwood Ave & Montecito Dr",,  37.926359,-122.529511,3
+40276,40276,"Redwood Ave & Montecito Dr",,  37.926448,-122.529621,3
+40277,40277,"Tamalpais Dr & Eastman Ave",,  37.925295,-122.523697,3
+40278,40278,"Tamalpais Dr & Eastman Ave",,  37.925506,-122.523783,3
+40279,40279,"Tamalpais Dr & Meadowsweet Dr",,  37.925198,-122.521737,3
+40280,40280,"Tamalpais Dr & Madera Blvd",,  37.925268,-122.518959,3
+40281,40281,"Tamalpais Dr & Casa Buena Dr",,  37.925031,-122.518511,3
+40295,40295,"Paradise Dr Bus Pad",,  37.926494,-122.515203,3
+40296,40296,"Paradise Dr Bus Pad",,  37.925443,-122.514032,3
+40297,40297,"Magnolia Ave & Frances Ave",,  37.946831,-122.546363,3
+40298,40298,"Magnolia Ave & Estelle Ave",,  37.948389,-122.548943,3
+40299,40299,"Magnolia Ave & Skylark Dr",,  37.944587,-122.543015,3
+40300,40300,"Magnolia Ave & Dartmouth Dr",,  37.945009,-122.542940,3
+40301,40301,"Magnolia Ave & Bon Air Rd",,  37.943031,-122.540538,3
+40302,40302,"Magnolia Ave & Bon Air Rd",,  37.943387,-122.540712,3
+40303,40303,"Magnolia Ave & Ward St",,  37.935922,-122.535307,3
+40304,40304,"Magnolia Ave & Ward St",,  37.936221,-122.535083,3
+40305,40305,"Magnolia Ave & Madrone Ave",,  37.932578,-122.536064,3
+40306,40306,"Magnolia Ave & Madrone Ave",,  37.932656,-122.535931,3
+40307,40307,"Magnolia Ave & Park Way",,  37.929090,-122.533438,3
+40308,40308,"Magnolia Ave & Alexander Ave",,  37.929469,-122.533919,3
+40315,40315,"Sir Francis Drake Blvd & McAllister Ave",,  37.953231,-122.539987,3
+40316,40316,"Sir Francis Drake Blvd & Wolfe Grade",,  37.952747,-122.538093,3
+40317,40317,"Sir Francis Drake Blvd & Wolfe Grade",,  37.953216,-122.538898,3
+40318,40318,"Sir Francis Drake Blvd & Bon Air Rd",,  37.950314,-122.533501,3
+40319,40319,"Sir Francis Drake Blvd & Bon Air Rd",,  37.950709,-122.533856,3
+40320,40320,"Sir Francis Drake Blvd & El Portal Dr",,  37.948281,-122.527360,3
+40321,40321,"Sir Francis Drake Blvd & El Portal Dr",,  37.948906,-122.528457,3
+40322,40322,"Sir Francis Drake Blvd & La Cuesta Dr",,  37.947282,-122.524830,3
+40323,40323,"Sir Francis Drake Blvd & La Cuesta Dr",,  37.947742,-122.525473,3
+40324,40324,"Sir Francis Drake Blvd & Eliseo Dr",,  37.945425,-122.520113,3
+40325,40325,"Sir Francis Drake Blvd & Eliseo Dr",,  37.945809,-122.520440,3
+40330,40330,"College of Marin-College Ave & Sir Francis Drake",,  37.954728,-122.548242,3
+40332,40332,"1135 Sir Francis Drake Blvd",,  37.959252,-122.552459,3
+40333,40333,"Sir Francis Drake Blvd & Ross Ter",,  37.959709,-122.552907,3
+40334,40334,"College of Marin-Sir Francis Drake & Elm Ave",,  37.956235,-122.548519,3
+40335,40335,"College of Marin-Sir Francis Drake & Maple Ave",,  37.956309,-122.548170,3
+40336,40336,"Sir Francis Drake Blvd & Ash Ave",,  37.954298,-122.546022,3
+40337,40337,"Sir Francis Drake Blvd & Ash Ave",,  37.954318,-122.545695,3
+40338,40338,"Sir Francis Drake Blvd & Rosebank Dr",,  37.953601,-122.543318,3
+40339,40339,"Sir Francis Drake Blvd & Oak Ave",,  37.953862,-122.543080,3
+40340,40340,"Sir Francis Drake Blvd & Laurel Grove Ave",,  37.953629,-122.540850,3
+40341,40341,"Sir Francis Drake Blvd & Lagunitas Rd",,  37.962396,-122.555757,3
+40342,40342,"Sir Francis Drake Blvd & Lagunitas Rd",,  37.962734,-122.555855,3
+40349,40349,"College of Marin-College Ave & Sir Francis Drake",,  37.954258,-122.548626,3
+40416,40416,"4th St & Ross Valley Dr",,  37.976125,-122.550194,3
+40418,40418,"4th St & Santa Margarita Ave",,  37.976332,-122.549873,3
+40419,40419,"4th St & Greenfield Ave",,  37.975115,-122.544225,3
+40420,40420,"4th St & Greenfield Ave",,  37.974858,-122.544216,3
+40421,40421,"4th St & Ida St",,  37.974157,-122.537989,3
+40422,40422,"4th St & Ida St",,  37.974074,-122.538234,3
+40423,40423,"4th St & E St",,  37.973562,-122.533058,3
+40424,40424,"4th St & E St",,  37.973716,-122.533450,3
+40425,40425,"4th St & C St",,  37.973499,-122.530943,3
+40426,40426,"4th St & C St",,  37.973353,-122.530546,3
+40427,40427,"4th St & Court St",,  37.973133,-122.527279,3
+40428,40428,"4th St & Court St",,  37.972991,-122.526880,3
+40436,40436,"Andersen Dr & Francisco Blvd W",,  37.960535,-122.511798,3
+40438,40438,"Andersen Dr & Du Bois St",,  37.963639,-122.517133,3
+40465,40465,"3140 Kerner Blvd",,  37.958661,-122.501133,3
+40466,40466,"Bellam Blvd & Lisbon St",,  37.961201,-122.503554,3
+40468,40468,"Andersen Dr & Jacoby St",,  37.957221,-122.507449,3
+40469,40469,"Golden Gate Transit-1011 Andersen Dr",,  37.955353,-122.504215,3
+40470,40470,"Andersen Dr & Simms St",,  37.957466,-122.507589,3
+40472,40472,"Sir Francis Drake Blvd & San Anselmo Ave",,  37.986454,-122.576794,3
+40473,40473,"Sir Francis Drake Blvd & Butterfield Rd",,  37.986842,-122.578464,3
+40474,40474,"Sir Francis Drake Blvd & Ash Ave",,  37.985386,-122.574285,3
+40475,40475,"Sir Francis Drake Blvd & Broadmoor Ave",,  37.985966,-122.575174,3
+40476,40476,"Sir Francis Drake Blvd & Tamal Ave",,  37.982176,-122.568778,3
+40478,40478,"Sir Francis Drake Blvd & Aspen Ct",,  37.984693,-122.572812,3
+40479,40479,"Sir Francis Drake Blvd & Sais Ave",,  37.980918,-122.566730,3
+40480,40480,"Sir Francis Drake Blvd & San Francisco Blvd",,  37.982558,-122.569214,3
+40481,40481,"Sir Francis Drake Blvd & Sunnyhills Dr",,  37.981255,-122.567056,3
+40482,40482,"Sir Francis Drake Blvd & Madrone Ave",,  37.978926,-122.564121,3
+40483,40483,"Sir Francis Drake Blvd & Madrone Ave",,  37.978790,-122.564331,3
+40484,40484,"San Anselmo Hub-Center & Sir Francis Drake",,  37.976603,-122.563016,3
+40485,40485,"Sir Francis Drake Blvd & Ross Ave",,  37.972419,-122.561718,3
+40486,40486,"Sir Francis Drake Blvd & Barber Ave",,  37.972816,-122.561525,3
+40487,40487,"Sir Francis Drake Blvd & Bolinas Ave",,  37.969360,-122.560659,3
+40488,40488,"Sir Francis Drake Blvd & Bolinas Ave",,  37.969749,-122.560488,3
+40489,40489,"Red Hill Ave & Sequoia Dr",,  37.976386,-122.554185,3
+40490,40490,"Red Hill Ave & Sequoia Dr",,  37.976635,-122.554645,3
+40512,40512,"Olema Way & Sir Francis Drake Blvd",,  38.000221,-122.604134,3
+40513,40513,"Sir Francis Drake Blvd & Glen Dr",,  38.000213,-122.603043,3
+40514,40514,"Sir Francis Drake Blvd & Alhambra Cir",,  37.999082,-122.600451,3
+40515,40515,"Sir Francis Drake Blvd & Alhambra Cir",,  37.999208,-122.600408,3
+40516,40516,"2535 Sir Francis Drake Blvd",,  37.997041,-122.599067,3
+40517,40517,"2535 Sir Francis Drake Blvd",,  37.997183,-122.599065,3
+40518,40518,"Sir Francis Drake Blvd & Oak Manor Dr",,  37.995660,-122.596701,3
+40519,40519,"Sir Francis Drake Blvd & Oak Manor Dr",,  37.995628,-122.596412,3
+40520,40520,"Sir Francis Drake Blvd & Marin Rd",,  37.993376,-122.594208,3
+40521,40521,"Sir Francis Drake Blvd & Oak Tree Ln",,  37.993794,-122.594348,3
+40522,40522,"Sir Francis Drake Blvd & Claus Dr",,  37.987300,-122.588794,3
+40523,40523,"Broadway Blvd & Bolinas Ave",,  37.987087,-122.588794,3
+40524,40524,"Sir Francis Drake Blvd & Broadway",,  37.989787,-122.591646,3
+40525,40525,"Sir Francis Drake Blvd & Marinda Dr",,  37.990061,-122.591565,3
+40526,40526,"Sir Francis Drake Blvd & Kent Ave",,  37.986562,-122.580920,3
+40527,40527,"Sir Francis Drake Blvd & Willow Ave",,  37.986713,-122.582751,3
+40528,40528,"Las Gallinas Ave & Cedar Hill Dr",,  38.025276,-122.548394,3
+40529,40529,"Las Gallinas Ave & Santiago Way",,  38.024996,-122.548212,3
+40530,40530,"Las Gallinas Ave & Maple Hill Dr",,  38.022486,-122.550138,3
+40531,40531,"Las Gallinas Ave & Skyview Ter",,  38.022204,-122.549949,3
+40532,40532,"Las Gallinas Ave & Park Ridge Rd",,  38.019019,-122.551687,3
+40533,40533,"Las Gallinas Ave & Montevideo Way",,  38.019075,-122.551248,3
+40534,40534,"Las Gallinas Ave & Las Colindas Rd",,  38.013268,-122.549516,3
+40535,40535,"Las Gallinas Ave & Las Colindas Rd",,  38.013096,-122.549210,3
+40536,40536,"Las Gallinas Ave & Holly Dr",,  38.010298,-122.548976,3
+40537,40537,"Las Gallinas Ave & Oleander Dr",,  38.011396,-122.548645,3
+40538,40538,"De La Guerra Rd & Del Ganado Rd",,  38.019953,-122.573318,3
+40540,40540,"Del Ganado Rd & Duran Dr",,  38.018584,-122.570764,3
+40541,40541,"Duran Dr & Del Ganado Rd",,  38.018473,-122.570798,3
+40542,40542,"Del Ganado Rd & Las Ovejas Ave",,  38.016038,-122.566846,3
+40543,40543,"Del Ganado Rd & Las Ovejas Ave",,  38.016278,-122.566818,3
+40544,40544,"Del Ganado Rd & Las Raposas Rd",,  38.014709,-122.561621,3
+40545,40545,"Del Ganado Rd & Las Raposas Rd",,  38.015004,-122.561837,3
+40548,40548,"Freitas Pkwy & Del Ganado Rd",,  38.012706,-122.558535,3
+40550,40550,"Del Ganado Rd & Freitas Pkwy",,  38.013350,-122.558776,3
+40551,40551,"Freitas Pkwy & Las Pavadas Ave",,  38.011405,-122.555374,3
+40552,40552,"Freitas Pkwy & Las Pavadas Ave",,  38.011837,-122.555413,3
+40553,40553,"Freitas Pkwy & Las Gallinas Ave",,  38.009736,-122.549628,3
+40556,40556,"Las Gallinas Ave & Nova Albion Way",,  38.008487,-122.549212,3
+40562,40562,"Las Gallinas Ave & Northgate Dr",,  38.006649,-122.545775,3
+40563,40563,"Las Gallinas Ave & Northgate Dr",,  38.006891,-122.546244,3
+40564,40564,"Las Gallinas Ave @ Northgate Mall",,  38.005165,-122.541905,3
+40565,40565,"Las Gallinas Ave @ Northgate Mall",,  38.004672,-122.541789,3
+40566,40566,"Los Ranchitos Rd & Northgate Dr",,  38.001350,-122.542654,3
+40567,40567,"Los Ranchitos Rd & Northgate Dr",,  38.001067,-122.542358,3
+40571,40571,"Los Ranchitos Rd & Golden Hinde Blvd",,  37.998405,-122.541708,3
+40572,40572,"Los Ranchitos Rd & Golden Hinde Blvd",,  37.998249,-122.541520,3
+40573,40573,"Los Ranchitos Rd & Circle Rd",,  37.994780,-122.541022,3
+40574,40574,"Los Ranchitos Rd & Circle Rd",,  37.994880,-122.540920,3
+40575,40575,"Los Ranchitos Rd & Ranch Rd",,  37.992407,-122.536406,3
+40576,40576,"Los Ranchitos Rd & Ranch Rd",,  37.992522,-122.536596,3
+40577,40577,"Las Gallinas Ave & Nova Albion Way",,  38.008133,-122.548749,3
+40579,40579,"N San Pedro Rd & Merrydale Rd",,  37.993404,-122.534602,3
+40580,40580,"Merrydale Rd & N San Pedro Rd",,  37.994591,-122.534233,3
+40581,40581,"N San Pedro Rd Bus Pad",,  37.995334,-122.533357,3
+40582,40582,"N San Pedro Rd Bus Pad",,  37.995309,-122.532511,3
+40606,40606,"Lucas Valley Bus Pad",,  38.020519,-122.539832,3
+40607,40607,"Lucas Valley Bus Pad",,  38.020071,-122.539152,3
+40634,40634,"Miller Creek Rd & Quietwood Dr",,  38.030966,-122.551984,3
+40635,40635,"Miller Creek Rd & Quietwood Dr",,  38.030900,-122.552340,3
+40636,40636,"Miller Creek Rd & Queenstone Dr",,  38.033192,-122.549638,3
+40637,40637,"Miller Creek Rd & Queenstone Dr",,  38.033401,-122.549909,3
+40638,40638,"Miller Creek Rd & Las Gallinas Ave",,  38.032579,-122.544017,3
+40639,40639,"Miller Creek Rd & Las Gallinas Ave",,  38.032952,-122.544979,3
+40640,40640,"Miller Creek Rd & Marinwood Ave",,  38.033244,-122.540521,3
+40641,40641,"Miller Creek Rd & Marinwood Ave",,  38.033511,-122.540743,3
+40653,40653,"Miller Creek Rd & Cedarberry Ln",,  38.028841,-122.552387,3
+40654,40654,"Miller Creek Rd & Cedarberry Ln",,  38.028633,-122.552824,3
+40655,40655,"San Marin Dr & Redwood Blvd",,  38.118884,-122.567488,4
+40656,40656,"San Marin Dr & Redwood Blvd",,  38.118454,-122.567421,4
+40657,40657,"San Marin Dr & Simmons Ln",,  38.121694,-122.584955,4
+40658,40658,"San Marin Dr & Simmons Ln",,  38.121439,-122.584483,4
+40659,40659,"San Marin Dr & Sereno Way",,  38.124479,-122.587718,4
+40660,40660,"San Marin Dr & Sereno Way",,  38.124257,-122.587765,4
+40661,40661,"San Carlos Way & San Marin Dr",,  38.123615,-122.591759,4
+40662,40662,"San Carlos Way & San Marin Dr",,  38.123518,-122.591575,4
+40663,40663,"San Carlos Way & San Luis Way",,  38.120015,-122.591376,4
+40664,40664,"San Carlos Way & San Luis Ct",,  38.119951,-122.591232,4
+40665,40665,"San Carlos Way & Corona Ct",,  38.118633,-122.595058,4
+40666,40666,"San Carlos Way & Corona Ct",,  38.118732,-122.594483,4
+40667,40667,"San Carlos Way & San Andreas Dr",,  38.118428,-122.597987,4
+40668,40668,"San Carlos Way & Clemente Ct",,  38.118426,-122.596866,4
+40669,40669,"San Marin Dr & San Andreas Dr",,  38.122115,-122.602121,4
+40670,40670,"San Marin Dr & San Andreas Dr",,  38.121909,-122.602010,4
+40671,40671,"San Marin Dr & San Ramon Way",,  38.121793,-122.604508,4
+40672,40672,"San Marin Dr & San Ramon Way",,  38.121636,-122.604051,4
+40673,40673,"San Marin Dr & San Carlos Way",,  38.118831,-122.609338,4
+40674,40674,"San Marin Dr & San Carlos Way",,  38.118807,-122.609052,4
+40675,40675,"Novato Blvd & Eucalyptus Ave",,  38.114239,-122.603339,4
+40676,40676,"Novato Blvd & Eucalyptus Ave",,  38.114868,-122.604073,4
+40677,40677,"Novato Blvd & Oliva Dr",,  38.112116,-122.597580,4
+40678,40678,"Novato Blvd & Oliva Dr",,  38.112167,-122.597325,4
+40679,40679,"Novato Blvd & Raposa Vista",,  38.112075,-122.593192,4
+40680,40680,"Novato Blvd & Wilson Ave",,  38.111907,-122.591532,4
+40681,40681,"Novato Blvd & McClay Rd",,  38.110035,-122.587615,4
+40682,40682,"Novato Blvd & McClay Rd",,  38.110128,-122.587548,4
+40683,40683,"Novato Blvd & Grant Ave",,  38.108365,-122.583904,4
+40684,40684,"Novato Blvd & Grant Ave",,  38.108662,-122.584290,4
+40686,40686,"7th St & Novato Blvd",,  38.106448,-122.578717,4
+40687,40687,"Novato Blvd & 7th St",,  38.106852,-122.580209,4
+40688,40688,"7th St & Grant Ave",,  38.108903,-122.578254,4
+40689,40689,"7th St & Grant Ave",,  38.108773,-122.578404,4
+40690,40690,"Grant Ave & 5th St",,  38.108609,-122.575707,4
+40691,40691,"Grant Ave & 5th St",,  38.108796,-122.576076,4
+40692,40692,"Grant Ave & 2nd St",,  38.107944,-122.572495,4
+40693,40693,"Grant Ave & 2nd St",,  38.108074,-122.572584,4
+40694,40694,"Redwood Blvd & Olive Ave",,  38.111171,-122.569050,4
+40695,40695,"Redwood Blvd & Olive Ave",,  38.111398,-122.568556,4
+40696,40696,"Redwood Blvd & Grant Ave",,  38.106290,-122.570808,4
+40697,40697,"Redwood Blvd & Grant Ave",,  38.106446,-122.570551,4
+40698,40698,"DeLong Ave & Reichert Ave",,  38.105480,-122.566468,4
+40699,40699,"DeLong Ave & Reichert Ave",,  38.105572,-122.566043,4
+40702,40702,"S Novato Blvd & Diablo Ave",,  38.102246,-122.572822,4
+40703,40703,"S Novato Blvd & Diablo Ave",,  38.102559,-122.572732,4
+40704,40704,"S Novato Blvd & Joan Ave",,  38.099461,-122.571086,4
+40705,40705,"S Novato Blvd & Lauren Ave",,  38.097057,-122.569540,4
+40706,40706,"S Novato Blvd & Arthur St",,  38.091792,-122.567604,4
+40707,40707,"S Novato Blvd & Arthur St",,  38.092758,-122.567735,4
+40708,40708,"S Novato Blvd & Rowland Blvd",,  38.087721,-122.565028,4
+40709,40709,"S Novato Blvd & Rowland Blvd",,  38.089012,-122.565757,4
+40710,40710,"S Novato Blvd & Sunset Pkwy",,  38.085348,-122.562023,4
+40711,40711,"S Novato Blvd & Sunset Pkwy",,  38.085493,-122.562022,4
+40712,40712,"S Novato Blvd & Midway Blvd",,  38.081102,-122.558473,4
+40713,40713,"S Novato Blvd & Midway Blvd",,  38.081835,-122.558580,4
+40714,40714,"S Novato Blvd & Stone Dr",,  38.078101,-122.557019,4
+40715,40715,"S Novato Blvd & Stone Dr",,  38.078515,-122.557106,4
+40716,40716,"S Novato Blvd & Redwood Blvd",,  38.077459,-122.552537,4
+40717,40717,"S Novato Blvd & Redwood Blvd",,  38.077593,-122.551407,4
+40746,40746,"Ignacio Bus Pad",,  38.066870,-122.537040,4
+40773,40773,"Alameda del Prado Bus Pad",,  38.049102,-122.532367,4
+40779,40779,"Rowland Blvd Bus Pad",,  38.091291,-122.560847,4
+40780,40780,"Rowland Blvd Bus Pad",,  38.093471,-122.557999,4
+40825,40825,"4th St & C St",,  38.232416,-122.638747,5
+40826,40826,"Petaluma Blvd N & Stony Point Rd",,  38.268565,-122.670866,5
+40827,40827,"Petaluma Blvd N & Stony Point Rd",,  38.269476,-122.670393,5
+40829,40829,"Petaluma Blvd N & Corona Rd",,  38.260139,-122.660837,5
+40830,40830,"Petaluma Blvd N & Gossage Ave",,  38.256322,-122.653596,5
+40832,40832,"Petaluma Blvd N & Factory Outlet Rd",,  38.255426,-122.651750,5
+40833,40833,"Petaluma Blvd N & West St",,  38.242021,-122.643990,5
+40834,40834,"Petaluma Blvd N & West St",,  38.242909,-122.644089,5
+40835,40835,"Petaluma Blvd N & Mary St",,  38.236307,-122.641622,5
+40836,40836,"Petaluma Blvd N & Mary St",,  38.236526,-122.641597,5
+40837,40837,"Petaluma Blvd S & F St",,  38.231556,-122.634682,5
+40838,40838,"Petaluma Blvd S & G St",,  38.231167,-122.633319,5
+40839,40839,"4th St & C St",,  38.232320,-122.638807,5
+40840,40840,"Petaluma Blvd S & Mountain View Ave",,  38.227988,-122.625739,5
+40841,40841,"Petaluma Blvd S & Mountain View Ave",,  38.228151,-122.625736,5
+40844,40844,"Petaluma Blvd N & Sycamore Ln",,  38.246834,-122.645379,5
+40845,40845,"Petaluma Blvd N & Sycamore Ln",,  38.246860,-122.645229,5
+40884,40884,"Commerce Blvd & Arlen Dr",,  38.340311,-122.712377,5
+40885,40885,"Roberts Lake Park & Ride Lot",,  38.364324,-122.710701,5
+40886,40886,"Roberts Lake Park & Ride Lot",,  38.363782,-122.710664,5
+40889,40889,"Commerce Blvd N & Rohnert Park Expy",,  38.347329,-122.709659,5
+40890,40890,"Commerce Blvd N & Rohnert Park Expy",,  38.347447,-122.709464,5
+40891,40891,"Commerce Blvd & Enterprise Dr",,  38.344638,-122.712114,5
+40892,40892,"Commerce Blvd & Enterprise Dr",,  38.345018,-122.711710,5
+40909,40909,"Old Redwood Hwy & William St",,  38.328372,-122.708067,5
+40910,40910,"Old Redwood Hwy & George St",,  38.328726,-122.708202,5
+40912,40912,"Old Redwood Hwy & E Cotati Ave",,  38.327043,-122.706648,5
+40913,40913,"Old Redwood Hwy & St Joseph Way Park & Ride Lot",,  38.330180,-122.709766,5
+40914,40914,"Old Redwood Hwy & St Joseph Way Park & Ride Lot",,  38.330401,-122.709715,5
+40915,40915,"Cotati Hub-W Sierra Ave & La Plaza",,  38.326156,-122.706922,5
+40916,40916,"W Sierra Ave & Water Rd",,  38.321373,-122.712510,5
+40917,40917,"W Sierra Ave & Water Rd",,  38.321266,-122.712512,5
+40949,40949,"Piner Rd & Industrial Dr",,  38.471387,-122.740519,6
+40950,40950,"Piner Rd & Range Ave",,  38.471965,-122.733879,6
+40951,40951,"Piner Rd & Range Ave",,  38.472116,-122.733879,6
+40969,40969,"Santa Rosa Veterans Memorial-Maple & Brookwood",,  38.433289,-122.702090,6
+40996,40996,"Santa Rosa Ave & Mountain View Ave",,  38.380408,-122.713573,6
+40997,40997,"Santa Rosa Ave & Mountain View Ave",,  38.381508,-122.713452,6
+40998,40998,"Santa Rosa Ave & Scenic Ave",,  38.376101,-122.713520,6
+40999,40999,"Santa Rosa Ave & Horn Ave",,  38.375779,-122.713380,6
+41000,41000,"Hwy 101 & Alexander Ave",,  37.835697,-122.483750,2
+41002,41002,"San Carlos Way & San Luis Way",,  38.119324,-122.592937,4
+41003,41003,"San Carlos Way & San Luis Way",,  38.119386,-122.593082,4
+41036,41036,"Bellam Blvd & I-580",,  37.959302,-122.506662,3
+41037,41037,"Bellam Blvd & I-580",,  37.959402,-122.506336,3
+41038,41038,"E Blithedale Ave & Camino Alto",,  37.900628,-122.529175,2
+41042,41042,"Bridgeway & Coloma St",,  37.868381,-122.502324,2
+41044,41044,"Atherton Ave Bus Pad",,  38.116835,-122.564270,4
+41045,41045,"Atherton Ave Bus Pad",,  38.117289,-122.565750,4
+41046,41046,"Redwood Blvd & Escallonia Dr",,  38.115865,-122.567443,4
+41047,41047,"Redwood Blvd & Rush Creek Place",,  38.115953,-122.567062,4
+41048,41048,"San Marin Dr & E Campus Dr",,  38.120673,-122.569167,4
+41049,41049,"San Marin Dr & Santolina Dr",,  38.120570,-122.569689,4
+41051,41051,"Golden Gate Pl & Railroad Ave",,  38.113775,-122.565641,4
+41074,41074,"San Marin Dr & W Campus Dr",,  38.121307,-122.575353,4
+41075,41075,"San Marin Dr & Somerset Dr",,  38.120751,-122.578646,4
+41078,41078,"Petaluma Blvd N & Factory Outlet Rd",,  38.254864,-122.651453,5
+41089,41089,"San Quentin-I-580 & Main St",,  37.942990,-122.480334,3
+41090,41090,"San Quentin-Francisco Blvd E & Main St",,  37.944124,-122.480719,3
+41091,41091,"Francisco Blvd E & Grange St",,  37.945136,-122.486425,3
+41092,41092,"Francisco Blvd E & Morphew St",,  37.946958,-122.490994,3
+41093,41093,"Francisco Blvd E & Pelican Way",,  37.949161,-122.493463,3
+41094,41094,"1525 Francisco Blvd E",,  37.952527,-122.497057,3
+41095,41095,"Irene St & Francisco Blvd E",,  37.956747,-122.500305,3
+41098,41098,"DeLong Ave Bus Pad",,  38.104431,-122.561378,4
+41099,41099,"DeLong Ave Bus Pad",,  38.104453,-122.562615,4
+41151,41151,"North Point St & Van Ness Ave",,  37.805101,-122.424703,1
+41152,41152,"Beach St & Hyde St",,  37.806633,-122.420361,1
+41153,41153,"Beach St & Taylor St",,  37.807215,-122.415734,1
+41154,41154,"Beach St & Stockton St",,  37.807836,-122.410818,1
+41172,41172,"7th St & Novato Blvd",,  38.107158,-122.578481,4
+41186,41186,"Van Ness Ave & Turk St",,  37.781877,-122.420465,1
+41191,41191,"Mission St & 3rd St",,  37.786426,-122.401764,1
+41203,41203,"E Washington St & Grey St",,  38.236345,-122.639259,5
+41205,41205,"E Washington St & Vallejo Ave",,  38.240897,-122.633603,5
+41206,41206,"E Washington St & Lakeville St",,  38.238143,-122.635875,5
+41207,41207,"E Washington St & Ellis St",,  38.243646,-122.631082,5
+41208,41208,"E Washington St & Johnson St",,  38.244057,-122.630550,5
+41209,41209,"Copeland St Transit Mall",,  38.236522,-122.636285,5
+41217,41217,"Petaluma Blvd S & Crystal Ln",,  38.226933,-122.619416,5
+41218,41218,"Petaluma Blvd S & Crystal Ln",,  38.227852,-122.617263,5
+41300,41300,"1011 Andersen Dr",,  37.955396,-122.503761,3
+41301,41301,"Kerner Blvd & Shoreline Pkwy",,  37.951042,-122.493452,3
+41302,41302,"Morphew St & Francisco Blvd E",,  37.946889,-122.490328,3
+41360,41360,"Sir Francis Drake Blvd & Bank St",,  37.975495,-122.561609,3
+41361,41361,"Sir Francis Drake Blvd & Bank St",,  37.975231,-122.561897,3
+42003,42003,"Sansome St & Halleck St",,  37.793715,-122.401230,1
+42004,42004,"Sansome St & Sacramento St",,  37.794593,-122.401406,1
+42005,42005,"Sansome St & Commercial St",,  37.794772,-122.401440,1
+42006,42006,"Sansome St & Vallejo St",,  37.799531,-122.402399,1
+42007,42007,"Sansome St & Clay St",,  37.795024,-122.401486,1
+42009,42009,"College Ave & Kent Ave",,  37.951673,-122.549773,3
+42010,42010,"Paradise Dr & Hwy 101",,  37.926267,-122.514052,3
+42011,42011,"Alameda del Prado Bus Pad",,  38.048564,-122.531725,4
+42020,42020,"College Ave & Kent Ave",,  37.950897,-122.549594,3
+42027,42027,"Terra Linda Bus Pad",,  38.005840,-122.540390,3
+42032,42032,"Marinwood Bus Pad",,  38.033491,-122.536812,3
+42036,42036,"Petaluma Blvd S & Landing Way",,  38.225054,-122.611985,5
+42039,42039,"Rohnert Park Expy Bus Pad",,  38.349333,-122.712005,5
+42042,42042,"Commerce Blvd & Arlen Dr",,  38.340784,-122.712270,5
+42103,42103,"Bridgeway & W Harbor Dr",,  37.866897,-122.501091,2
+42112,42112,"Terra Linda Bus Pad",,  38.007895,-122.542272,3
+42113,42113,"Marinwood Bus Pad",,  38.034237,-122.537374,3
+42114,42114,"Enfrente Rd & Salvatore Dr",,  38.067253,-122.538711,4
+42119,42119,"Rohnert Park Expy Bus Pad",,  38.347277,-122.714106,5
+42120,42120,"Petaluma Blvd S & Landing Way",,  38.225246,-122.612387,5
+42121,42121,"Rohnert Park Expy & Hwy 101",,  38.348238,-122.714226,5
+42126,42126,"Santa Rosa Transit Mall",,  38.438860,-122.713417,6
+42130,42130,"Belvedere Dr & Redwood Hwy Frontage Rd",,  37.897803,-122.514316,2
+42151,42151,"El Cerrito del Norte BART Station",,  37.924455,-122.316528,7
+42152,42152,"Cutting Blvd & Carlson Blvd",,  37.925300,-122.337930,7
+42153,42153,"Cutting Blvd & S 35th St",,  37.925154,-122.336216,7
+42154,42154,"Cutting Blvd & Harbour Way",,  37.925316,-122.359891,7
+42155,42155,"Cutting Blvd & Harbour Way",,  37.925109,-122.359800,7
+42160,42160,"Cutting Blvd & Marina Bay Pkwy",,  37.925075,-122.347470,7
+42161,42161,"Cutting Blvd & S 23rd St",,  37.925291,-122.347566,7
+42162,42162,"Cutting Blvd & S 49th St",,  37.925376,-122.323385,7
+42163,42163,"Cutting Blvd & S 49th St",,  37.925566,-122.323237,7
+42183,42183,"El Cerrito del Norte BART Station",,  37.924686,-122.316715,7
+42184,42184,"MacArthur BART Station",,  37.828023,-122.266606,7
+42185,42185,"19th St/Oakland BART Station",,  37.809415,-122.268992,7
+42186,42186,"W Grand Ave & Adeline St",,  37.815636,-122.283814,7
+42187,42187,"Tewksbury Ave & Washington Ave",,  37.927800,-122.383977,7
+42188,42188,"Tewksbury Ave & Washington Ave",,  37.927929,-122.383966,7
+42200,42200,"Mission St & 7th St",,  37.779475,-122.410525,1
+42201,42201,"Mission St & 5th St",,  37.782616,-122.406524,1
+42202,42202,"Mission St & 4th St",,  37.784955,-122.403550,1
+42203,42203,"Mission St & 2nd St",,  37.787867,-122.399928,1
+42204,42204,"Mission St & Fremont St",,  37.790346,-122.396736,1
+42206,42206,"Mission St & 1st St",,  37.789869,-122.397533,1
+42207,42207,"Mission St & 2nd St",,  37.787923,-122.399997,1
+42208,42208,"Mission St & 3rd St",,  37.786018,-122.402482,1
+42209,42209,"Mission St & 5th St",,  37.782370,-122.407031,1
+42210,42210,"Mission St & 8th St",,  37.777681,-122.412849,1
+42211,42211,"Rowland Blvd Park & Ride Lot",,  38.092615,-122.557948,4
+42213,42213,"Perry St & 3rd St",,  37.782050,-122.396995,1
+42215,42215,"Perry St & 4th St",,  37.780487,-122.399212,1
+42229,42229,"Fremont St btwn Folsom St & Howard St",,  37.788780,-122.394458,1
+42233,42233,"Fremont St btwn Mission St & Market St",,  37.790819,-122.397093,1
+42234,42234,"Fremont St btwn Mission St & Market St",,  37.790961,-122.397281,1
+42236,42236,"Pine St & Battery St",,  37.792325,-122.399687,1
+42237,42237,"Pine St & Battery St",,  37.792358,-122.399458,1
+42238,42238,"Sansome St & Sacramento St",,  37.793892,-122.401266,1
+42244,42244,"Van Ness Ave & O'Farrell St",,  37.784675,-122.421036,1
+42246,42246,"Van Ness Ave & Jackson St",,  37.793740,-122.423201,1
+42247,42247,"Clay St & Front St",,  37.795210,-122.398631,1
+42248,42248,"Davis St & California St",,  37.793811,-122.397761,1
+42249,42249,"Beale St btwn Market St & Mission St",,  37.791834,-122.396798,1
+42250,42250,"Van Ness Ave & Jackson St",,  37.794105,-122.422947,1
+42251,42251,"Van Ness Ave & Vallejo St",,  37.796751,-122.423797,1
+43000,43000,"San Francisco Ferry Terminal",,  37.796170,-122.391617,1
+43003,43003,"Sausalito Ferry Landing",,  37.856401,-122.478251,2
+43004,43004,"Larkspur Ferry Terminal",,  37.945316,-122.508735,3
+43007,43007,"Tiburon Ferry Landing",,  37.873227,-122.456275,3
+44001,44001,"San Rafael Transit Center Platform B",,  37.971031,-122.522532,3
+44002,44002,"San Rafael Transit Center Platform A",,  37.970897,-122.522406,3
+44003,44003,"San Rafael Transit Center Platform B",,  37.971351,-122.522570,3
+44113,44113,"Donahue St & Terners Dr",,  37.871946,-122.511312,2

@@ -1,0 +1,5 @@
+agency_id,route_id,route_short_name,route_long_name,route_desc,route_type,route_url,route_color,route_text_color,route_sort_order,min_headway_minutes,eligibility_restricted,continuous_pickup,continuous_drop_off
+671,6279,,East Route,,3,https://www.missionbaytma.org/east-route/,2074dd,ffffff,1,36,0,1,1
+671,6283,,Transbay-Caltrain Route,,3,https://www.missionbaytma.org/transbay-caltrain-route/,e26843,ffffff,2,60,0,1,1
+671,10992,,CCA/Adobe Route,,3,https://www.missionbaytma.org/cca-adobe-route/,b7702a,ffffff,3,25,0,1,1
+671,6280,,West Route,,3,https://www.missionbaytma.org/west-route/,548433,ffffff,7,,0,1,1

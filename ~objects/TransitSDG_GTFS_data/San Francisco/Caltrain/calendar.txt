@@ -1,0 +1,4 @@
+service_id,service_name,monday,tuesday,wednesday,thursday,friday,saturday,sunday,start_date,end_date
+c_20188_b_26823_d_31,Year Round Weekday Starting 6/15/20 (Weekday),1,1,1,1,1,0,0,20200615,20210101
+c_16884_b_25771_d_96,Year Round Weekend (Weekend),0,0,0,0,0,1,1,20200615,20210101
+c_16884_b_25771_d_32,Year Round Weekend (Saturday only),0,0,0,0,0,1,0,20200615,20210101

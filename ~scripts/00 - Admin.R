@@ -14,7 +14,7 @@
 # Exports:
 #
 # To-do:
-# 1. Consider putting aesthetics in separate script and sourcing here
+# 1. 
 ##########################################################################
 
 ## 1. ----
@@ -39,6 +39,7 @@ library(knitr)
 library(kableExtra)
 # library(wesanderson) # palettes
 library(osmplotr)
+library(ggsn)
 
 # OSM and OSHDB tools
 library(osmdata)

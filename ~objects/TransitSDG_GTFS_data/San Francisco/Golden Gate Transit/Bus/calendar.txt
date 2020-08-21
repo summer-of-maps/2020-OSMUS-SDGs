@@ -1,0 +1,5 @@
+service_id,monday,tuesday,wednesday,thursday,friday,saturday,sunday,start_date,end_date
+20JULY-FerryMVS-Weekday-01,1,1,1,1,1,0,0,20200720,20200911
+20JULY-01-SUN-Sunday-03,0,0,0,0,0,0,1,20200719,20200906
+20JULY-01-WKDY-Weekday-03,1,1,1,1,1,0,0,20200720,20200911
+20JULY-01-SAT-Saturday-03,0,0,0,0,0,1,0,20200725,20200912

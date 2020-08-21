@@ -1,0 +1,9 @@
+route_id,agency_id,route_short_name,route_long_name,route_desc,route_type,route_url,route_color,route_text_color
+"South SF - HB","SB","South SF - HB","South San Francisco - Harbor Bay","",4,"","d63956","ffffff"
+"Vallejo - SF","SB","Vallejo - SF","Vallejo - San Francisco","",4,"","008e9d","ffffff"
+"South SF - Ala - Oak","SB","South SF - Ala - Oak","South SF - Oakland - Alameda","",4,"","c60bb6","ffffff"
+"HB - SF","SB","HB - SF","Harbor Bay - San Francisco Ferry Building","",4,"","d63956","000000"
+"SF - Ala - Oak","SB","SF - Ala - Oak","San Francisco - Alameda via Oakland","",4,"","ec7501",""
+"South SF - Oak - Ala","SB","South SF - Oak - Ala","South SF - Alameda via Oakland","",4,"","c60bb6","000000"
+"SF - Oak - Ala","SB","SF - Oak - Ala","San Francisco - Oakland via Alameda","",4,"","ec7501","000000"
+"Rich - SF","SB","Rich - SF","Richmond - San Francisco","",4,"","007e12","ffffff"

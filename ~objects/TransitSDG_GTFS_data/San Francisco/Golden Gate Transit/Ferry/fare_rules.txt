@@ -1,0 +1,7 @@
+fare_id,route_id,origin_id,destination_id,contains_id
+44927,Rich - SF,,,
+44926,South SF - Ala - Oak,,,
+44925,Vallejo - SF,,,
+44924,HB - SF,,,
+44923,SF - Ala - Oak,,,
+44923,SF - Oak - Ala,,,

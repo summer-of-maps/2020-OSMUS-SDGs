@@ -1,0 +1,16 @@
+service_id,date,holiday_name,exception_type
+c_19775_b_26212_d_31,20210101,New Years Day,2
+c_19775_b_26212_d_31,20201231,New Year's Eve,2
+c_19775_b_26212_d_31,20201225,Christmas Day,2
+c_19775_b_26212_d_31,20201224,Christmas Eve,2
+c_19775_b_26212_d_31,20201127,Day After Thanksgiving,2
+c_19775_b_26212_d_31,20201126,Thanksgiving Day,2
+c_19775_b_26212_d_31,20200907,Labor Day,2
+c_17308_b_none_d_0,20201127,Day After Thanksgiving,1
+c_15975_b_26877_d_31,20210101,New Years Day,2
+c_15975_b_26877_d_31,20201231,New Year's Eve,2
+c_15975_b_26877_d_31,20201225,Christmas Day,2
+c_15975_b_26877_d_31,20201224,Christmas Eve,2
+c_15975_b_26877_d_31,20201127,Day After Thanksgiving,2
+c_15975_b_26877_d_31,20201126,Thanksgiving Day,2
+c_15975_b_26877_d_31,20200907,Labor Day,2

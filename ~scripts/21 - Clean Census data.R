@@ -9,7 +9,7 @@
 # 1. grids as 21_grids.RDS
 # 
 # To-do:
-# 1. interpolate additional census variables for each grid cell 
+# 1. 
 #
 ##########################################################################
 
@@ -38,7 +38,8 @@ cell_size <- conv_unit(0.1, # each grid is 1/10th of a square mile
                        to = "ft2")
 
 # 3. ----
-grids <- map(BGs,
+grids <- map2(BGs[1:6],
+              bbox_sfs[1:6],
              ~ st_make_grid(.x,
                             # see notes for utility function find_hex_cellsize()
                             cellsize = find_hex_cellsize(cell_size),
@@ -51,7 +52,8 @@ grids <- map(BGs,
                                   # preserve total population
                                   # extensive = FALSE would preserve the mean
                                   extensive = TRUE)} %>% 
-               mutate(TotPop = round(TotPop)))
+               mutate(TotPop = round(TotPop)) %>% 
+               .[.y,])
 
 ## 1. Export as RDS ----
 # saveRDS(grids,

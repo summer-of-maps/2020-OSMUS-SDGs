@@ -1,0 +1,4 @@
+agency_id,agency_name,agency_url,agency_timezone,agency_lang,agency_phone
+1,"MVTA",http://www.mvta.com,America/Chicago,en,952/882-7500
+2,"Metro",http://www.metrotransit.org,America/Chicago,en,612/349-7000
+3,"Mystic",http://www.mysticlake.com/,America/Chicago,en,952/445-9000

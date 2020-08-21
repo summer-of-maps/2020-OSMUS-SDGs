@@ -240,9 +240,9 @@ parks_openData_list <- map(parks_openData_list[1:6],
                            st_make_valid)
 
 ## 1. Export as rds ----
-saveRDS(parks_osmData_list,
-        "~objects/10/13_parks_osmData_list.rds")
+# saveRDS(parks_osmData_list,
+#         "~objects/10/13_parks_osmData_list.rds")
 
 ## 2. Exports as rds ----
-saveRDS(parks_openData_list,
-        "~objects/10/13_parks_openData_list.rds")
+# saveRDS(parks_openData_list,
+#         "~objects/10/13_parks_openData_list.rds")

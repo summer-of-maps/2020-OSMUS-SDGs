@@ -1,0 +1,7 @@
+rider_category_id,rider_category_description
+"2","(65  yrs), Disabled, Medicare"
+"3","Child (under 5)"
+"5","Youth (5-18 years)"
+"15","School Group"
+"16","Short Hop Adult"
+"17","Short Hop5  Youth, Senior (65+ yrs), Disabled, Medicare"

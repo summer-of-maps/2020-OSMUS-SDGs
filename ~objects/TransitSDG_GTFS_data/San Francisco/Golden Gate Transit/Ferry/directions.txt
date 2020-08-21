@@ -1,0 +1,7 @@
+route_id,direction_id,direction
+"Vallejo - SF",0,South
+"Vallejo - SF",1,North
+"SF - Ala - Oak",0,West
+"SF - Ala - Oak",1,East
+"Rich - SF",0,South
+"Rich - SF",1,North

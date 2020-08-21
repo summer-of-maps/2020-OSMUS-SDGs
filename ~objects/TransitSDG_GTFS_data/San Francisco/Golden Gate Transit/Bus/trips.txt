@@ -1,0 +1,598 @@
+route_id,service_id,trip_id,trip_headsign,direction_id,block_id,shape_id
+70-224,20JULY-01-SAT-Saturday-03,6742852,Route 70 Northbound - Novato,0,1469323,700317
+70-224,20JULY-01-SAT-Saturday-03,6742853,Route 70 Northbound - Novato,0,1469344,700317
+70-224,20JULY-01-SAT-Saturday-03,6742854,Route 70 Northbound - Novato,0,1469330,700317
+70-224,20JULY-01-SAT-Saturday-03,6742855,Route 70 Northbound - Novato,0,1469322,700317
+70-224,20JULY-01-SAT-Saturday-03,6742856,Route 70 Southbound - San Francisco,1,1469306,700318
+70-224,20JULY-01-SAT-Saturday-03,6742857,Route 70 Southbound - San Francisco,1,1469314,700318
+70-224,20JULY-01-SAT-Saturday-03,6742858,Route 70 Northbound - Novato,0,1469342,700317
+70-224,20JULY-01-SAT-Saturday-03,6742859,Route 70 Northbound - Novato,0,1469344,700317
+70-224,20JULY-01-SAT-Saturday-03,6742860,Route 70 Northbound - Novato,0,1469319,700317
+70-224,20JULY-01-SAT-Saturday-03,6742861,Route 70 Northbound - Novato,0,1469303,700317
+70-224,20JULY-01-SAT-Saturday-03,6742862,Route 70 Northbound - Novato,0,1469341,700317
+70-224,20JULY-01-SAT-Saturday-03,6742863,Route 70 Northbound - Novato,0,1469343,700317
+70-224,20JULY-01-SAT-Saturday-03,6742864,Route 70 Northbound - Novato,0,1469322,700317
+70-224,20JULY-01-SAT-Saturday-03,6742865,Route 70 Northbound - Novato,0,1469323,700317
+70-224,20JULY-01-SAT-Saturday-03,6742866,Route 70 Northbound - Novato,0,1469324,700317
+70-224,20JULY-01-SAT-Saturday-03,6742867,Route 70 Northbound - Novato,0,1469325,700317
+70-224,20JULY-01-SAT-Saturday-03,6742868,Route 70 Northbound - Novato,0,1469331,700317
+70-224,20JULY-01-SAT-Saturday-03,6742869,Route 70 Northbound - Novato,0,1469335,700317
+70-224,20JULY-01-SAT-Saturday-03,6742870,Route 70 Northbound - Novato,0,1469329,700317
+70-224,20JULY-01-SAT-Saturday-03,6742871,Route 70 Southbound - San Francisco,1,1469324,700318
+70-224,20JULY-01-SAT-Saturday-03,6742872,Route 70 Southbound - San Francisco,1,1469322,700318
+70-224,20JULY-01-SAT-Saturday-03,6742873,Route 70 Southbound - San Francisco,1,1469331,700318
+70-224,20JULY-01-SAT-Saturday-03,6742874,Route 70 Southbound - San Francisco,1,1469325,700318
+70-224,20JULY-01-SAT-Saturday-03,6742875,Route 70 Southbound - San Francisco,1,1469302,700318
+70-224,20JULY-01-SAT-Saturday-03,6742876,Route 70 Southbound - San Francisco,1,1469303,700318
+70-224,20JULY-01-SAT-Saturday-03,6742877,Route 70 Southbound - San Francisco,1,1469341,700318
+70-224,20JULY-01-SAT-Saturday-03,6742878,Route 70 Southbound - San Francisco,1,1469342,700318
+70-224,20JULY-01-SAT-Saturday-03,6742879,Route 70 Southbound - San Francisco,1,1469343,700318
+70-224,20JULY-01-SAT-Saturday-03,6742880,Route 70 Southbound - San Francisco,1,1469344,700318
+70-224,20JULY-01-SAT-Saturday-03,6742881,Route 70 Southbound - San Francisco,1,1469319,700318
+70-224,20JULY-01-SAT-Saturday-03,6742882,Route 70 Southbound - San Francisco,1,1469323,700318
+70-224,20JULY-01-SAT-Saturday-03,6742883,Route 70 Northbound - Novato,0,1469338,700317
+70-224,20JULY-01-SAT-Saturday-03,6742884,Route 70 Northbound - Novato,0,1469351,700317
+70-224,20JULY-01-SAT-Saturday-03,6742885,Route 70 Southbound - San Francisco,1,1469335,700318
+70-224,20JULY-01-SAT-Saturday-03,6742886,Route 70 Southbound - San Francisco,1,1469329,700318
+70-224,20JULY-01-SAT-Saturday-03,6742887,Route 70 Southbound - San Francisco,1,1469344,700318
+70-224,20JULY-01-SAT-Saturday-03,6742888,Route 70 Southbound - San Francisco,1,1469330,700318
+70-224,20JULY-01-SAT-Saturday-03,6742889,Route 70 Southbound - San Francisco,1,1469322,700318
+70-224,20JULY-01-SAT-Saturday-03,6742890,Route 70 Northbound - Novato,0,1469344,700317
+70-224,20JULY-01-SAT-Saturday-03,6742891,Route 70 Northbound - Novato,0,1469319,700317
+70-224,20JULY-01-SAT-Saturday-03,6742892,Route 70 Northbound - Novato,0,1469322,700317
+70-224,20JULY-01-SAT-Saturday-03,6742893,Route 70 Northbound - Novato,0,1469323,700317
+70-224,20JULY-01-SAT-Saturday-03,6742894,Route 70 Southbound - San Francisco,1,1469311,700318
+70-224,20JULY-01-SAT-Saturday-03,6742895,Route 70 Southbound - San Francisco,1,1469304,700318
+70-224,20JULY-01-SAT-Saturday-03,6742896,Route 70 Southbound - San Francisco,1,1469319,700318
+40-224,20JULY-01-SAT-Saturday-03,6742897,Route 40 Eastbound - El Cerrito del Norte BART,0,1469313,400105
+40-224,20JULY-01-SAT-Saturday-03,6742898,Route 40 Eastbound - El Cerrito del Norte BART,0,1469317,400105
+40-224,20JULY-01-SAT-Saturday-03,6742899,Route 40 Eastbound - El Cerrito del Norte BART,0,1469313,400105
+40-224,20JULY-01-SAT-Saturday-03,6742900,Route 40 Eastbound - El Cerrito del Norte BART,0,1469317,400105
+40-224,20JULY-01-SAT-Saturday-03,6742901,Route 40 Eastbound - El Cerrito del Norte BART,0,1469313,400105
+40-224,20JULY-01-SAT-Saturday-03,6742902,Route 40 Eastbound - El Cerrito del Norte BART,0,1469317,400105
+40-224,20JULY-01-SAT-Saturday-03,6742903,Route 40 Eastbound - El Cerrito del Norte BART,0,1469313,400105
+40-224,20JULY-01-SAT-Saturday-03,6742904,Route 40 Eastbound - El Cerrito del Norte BART,0,1469317,400105
+40-224,20JULY-01-SAT-Saturday-03,6742905,Route 40 Eastbound - El Cerrito del Norte BART,0,1469313,400105
+40-224,20JULY-01-SAT-Saturday-03,6742906,Route 40 Eastbound - El Cerrito del Norte BART,0,1469317,400105
+40-224,20JULY-01-SAT-Saturday-03,6742907,Route 40 Eastbound - El Cerrito del Norte BART,0,1469333,400105
+40-224,20JULY-01-SAT-Saturday-03,6742908,Route 40 Eastbound - El Cerrito del Norte BART,0,1469337,400105
+40-224,20JULY-01-SAT-Saturday-03,6742909,Route 40 Eastbound - El Cerrito del Norte BART,0,1469313,400105
+40-224,20JULY-01-SAT-Saturday-03,6742910,Route 40 Eastbound - El Cerrito del Norte BART,0,1469337,400105
+40-224,20JULY-01-SAT-Saturday-03,6742911,Route 40 Eastbound - El Cerrito del Norte BART,0,1469313,400105
+40-224,20JULY-01-SAT-Saturday-03,6742912,Route 40 Westbound - San Rafael,1,1469313,400106
+40-224,20JULY-01-SAT-Saturday-03,6742913,Route 40 Westbound - San Rafael,1,1469317,400106
+40-224,20JULY-01-SAT-Saturday-03,6742914,Route 40 Westbound - San Rafael,1,1469317,400106
+40-224,20JULY-01-SAT-Saturday-03,6742915,Route 40 Westbound - San Rafael,1,1469313,400106
+40-224,20JULY-01-SAT-Saturday-03,6742916,Route 40 Westbound - San Rafael,1,1469317,400106
+40-224,20JULY-01-SAT-Saturday-03,6742917,Route 40 Westbound - San Rafael,1,1469313,400106
+40-224,20JULY-01-SAT-Saturday-03,6742918,Route 40 Westbound - San Rafael,1,1469317,400106
+40-224,20JULY-01-SAT-Saturday-03,6742919,Route 40 Westbound - San Rafael,1,1469313,400106
+40-224,20JULY-01-SAT-Saturday-03,6742920,Route 40 Westbound - San Rafael,1,1469317,400106
+40-224,20JULY-01-SAT-Saturday-03,6742921,Route 40 Westbound - San Rafael,1,1469333,400106
+40-224,20JULY-01-SAT-Saturday-03,6742922,Route 40 Westbound - San Rafael,1,1469313,400106
+40-224,20JULY-01-SAT-Saturday-03,6742923,Route 40 Westbound - San Rafael,1,1469337,400106
+40-224,20JULY-01-SAT-Saturday-03,6742924,Route 40 Westbound - San Rafael,1,1469313,400106
+40-224,20JULY-01-SAT-Saturday-03,6742925,Route 40 Westbound - San Rafael,1,1469337,400106
+40-224,20JULY-01-SAT-Saturday-03,6742926,Route 40 Westbound - San Rafael,1,1469313,400106
+40-224,20JULY-01-SAT-Saturday-03,6742927,Route 40 Eastbound - El Cerrito del Norte BART,0,1469333,400105
+40-224,20JULY-01-SAT-Saturday-03,6742928,Route 40 Eastbound - El Cerrito del Norte BART,0,1469313,400105
+40-224,20JULY-01-SAT-Saturday-03,6742929,Route 40 Westbound - San Rafael,1,1469310,400106
+40-224,20JULY-01-SAT-Saturday-03,6742930,Route 40 Westbound - San Rafael,1,1469305,400106
+40-224,20JULY-01-SAT-Saturday-03,6742931,Route 40 Westbound - San Rafael,1,1469313,400106
+40-224,20JULY-01-SAT-Saturday-03,6742932,Route 40 Eastbound - El Cerrito del Norte BART,0,1469305,400105
+40-224,20JULY-01-SAT-Saturday-03,6742933,Route 40 Eastbound - El Cerrito del Norte BART,0,1469337,400105
+40-224,20JULY-01-SAT-Saturday-03,6742934,Route 40 Westbound - San Rafael,1,1469305,400106
+30-224,20JULY-01-SAT-Saturday-03,6742935,Route 30  Northbound - San Rafael,0,1469309,300142
+30-224,20JULY-01-SAT-Saturday-03,6742936,Route 30  Northbound - San Rafael,0,1469306,300142
+30-224,20JULY-01-SAT-Saturday-03,6742937,Route 30  Northbound - San Rafael,0,1469314,300142
+30-224,20JULY-01-SAT-Saturday-03,6742938,Route 30  Northbound - San Rafael,0,1469320,300142
+30-224,20JULY-01-SAT-Saturday-03,6742939,Route 30  Northbound - San Rafael,0,1469341,300142
+30-224,20JULY-01-SAT-Saturday-03,6742940,Route 30  Northbound - San Rafael,0,1469342,300142
+30-224,20JULY-01-SAT-Saturday-03,6742941,Route 30  Northbound - San Rafael,0,1469343,300142
+30-224,20JULY-01-SAT-Saturday-03,6742942,Route 30  Northbound - San Rafael,0,1469326,300142
+30-224,20JULY-01-SAT-Saturday-03,6742943,Route 30  Northbound - San Rafael,0,1469329,300142
+30-224,20JULY-01-SAT-Saturday-03,6742944,Route 30  Northbound - San Rafael,0,1469328,300142
+30-224,20JULY-01-SAT-Saturday-03,6742945,Route 30  Northbound - San Rafael,0,1469332,300142
+30-224,20JULY-01-SAT-Saturday-03,6742946,Route 30  Northbound - San Rafael,0,1469336,300142
+30-224,20JULY-01-SAT-Saturday-03,6742947,Route 30  Northbound - San Rafael,0,1469325,300142
+30-224,20JULY-01-SAT-Saturday-03,6742948,Route 30  Northbound - San Rafael,0,1469331,300142
+30-224,20JULY-01-SAT-Saturday-03,6742949,Route 30  Northbound - San Rafael,0,1469335,300142
+30-224,20JULY-01-SAT-Saturday-03,6742950,Route 30  Northbound - San Rafael,0,1469329,300142
+30-224,20JULY-01-SAT-Saturday-03,6742951,Route 30  Northbound - San Rafael,0,1469352,300142
+30-224,20JULY-01-SAT-Saturday-03,6742952,Route 30  Northbound - San Rafael,0,1469344,300142
+30-224,20JULY-01-SAT-Saturday-03,6742953,Route 30  Northbound - San Rafael,0,1469307,300142
+30-224,20JULY-01-SAT-Saturday-03,6742954,Route 30 Southbound - San Francisco,1,1469340,300143
+30-224,20JULY-01-SAT-Saturday-03,6742955,Route 30 Southbound - San Francisco,1,1469339,300143
+30-224,20JULY-01-SAT-Saturday-03,6742956,Route 30 Southbound - San Francisco,1,1469338,300143
+30-224,20JULY-01-SAT-Saturday-03,6742957,Route 30 Southbound - San Francisco,1,1469323,300143
+30-224,20JULY-01-SAT-Saturday-03,6742958,Route 30 Southbound - San Francisco,1,1469322,300143
+30-224,20JULY-01-SAT-Saturday-03,6742959,Route 30 Southbound - San Francisco,1,1469330,300143
+30-224,20JULY-01-SAT-Saturday-03,6742960,Route 30 Southbound - San Francisco,1,1469344,300143
+30-224,20JULY-01-SAT-Saturday-03,6742961,Route 30 Southbound - San Francisco,1,1469336,300143
+30-224,20JULY-01-SAT-Saturday-03,6742962,Route 30 Southbound - San Francisco,1,1469332,300143
+30-224,20JULY-01-SAT-Saturday-03,6742963,Route 30 Southbound - San Francisco,1,1469328,300143
+30-224,20JULY-01-SAT-Saturday-03,6742964,Route 30 Southbound - San Francisco,1,1469324,300143
+30-224,20JULY-01-SAT-Saturday-03,6742965,Route 30 Southbound - San Francisco,1,1469323,300143
+30-224,20JULY-01-SAT-Saturday-03,6742966,Route 30 Southbound - San Francisco,1,1469309,300143
+30-224,20JULY-01-SAT-Saturday-03,6742967,Route 30 Southbound - San Francisco,1,1469315,300143
+30-224,20JULY-01-SAT-Saturday-03,6742968,Route 30 Southbound - San Francisco,1,1469318,300143
+30-224,20JULY-01-SAT-Saturday-03,6742969,Route 30 Southbound - San Francisco,1,1469321,300143
+30-224,20JULY-01-SAT-Saturday-03,6742970,Route 30 Southbound - San Francisco,1,1469322,300143
+30-224,20JULY-01-SAT-Saturday-03,6742971,Route 30 Southbound - San Francisco,1,1469325,300143
+30-224,20JULY-01-SAT-Saturday-03,6742972,Route 30 Southbound - San Francisco,1,1469312,300143
+30-224,20JULY-01-SAT-Saturday-03,6742973,Route 30 Southbound - San Francisco,1,1469316,300143
+30-224,20JULY-01-SAT-Saturday-03,6742974,Route 30 Southbound - San Francisco,1,1469320,300143
+30-224,20JULY-01-SAT-Saturday-03,6742975,Route 30  Northbound - San Rafael,0,1469330,300142
+30-224,20JULY-01-SAT-Saturday-03,6742976,Route 30  Northbound - San Rafael,0,1469327,300142
+30-224,20JULY-01-SAT-Saturday-03,6742977,Route 30  Northbound - San Rafael,0,1469334,300142
+101-224,20JULY-01-SAT-Saturday-03,6742978,Route 101 Northbound - Santa Rosa,0,1469330,1010256
+101-224,20JULY-01-SAT-Saturday-03,6742979,Route 101 Northbound - Santa Rosa,0,1469350,1010256
+101-224,20JULY-01-SAT-Saturday-03,6742980,Route 101 Northbound - Santa Rosa,0,1469349,1010256
+101-224,20JULY-01-SAT-Saturday-03,6742981,Route 101 Northbound - Santa Rosa,0,1469348,1010256
+101-224,20JULY-01-SAT-Saturday-03,6742982,Route 101 Northbound - Santa Rosa,0,1469347,1010256
+101-224,20JULY-01-SAT-Saturday-03,6742983,Route 101 Northbound - Santa Rosa,0,1469308,1010256
+101-224,20JULY-01-SAT-Saturday-03,6742984,Route 101 Northbound - Santa Rosa,0,1469302,1010256
+101-224,20JULY-01-SAT-Saturday-03,6742985,Route 101 Northbound - Santa Rosa,0,1469312,1010256
+101-224,20JULY-01-SAT-Saturday-03,6742986,Route 101 Northbound - Santa Rosa,0,1469311,1010256
+101-224,20JULY-01-SAT-Saturday-03,6742987,Route 101 Northbound - Santa Rosa,0,1469318,1010256
+101-224,20JULY-01-SAT-Saturday-03,6742988,Route 101 Northbound - Santa Rosa,0,1469346,1010256
+101-224,20JULY-01-SAT-Saturday-03,6742989,Route 101 Northbound - Santa Rosa,0,1469347,1010256
+101-224,20JULY-01-SAT-Saturday-03,6742990,Route 101 Northbound - Santa Rosa,0,1469348,1010256
+101-224,20JULY-01-SAT-Saturday-03,6742991,Route 101 Northbound - Santa Rosa,0,1469349,1010256
+101-224,20JULY-01-SAT-Saturday-03,6742992,Route 101 Northbound - Santa Rosa,0,1469350,1010256
+101-224,20JULY-01-SAT-Saturday-03,6742993,Route 101 Northbound - Santa Rosa,0,1469351,1010256
+101-224,20JULY-01-SAT-Saturday-03,6742994,Route 101 Northbound - Santa Rosa,0,1469345,1010256
+101-224,20JULY-01-SAT-Saturday-03,6742995,Route 101 Northbound - Santa Rosa,0,1469346,1010256
+101-224,20JULY-01-SAT-Saturday-03,6742996,Route 101 Northbound - Santa Rosa,0,1469345,1010256
+101-224,20JULY-01-SAT-Saturday-03,6742997,Route 101 Southbound - San Francisco,1,1469341,1010257
+101-224,20JULY-01-SAT-Saturday-03,6742998,Route 101 Southbound - San Francisco,1,1469342,1010257
+101-224,20JULY-01-SAT-Saturday-03,6742999,Route 101 Southbound - San Francisco,1,1469343,1010257
+101-224,20JULY-01-SAT-Saturday-03,6743000,Route 101 Southbound - San Francisco,1,1469344,1010257
+101-224,20JULY-01-SAT-Saturday-03,6743001,Route 101 Southbound - San Francisco,1,1469345,1010257
+101-224,20JULY-01-SAT-Saturday-03,6743002,Route 101 Southbound - San Francisco,1,1469346,1010257
+101-224,20JULY-01-SAT-Saturday-03,6743003,Route 101 Southbound - San Francisco,1,1469347,1010257
+101-224,20JULY-01-SAT-Saturday-03,6743004,Route 101 Southbound - San Francisco,1,1469348,1010257
+101-224,20JULY-01-SAT-Saturday-03,6743005,Route 101 Southbound - San Francisco,1,1469349,1010257
+101-224,20JULY-01-SAT-Saturday-03,6743006,Route 101 Southbound - San Francisco,1,1469350,1010257
+101-224,20JULY-01-SAT-Saturday-03,6743007,Route 101 Southbound - San Francisco,1,1469351,1010257
+101-224,20JULY-01-SAT-Saturday-03,6743008,Route 101 Southbound - San Francisco,1,1469345,1010257
+101-224,20JULY-01-SAT-Saturday-03,6743009,Route 101 Southbound - San Francisco,1,1469346,1010257
+101-224,20JULY-01-SAT-Saturday-03,6743010,Route 101 Southbound - San Francisco,1,1469347,1010257
+101-224,20JULY-01-SAT-Saturday-03,6743011,Route 101 Southbound - San Francisco,1,1469348,1010257
+101-224,20JULY-01-SAT-Saturday-03,6743012,Route 101 Southbound - San Francisco,1,1469349,1010257
+101-224,20JULY-01-SAT-Saturday-03,6743013,Route 101 Southbound - San Francisco,1,1469350,1010257
+101-224,20JULY-01-SAT-Saturday-03,6743014,Route 101 Southbound - San Francisco,1,1469351,1010257
+101-224,20JULY-01-SAT-Saturday-03,6743015,Route 101 Southbound - San Francisco,1,1469352,1010257
+101-224,20JULY-01-SUN-Sunday-03,6743741,Route 101 Northbound - Santa Rosa,0,1469419,1010256
+101-224,20JULY-01-SUN-Sunday-03,6743742,Route 101 Northbound - Santa Rosa,0,1469438,1010256
+101-224,20JULY-01-SUN-Sunday-03,6743743,Route 101 Northbound - Santa Rosa,0,1469437,1010256
+101-224,20JULY-01-SUN-Sunday-03,6743744,Route 101 Northbound - Santa Rosa,0,1469436,1010256
+101-224,20JULY-01-SUN-Sunday-03,6743745,Route 101 Northbound - Santa Rosa,0,1469435,1010256
+101-224,20JULY-01-SUN-Sunday-03,6743746,Route 101 Northbound - Santa Rosa,0,1469401,1010256
+101-224,20JULY-01-SUN-Sunday-03,6743747,Route 101 Northbound - Santa Rosa,0,1469397,1010256
+101-224,20JULY-01-SUN-Sunday-03,6743748,Route 101 Northbound - Santa Rosa,0,1469402,1010256
+101-224,20JULY-01-SUN-Sunday-03,6743749,Route 101 Northbound - Santa Rosa,0,1469403,1010256
+101-224,20JULY-01-SUN-Sunday-03,6743750,Route 101 Northbound - Santa Rosa,0,1469407,1010256
+101-224,20JULY-01-SUN-Sunday-03,6743751,Route 101 Northbound - Santa Rosa,0,1469434,1010256
+101-224,20JULY-01-SUN-Sunday-03,6743752,Route 101 Northbound - Santa Rosa,0,1469435,1010256
+101-224,20JULY-01-SUN-Sunday-03,6743753,Route 101 Northbound - Santa Rosa,0,1469436,1010256
+101-224,20JULY-01-SUN-Sunday-03,6743754,Route 101 Northbound - Santa Rosa,0,1469437,1010256
+101-224,20JULY-01-SUN-Sunday-03,6743755,Route 101 Northbound - Santa Rosa,0,1469438,1010256
+101-224,20JULY-01-SUN-Sunday-03,6743756,Route 101 Northbound - Santa Rosa,0,1469439,1010256
+101-224,20JULY-01-SUN-Sunday-03,6743757,Route 101 Northbound - Santa Rosa,0,1469433,1010256
+101-224,20JULY-01-SUN-Sunday-03,6743758,Route 101 Northbound - Santa Rosa,0,1469434,1010256
+101-224,20JULY-01-SUN-Sunday-03,6743759,Route 101 Northbound - Santa Rosa,0,1469433,1010256
+101-224,20JULY-01-SUN-Sunday-03,6743760,Route 101 Southbound - San Francisco,1,1469429,1010257
+101-224,20JULY-01-SUN-Sunday-03,6743761,Route 101 Southbound - San Francisco,1,1469430,1010257
+101-224,20JULY-01-SUN-Sunday-03,6743762,Route 101 Southbound - San Francisco,1,1469431,1010257
+101-224,20JULY-01-SUN-Sunday-03,6743763,Route 101 Southbound - San Francisco,1,1469432,1010257
+101-224,20JULY-01-SUN-Sunday-03,6743764,Route 101 Southbound - San Francisco,1,1469433,1010257
+101-224,20JULY-01-SUN-Sunday-03,6743765,Route 101 Southbound - San Francisco,1,1469434,1010257
+101-224,20JULY-01-SUN-Sunday-03,6743766,Route 101 Southbound - San Francisco,1,1469435,1010257
+101-224,20JULY-01-SUN-Sunday-03,6743767,Route 101 Southbound - San Francisco,1,1469436,1010257
+101-224,20JULY-01-SUN-Sunday-03,6743768,Route 101 Southbound - San Francisco,1,1469437,1010257
+101-224,20JULY-01-SUN-Sunday-03,6743769,Route 101 Southbound - San Francisco,1,1469438,1010257
+101-224,20JULY-01-SUN-Sunday-03,6743770,Route 101 Southbound - San Francisco,1,1469439,1010257
+101-224,20JULY-01-SUN-Sunday-03,6743771,Route 101 Southbound - San Francisco,1,1469433,1010257
+101-224,20JULY-01-SUN-Sunday-03,6743772,Route 101 Southbound - San Francisco,1,1469434,1010257
+101-224,20JULY-01-SUN-Sunday-03,6743773,Route 101 Southbound - San Francisco,1,1469435,1010257
+101-224,20JULY-01-SUN-Sunday-03,6743774,Route 101 Southbound - San Francisco,1,1469436,1010257
+101-224,20JULY-01-SUN-Sunday-03,6743775,Route 101 Southbound - San Francisco,1,1469437,1010257
+101-224,20JULY-01-SUN-Sunday-03,6743776,Route 101 Southbound - San Francisco,1,1469438,1010257
+101-224,20JULY-01-SUN-Sunday-03,6743777,Route 101 Southbound - San Francisco,1,1469439,1010257
+101-224,20JULY-01-SUN-Sunday-03,6743778,Route 101 Southbound - San Francisco,1,1469440,1010257
+70-224,20JULY-01-SUN-Sunday-03,6743779,Route 70 Northbound - Novato,0,1469411,700317
+70-224,20JULY-01-SUN-Sunday-03,6743780,Route 70 Northbound - Novato,0,1469432,700317
+70-224,20JULY-01-SUN-Sunday-03,6743781,Route 70 Northbound - Novato,0,1469419,700317
+70-224,20JULY-01-SUN-Sunday-03,6743782,Route 70 Northbound - Novato,0,1469410,700317
+70-224,20JULY-01-SUN-Sunday-03,6743783,Route 70 Southbound - San Francisco,1,1469400,700318
+70-224,20JULY-01-SUN-Sunday-03,6743784,Route 70 Southbound - San Francisco,1,1469404,700318
+70-224,20JULY-01-SUN-Sunday-03,6743785,Route 70 Northbound - Novato,0,1469430,700317
+70-224,20JULY-01-SUN-Sunday-03,6743786,Route 70 Northbound - Novato,0,1469432,700317
+70-224,20JULY-01-SUN-Sunday-03,6743787,Route 70 Northbound - Novato,0,1469408,700317
+70-224,20JULY-01-SUN-Sunday-03,6743788,Route 70 Northbound - Novato,0,1469399,700317
+70-224,20JULY-01-SUN-Sunday-03,6743789,Route 70 Northbound - Novato,0,1469429,700317
+70-224,20JULY-01-SUN-Sunday-03,6743790,Route 70 Northbound - Novato,0,1469431,700317
+70-224,20JULY-01-SUN-Sunday-03,6743791,Route 70 Northbound - Novato,0,1469410,700317
+70-224,20JULY-01-SUN-Sunday-03,6743792,Route 70 Northbound - Novato,0,1469411,700317
+70-224,20JULY-01-SUN-Sunday-03,6743793,Route 70 Northbound - Novato,0,1469412,700317
+70-224,20JULY-01-SUN-Sunday-03,6743794,Route 70 Northbound - Novato,0,1469413,700317
+70-224,20JULY-01-SUN-Sunday-03,6743795,Route 70 Northbound - Novato,0,1469420,700317
+70-224,20JULY-01-SUN-Sunday-03,6743796,Route 70 Northbound - Novato,0,1469441,700317
+70-224,20JULY-01-SUN-Sunday-03,6743797,Route 70 Northbound - Novato,0,1469418,700317
+70-224,20JULY-01-SUN-Sunday-03,6743798,Route 70 Southbound - San Francisco,1,1469412,700318
+70-224,20JULY-01-SUN-Sunday-03,6743799,Route 70 Southbound - San Francisco,1,1469410,700318
+70-224,20JULY-01-SUN-Sunday-03,6743800,Route 70 Southbound - San Francisco,1,1469420,700318
+70-224,20JULY-01-SUN-Sunday-03,6743801,Route 70 Southbound - San Francisco,1,1469413,700318
+70-224,20JULY-01-SUN-Sunday-03,6743802,Route 70 Southbound - San Francisco,1,1469397,700318
+70-224,20JULY-01-SUN-Sunday-03,6743803,Route 70 Southbound - San Francisco,1,1469399,700318
+70-224,20JULY-01-SUN-Sunday-03,6743804,Route 70 Southbound - San Francisco,1,1469429,700318
+70-224,20JULY-01-SUN-Sunday-03,6743805,Route 70 Southbound - San Francisco,1,1469430,700318
+70-224,20JULY-01-SUN-Sunday-03,6743806,Route 70 Southbound - San Francisco,1,1469431,700318
+70-224,20JULY-01-SUN-Sunday-03,6743807,Route 70 Southbound - San Francisco,1,1469432,700318
+70-224,20JULY-01-SUN-Sunday-03,6743808,Route 70 Southbound - San Francisco,1,1469408,700318
+70-224,20JULY-01-SUN-Sunday-03,6743809,Route 70 Southbound - San Francisco,1,1469411,700318
+70-224,20JULY-01-SUN-Sunday-03,6743810,Route 70 Northbound - Novato,0,1469423,700317
+70-224,20JULY-01-SUN-Sunday-03,6743811,Route 70 Northbound - Novato,0,1469439,700317
+70-224,20JULY-01-SUN-Sunday-03,6743812,Route 70 Southbound - San Francisco,1,1469441,700318
+70-224,20JULY-01-SUN-Sunday-03,6743813,Route 70 Southbound - San Francisco,1,1469418,700318
+70-224,20JULY-01-SUN-Sunday-03,6743814,Route 70 Southbound - San Francisco,1,1469432,700318
+70-224,20JULY-01-SUN-Sunday-03,6743815,Route 70 Southbound - San Francisco,1,1469419,700318
+70-224,20JULY-01-SUN-Sunday-03,6743816,Route 70 Southbound - San Francisco,1,1469410,700318
+70-224,20JULY-01-SUN-Sunday-03,6743817,Route 70 Northbound - Novato,0,1469432,700317
+70-224,20JULY-01-SUN-Sunday-03,6743818,Route 70 Northbound - Novato,0,1469408,700317
+70-224,20JULY-01-SUN-Sunday-03,6743819,Route 70 Northbound - Novato,0,1469410,700317
+70-224,20JULY-01-SUN-Sunday-03,6743820,Route 70 Northbound - Novato,0,1469411,700317
+70-224,20JULY-01-SUN-Sunday-03,6743821,Route 70 Southbound - San Francisco,1,1469403,700318
+70-224,20JULY-01-SUN-Sunday-03,6743822,Route 70 Southbound - San Francisco,1,1469406,700318
+70-224,20JULY-01-SUN-Sunday-03,6743823,Route 70 Southbound - San Francisco,1,1469408,700318
+30-224,20JULY-01-SUN-Sunday-03,6743824,Route 30  Northbound - San Rafael,0,1469398,300142
+30-224,20JULY-01-SUN-Sunday-03,6743825,Route 30  Northbound - San Rafael,0,1469400,300142
+30-224,20JULY-01-SUN-Sunday-03,6743826,Route 30  Northbound - San Rafael,0,1469404,300142
+30-224,20JULY-01-SUN-Sunday-03,6743827,Route 30  Northbound - San Rafael,0,1469426,300142
+30-224,20JULY-01-SUN-Sunday-03,6743828,Route 30  Northbound - San Rafael,0,1469429,300142
+30-224,20JULY-01-SUN-Sunday-03,6743829,Route 30  Northbound - San Rafael,0,1469430,300142
+30-224,20JULY-01-SUN-Sunday-03,6743830,Route 30  Northbound - San Rafael,0,1469431,300142
+30-224,20JULY-01-SUN-Sunday-03,6743831,Route 30  Northbound - San Rafael,0,1469415,300142
+30-224,20JULY-01-SUN-Sunday-03,6743832,Route 30  Northbound - San Rafael,0,1469418,300142
+30-224,20JULY-01-SUN-Sunday-03,6743833,Route 30  Northbound - San Rafael,0,1469414,300142
+30-224,20JULY-01-SUN-Sunday-03,6743834,Route 30  Northbound - San Rafael,0,1469417,300142
+30-224,20JULY-01-SUN-Sunday-03,6743835,Route 30  Northbound - San Rafael,0,1469421,300142
+30-224,20JULY-01-SUN-Sunday-03,6743836,Route 30  Northbound - San Rafael,0,1469413,300142
+30-224,20JULY-01-SUN-Sunday-03,6743837,Route 30  Northbound - San Rafael,0,1469420,300142
+30-224,20JULY-01-SUN-Sunday-03,6743838,Route 30  Northbound - San Rafael,0,1469441,300142
+30-224,20JULY-01-SUN-Sunday-03,6743839,Route 30  Northbound - San Rafael,0,1469418,300142
+30-224,20JULY-01-SUN-Sunday-03,6743840,Route 30  Northbound - San Rafael,0,1469440,300142
+30-224,20JULY-01-SUN-Sunday-03,6743841,Route 30  Northbound - San Rafael,0,1469432,300142
+30-224,20JULY-01-SUN-Sunday-03,6743842,Route 30  Northbound - San Rafael,0,1469427,300142
+30-224,20JULY-01-SUN-Sunday-03,6743843,Route 30 Southbound - San Francisco,1,1469425,300143
+30-224,20JULY-01-SUN-Sunday-03,6743844,Route 30 Southbound - San Francisco,1,1469424,300143
+30-224,20JULY-01-SUN-Sunday-03,6743845,Route 30 Southbound - San Francisco,1,1469423,300143
+30-224,20JULY-01-SUN-Sunday-03,6743846,Route 30 Southbound - San Francisco,1,1469411,300143
+30-224,20JULY-01-SUN-Sunday-03,6743847,Route 30 Southbound - San Francisco,1,1469410,300143
+30-224,20JULY-01-SUN-Sunday-03,6743848,Route 30 Southbound - San Francisco,1,1469419,300143
+30-224,20JULY-01-SUN-Sunday-03,6743849,Route 30 Southbound - San Francisco,1,1469432,300143
+30-224,20JULY-01-SUN-Sunday-03,6743850,Route 30 Southbound - San Francisco,1,1469421,300143
+30-224,20JULY-01-SUN-Sunday-03,6743851,Route 30 Southbound - San Francisco,1,1469417,300143
+30-224,20JULY-01-SUN-Sunday-03,6743852,Route 30 Southbound - San Francisco,1,1469414,300143
+30-224,20JULY-01-SUN-Sunday-03,6743853,Route 30 Southbound - San Francisco,1,1469412,300143
+30-224,20JULY-01-SUN-Sunday-03,6743854,Route 30 Southbound - San Francisco,1,1469411,300143
+30-224,20JULY-01-SUN-Sunday-03,6743855,Route 30 Southbound - San Francisco,1,1469398,300143
+30-224,20JULY-01-SUN-Sunday-03,6743856,Route 30 Southbound - San Francisco,1,1469428,300143
+30-224,20JULY-01-SUN-Sunday-03,6743857,Route 30 Southbound - San Francisco,1,1469407,300143
+30-224,20JULY-01-SUN-Sunday-03,6743858,Route 30 Southbound - San Francisco,1,1469409,300143
+30-224,20JULY-01-SUN-Sunday-03,6743859,Route 30 Southbound - San Francisco,1,1469410,300143
+30-224,20JULY-01-SUN-Sunday-03,6743860,Route 30 Southbound - San Francisco,1,1469413,300143
+30-224,20JULY-01-SUN-Sunday-03,6743861,Route 30 Southbound - San Francisco,1,1469402,300143
+30-224,20JULY-01-SUN-Sunday-03,6743862,Route 30 Southbound - San Francisco,1,1469405,300143
+30-224,20JULY-01-SUN-Sunday-03,6743863,Route 30 Southbound - San Francisco,1,1469426,300143
+30-224,20JULY-01-SUN-Sunday-03,6743864,Route 30  Northbound - San Rafael,0,1469419,300142
+30-224,20JULY-01-SUN-Sunday-03,6743865,Route 30  Northbound - San Rafael,0,1469416,300142
+30-224,20JULY-01-SUN-Sunday-03,6743866,Route 30  Northbound - San Rafael,0,1469422,300142
+40-224,20JULY-01-SUN-Sunday-03,6743867,Route 40 Eastbound - El Cerrito del Norte BART,0,1469393,400105
+40-224,20JULY-01-SUN-Sunday-03,6743868,Route 40 Eastbound - El Cerrito del Norte BART,0,1469394,400105
+40-224,20JULY-01-SUN-Sunday-03,6743869,Route 40 Eastbound - El Cerrito del Norte BART,0,1469393,400105
+40-224,20JULY-01-SUN-Sunday-03,6743870,Route 40 Eastbound - El Cerrito del Norte BART,0,1469394,400105
+40-224,20JULY-01-SUN-Sunday-03,6743871,Route 40 Eastbound - El Cerrito del Norte BART,0,1469393,400105
+40-224,20JULY-01-SUN-Sunday-03,6743872,Route 40 Eastbound - El Cerrito del Norte BART,0,1469394,400105
+40-224,20JULY-01-SUN-Sunday-03,6743873,Route 40 Eastbound - El Cerrito del Norte BART,0,1469393,400105
+40-224,20JULY-01-SUN-Sunday-03,6743874,Route 40 Eastbound - El Cerrito del Norte BART,0,1469394,400105
+40-224,20JULY-01-SUN-Sunday-03,6743875,Route 40 Eastbound - El Cerrito del Norte BART,0,1469393,400105
+40-224,20JULY-01-SUN-Sunday-03,6743876,Route 40 Eastbound - El Cerrito del Norte BART,0,1469394,400105
+40-224,20JULY-01-SUN-Sunday-03,6743877,Route 40 Eastbound - El Cerrito del Norte BART,0,1469396,400105
+40-224,20JULY-01-SUN-Sunday-03,6743878,Route 40 Eastbound - El Cerrito del Norte BART,0,1469395,400105
+40-224,20JULY-01-SUN-Sunday-03,6743879,Route 40 Eastbound - El Cerrito del Norte BART,0,1469393,400105
+40-224,20JULY-01-SUN-Sunday-03,6743880,Route 40 Eastbound - El Cerrito del Norte BART,0,1469395,400105
+40-224,20JULY-01-SUN-Sunday-03,6743881,Route 40 Eastbound - El Cerrito del Norte BART,0,1469393,400105
+40-224,20JULY-01-SUN-Sunday-03,6743882,Route 40 Westbound - San Rafael,1,1469393,400106
+40-224,20JULY-01-SUN-Sunday-03,6743883,Route 40 Westbound - San Rafael,1,1469394,400106
+40-224,20JULY-01-SUN-Sunday-03,6743884,Route 40 Westbound - San Rafael,1,1469394,400106
+40-224,20JULY-01-SUN-Sunday-03,6743885,Route 40 Westbound - San Rafael,1,1469393,400106
+40-224,20JULY-01-SUN-Sunday-03,6743886,Route 40 Westbound - San Rafael,1,1469394,400106
+40-224,20JULY-01-SUN-Sunday-03,6743887,Route 40 Westbound - San Rafael,1,1469393,400106
+40-224,20JULY-01-SUN-Sunday-03,6743888,Route 40 Westbound - San Rafael,1,1469394,400106
+40-224,20JULY-01-SUN-Sunday-03,6743889,Route 40 Westbound - San Rafael,1,1469393,400106
+40-224,20JULY-01-SUN-Sunday-03,6743890,Route 40 Westbound - San Rafael,1,1469394,400106
+40-224,20JULY-01-SUN-Sunday-03,6743891,Route 40 Westbound - San Rafael,1,1469396,400106
+40-224,20JULY-01-SUN-Sunday-03,6743892,Route 40 Westbound - San Rafael,1,1469393,400106
+40-224,20JULY-01-SUN-Sunday-03,6743893,Route 40 Westbound - San Rafael,1,1469395,400106
+40-224,20JULY-01-SUN-Sunday-03,6743894,Route 40 Westbound - San Rafael,1,1469393,400106
+40-224,20JULY-01-SUN-Sunday-03,6743895,Route 40 Westbound - San Rafael,1,1469395,400106
+40-224,20JULY-01-SUN-Sunday-03,6743896,Route 40 Westbound - San Rafael,1,1469393,400106
+40-224,20JULY-01-SUN-Sunday-03,6743897,Route 40 Eastbound - El Cerrito del Norte BART,0,1469396,400105
+40-224,20JULY-01-SUN-Sunday-03,6743898,Route 40 Eastbound - El Cerrito del Norte BART,0,1469393,400105
+40-224,20JULY-01-SUN-Sunday-03,6743899,Route 40 Westbound - San Rafael,1,1469392,400106
+40-224,20JULY-01-SUN-Sunday-03,6743900,Route 40 Westbound - San Rafael,1,1469391,400106
+40-224,20JULY-01-SUN-Sunday-03,6743901,Route 40 Westbound - San Rafael,1,1469393,400106
+40-224,20JULY-01-SUN-Sunday-03,6743902,Route 40 Eastbound - El Cerrito del Norte BART,0,1469391,400105
+40-224,20JULY-01-SUN-Sunday-03,6743903,Route 40 Eastbound - El Cerrito del Norte BART,0,1469395,400105
+40-224,20JULY-01-SUN-Sunday-03,6743904,Route 40 Westbound - San Rafael,1,1469391,400106
+56X-224,20JULY-01-WKDY-Weekday-03,6741523,Route 56X Northbound - San Marin,0,1469262,56X0016
+56X-224,20JULY-01-WKDY-Weekday-03,6741524,Route 56X Northbound - San Marin,0,1469229,56X0016
+56X-224,20JULY-01-WKDY-Weekday-03,6741525,Route 56X Northbound - San Marin,0,1469234,56X0016
+56X-224,20JULY-01-WKDY-Weekday-03,6741526,Route 56X Northbound - San Marin,0,1469173,56X0016
+56X-224,20JULY-01-WKDY-Weekday-03,6741527,Route 56X Southbound - San Francisco,1,1469237,56X0017
+56X-224,20JULY-01-WKDY-Weekday-03,6741528,Route 56X Southbound - San Francisco,1,1469249,56X0017
+56X-224,20JULY-01-WKDY-Weekday-03,6741529,Route 56X Southbound - San Francisco,1,1469260,56X0017
+56X-224,20JULY-01-WKDY-Weekday-03,6741530,Route 56X Southbound - San Francisco,1,1469241,56X0017
+72-224,20JULY-01-WKDY-Weekday-03,6741531,Route 72 Southbound - San Francisco,1,1469247,720107
+72-224,20JULY-01-WKDY-Weekday-03,6741532,Route 72 Northbound - Santa Rosa,0,1469197,720115
+72-224,20JULY-01-WKDY-Weekday-03,6741533,Route 72 Northbound - Santa Rosa,0,1469261,720115
+72-224,20JULY-01-WKDY-Weekday-03,6741534,Route 72 Northbound - Santa Rosa,0,1469254,720115
+72-224,20JULY-01-WKDY-Weekday-03,6741535,Route 72 Northbound - Santa Rosa,0,1469252,720115
+72-224,20JULY-01-WKDY-Weekday-03,6741536,Route 72 Northbound - Santa Rosa,0,1469256,720115
+72-224,20JULY-01-WKDY-Weekday-03,6741537,Route 72 Northbound - Santa Rosa,0,1469217,720115
+72-224,20JULY-01-WKDY-Weekday-03,6741538,Route 72 Southbound - San Francisco,1,1469235,720107
+72-224,20JULY-01-WKDY-Weekday-03,6741539,Route 72 Southbound - San Francisco,1,1469214,720107
+72-224,20JULY-01-WKDY-Weekday-03,6741540,Route 72 Southbound - San Francisco,1,1469240,720107
+72-224,20JULY-01-WKDY-Weekday-03,6741541,Route 72 Southbound - San Francisco,1,1469216,720107
+72-224,20JULY-01-WKDY-Weekday-03,6741542,Route 72 Southbound - San Francisco,1,1469215,720107
+54-224,20JULY-01-WKDY-Weekday-03,6741543,Route 54 Southbound - San Francisco,1,1469239,540205
+54-224,20JULY-01-WKDY-Weekday-03,6741544,Route 54 Northbound - Novato,0,1469255,540207
+54-224,20JULY-01-WKDY-Weekday-03,6741545,Route 54 Northbound - Novato,0,1469227,540207
+54-224,20JULY-01-WKDY-Weekday-03,6741546,Route 54 Northbound - Novato,0,1469265,540235
+54-224,20JULY-01-WKDY-Weekday-03,6741547,Route 54 Northbound - Novato,0,1469266,540235
+54-224,20JULY-01-WKDY-Weekday-03,6741548,Route 54 Northbound - Novato,0,1469267,540235
+54-224,20JULY-01-WKDY-Weekday-03,6741549,Route 54 Southbound - San Francisco,1,1469263,540205
+54-224,20JULY-01-WKDY-Weekday-03,6741550,Route 54 Southbound - San Francisco,1,1469264,540205
+54-224,20JULY-01-WKDY-Weekday-03,6741551,Route 54 Southbound - San Francisco,1,1469268,540205
+38-224,20JULY-01-WKDY-Weekday-03,6741552,Route 38 Northbound - Marinwood,0,1469258,380092
+38-224,20JULY-01-WKDY-Weekday-03,6741553,Route 38 Northbound - Marinwood,0,1469170,380092
+38-224,20JULY-01-WKDY-Weekday-03,6741554,Route 38 Southbound - San Francisco,1,1469245,380091
+38-224,20JULY-01-WKDY-Weekday-03,6741555,Route 38 Southbound - San Francisco,1,1469250,380091
+27-224,20JULY-01-WKDY-Weekday-03,6741556,Route 27 Southbound - San Francisco,1,1469253,270248
+27-224,20JULY-01-WKDY-Weekday-03,6741557,Route 27 Northbound - San Anselmo,0,1469176,270247
+27-224,20JULY-01-WKDY-Weekday-03,6741558,Route 27 Northbound - San Anselmo,0,1469257,270247
+27-224,20JULY-01-WKDY-Weekday-03,6741559,Route 27 Southbound - San Francisco,1,1469212,270248
+27-224,20JULY-01-WKDY-Weekday-03,6741560,Route 27 Southbound - San Francisco,1,1469236,270249
+27-224,20JULY-01-WKDY-Weekday-03,6741561,Route 27 Southbound - San Francisco,1,1469181,270250
+27-224,20JULY-01-WKDY-Weekday-03,6741562,Route 27 Southbound - San Francisco,1,1469244,270248
+27-224,20JULY-01-WKDY-Weekday-03,6741563,Route 27 Northbound - San Anselmo,0,1469175,270247
+18-224,20JULY-01-WKDY-Weekday-03,6741564,Route 18 Northbound - College of Marin,0,1469227,180109
+18-224,20JULY-01-WKDY-Weekday-03,6741565,Route 18 Northbound - College of Marin,0,1469171,180109
+18-224,20JULY-01-WKDY-Weekday-03,6741566,Route 18 Southbound - San Francisco,1,1469236,180108
+18-224,20JULY-01-WKDY-Weekday-03,6741567,Route 18 Southbound - San Francisco,1,1469259,180108
+4-224,20JULY-01-WKDY-Weekday-03,6741568,Route 4 Southbound - San Francisco,1,1469238,40251
+4-224,20JULY-01-WKDY-Weekday-03,6741569,Route 4 Southbound - San Francisco,1,1469213,40251
+4-224,20JULY-01-WKDY-Weekday-03,6741570,Route 4 Northbound - Strawberry via Mill Valley,0,1469237,40252
+4-224,20JULY-01-WKDY-Weekday-03,6741571,Route 4 Northbound - Strawberry via Mill Valley,0,1469240,40252
+4-224,20JULY-01-WKDY-Weekday-03,6741572,Route 4 Northbound - Strawberry via Mill Valley,0,1469215,40252
+4-224,20JULY-01-WKDY-Weekday-03,6741573,Route 4 Northbound - Strawberry via Mill Valley,0,1469260,40252
+4-224,20JULY-01-WKDY-Weekday-03,6741574,Route 4 Northbound - Strawberry via Mill Valley,0,1469183,40252
+4-224,20JULY-01-WKDY-Weekday-03,6741575,Route 4 Northbound - Strawberry via Mill Valley,0,1469251,40252
+4-224,20JULY-01-WKDY-Weekday-03,6741576,Route 4 Northbound - Mill Valley,0,1469231,40256
+4-224,20JULY-01-WKDY-Weekday-03,6741577,Route 4 Northbound - Mill Valley,0,1469233,40256
+4-224,20JULY-01-WKDY-Weekday-03,6741578,Route 4 Southbound - San Francisco,1,1469177,40254
+4-224,20JULY-01-WKDY-Weekday-03,6741579,Route 4 Southbound - San Francisco,1,1469183,40254
+4-224,20JULY-01-WKDY-Weekday-03,6741580,Route 4 Southbound - San Francisco,1,1469251,40254
+4-224,20JULY-01-WKDY-Weekday-03,6741581,Route 4 Southbound - San Francisco,1,1469260,40254
+4-224,20JULY-01-WKDY-Weekday-03,6741582,Route 4 Southbound - San Francisco,1,1469254,40254
+4-224,20JULY-01-WKDY-Weekday-03,6741583,Route 4 Southbound - San Francisco,1,1469252,40254
+4-224,20JULY-01-WKDY-Weekday-03,6741584,Route 4 Southbound - San Francisco,1,1469217,40254
+4-224,20JULY-01-WKDY-Weekday-03,6741585,Route 4 Southbound - San Francisco,1,1469197,40254
+4-224,20JULY-01-WKDY-Weekday-03,6741586,Route 4 Southbound - San Francisco,1,1469242,40251
+4-224,20JULY-01-WKDY-Weekday-03,6741587,Route 4 Northbound - Mill Valley,0,1469226,40256
+4-224,20JULY-01-WKDY-Weekday-03,6741588,Route 4 Northbound - Strawberry via Mill Valley,0,1469177,40252
+4-224,20JULY-01-WKDY-Weekday-03,6741589,Route 4 Northbound - Mill Valley,0,1469172,40256
+4-224,20JULY-01-WKDY-Weekday-03,6741590,Route 4 Northbound - Mill Valley,0,1469225,40256
+4-224,20JULY-01-WKDY-Weekday-03,6741591,Route 4 Southbound - San Francisco,1,1469241,40251
+4-224,20JULY-01-WKDY-Weekday-03,6741592,Route 4 Southbound - San Francisco,1,1469246,40251
+4-224,20JULY-01-WKDY-Weekday-03,6741593,Route 4 Northbound - Mill Valley,0,1469225,40256
+4-224,20JULY-01-WKDY-Weekday-03,6741594,Route 4 Northbound - Strawberry via Mill Valley,0,1469260,40252
+24-224,20JULY-01-WKDY-Weekday-03,6741931,Route 24 Northbound - Fairfax Manor,0,1469228,240224
+24-224,20JULY-01-WKDY-Weekday-03,6741932,Route 24 Northbound - Fairfax Manor,0,1469230,240224
+24-224,20JULY-01-WKDY-Weekday-03,6741933,Route 24 Northbound - Fairfax Manor,0,1469232,240224
+24-224,20JULY-01-WKDY-Weekday-03,6741934,Route 24 Northbound - Fairfax Manor,0,1469226,240224
+24-224,20JULY-01-WKDY-Weekday-03,6741935,Route 24 Southbound - San Francisco,1,1469238,240193
+24-224,20JULY-01-WKDY-Weekday-03,6741936,Route 24 Southbound - San Francisco,1,1469243,240193
+24-224,20JULY-01-WKDY-Weekday-03,6741937,Route 24 Southbound - San Francisco,1,1469248,240193
+24-224,20JULY-01-WKDY-Weekday-03,6741938,Route 24 Southbound - San Francisco,1,1469239,240193
+704-224,20JULY-01-WKDY-Weekday-03,6741969,Route 704 Westbound - San Francisco,1,1469213,7040010
+705-224,20JULY-01-WKDY-Weekday-03,6741970,Route 705 Westbound - San Francisco,1,1469212,7050004
+101-224,20JULY-01-WKDY-Weekday-03,6741981,Route 101 Northbound - Santa Rosa,0,1469166,1010256
+101-224,20JULY-01-WKDY-Weekday-03,6741982,Route 101 Northbound - Santa Rosa,0,1469210,1010256
+101-224,20JULY-01-WKDY-Weekday-03,6741983,Route 101 Northbound - Santa Rosa,0,1469209,1010256
+101-224,20JULY-01-WKDY-Weekday-03,6741984,Route 101 Northbound - Santa Rosa,0,1469221,1010256
+101-224,20JULY-01-WKDY-Weekday-03,6741985,Route 101 Northbound - Santa Rosa,0,1469174,1010256
+101-224,20JULY-01-WKDY-Weekday-03,6741986,Route 101 Northbound - Santa Rosa,0,1469182,1010256
+101-224,20JULY-01-WKDY-Weekday-03,6741987,Route 101 Northbound - Santa Rosa,0,1469224,1010256
+101-224,20JULY-01-WKDY-Weekday-03,6741988,Route 101 Northbound - Santa Rosa,0,1469186,1010256
+101-224,20JULY-01-WKDY-Weekday-03,6741989,Route 101 Northbound - Santa Rosa,0,1469185,1010256
+101-224,20JULY-01-WKDY-Weekday-03,6741990,Route 101 Northbound - Santa Rosa,0,1469190,1010256
+101-224,20JULY-01-WKDY-Weekday-03,6741991,Route 101 Northbound - Santa Rosa,0,1469220,1010256
+101-224,20JULY-01-WKDY-Weekday-03,6741992,Route 101 Northbound - Santa Rosa,0,1469174,1010256
+101-224,20JULY-01-WKDY-Weekday-03,6741993,Route 101 Northbound - Santa Rosa,0,1469221,1010256
+101-224,20JULY-01-WKDY-Weekday-03,6741994,Route 101 Northbound - Santa Rosa,0,1469209,1010256
+101-224,20JULY-01-WKDY-Weekday-03,6741995,Route 101 Northbound - Santa Rosa,0,1469210,1010256
+101-224,20JULY-01-WKDY-Weekday-03,6741996,Route 101 Northbound - Santa Rosa,0,1469211,1010256
+101-224,20JULY-01-WKDY-Weekday-03,6741997,Route 101 Northbound - Santa Rosa,0,1469223,1010256
+101-224,20JULY-01-WKDY-Weekday-03,6741998,Route 101 Northbound - Santa Rosa,0,1469220,1010256
+101-224,20JULY-01-WKDY-Weekday-03,6741999,Route 101 Northbound - Santa Rosa,0,1469223,1010256
+101-224,20JULY-01-WKDY-Weekday-03,6742000,Route 101 Southbound - San Francisco,1,1469206,1010257
+101-224,20JULY-01-WKDY-Weekday-03,6742001,Route 101 Southbound - San Francisco,1,1469207,1010257
+101-224,20JULY-01-WKDY-Weekday-03,6742002,Route 101 Southbound - San Francisco,1,1469217,1010257
+101-224,20JULY-01-WKDY-Weekday-03,6742003,Route 101 Southbound - San Francisco,1,1469218,1010257
+101-224,20JULY-01-WKDY-Weekday-03,6742004,Route 101 Southbound - San Francisco,1,1469219,1010257
+101-224,20JULY-01-WKDY-Weekday-03,6742005,Route 101 Southbound - San Francisco,1,1469220,1010257
+101-224,20JULY-01-WKDY-Weekday-03,6742006,Route 101 Southbound - San Francisco,1,1469182,1010257
+101-224,20JULY-01-WKDY-Weekday-03,6742007,Route 101 Southbound - San Francisco,1,1469221,1010257
+101-224,20JULY-01-WKDY-Weekday-03,6742008,Route 101 Southbound - San Francisco,1,1469209,1010257
+101-224,20JULY-01-WKDY-Weekday-03,6742009,Route 101 Southbound - San Francisco,1,1469210,1010257
+101-224,20JULY-01-WKDY-Weekday-03,6742010,Route 101 Southbound - San Francisco,1,1469211,1010257
+101-224,20JULY-01-WKDY-Weekday-03,6742011,Route 101 Southbound - San Francisco,1,1469223,1010257
+101-224,20JULY-01-WKDY-Weekday-03,6742012,Route 101 Southbound - San Francisco,1,1469220,1010257
+101-224,20JULY-01-WKDY-Weekday-03,6742013,Route 101 Southbound - San Francisco,1,1469174,1010257
+101-224,20JULY-01-WKDY-Weekday-03,6742014,Route 101 Southbound - San Francisco,1,1469221,1010257
+101-224,20JULY-01-WKDY-Weekday-03,6742015,Route 101 Southbound - San Francisco,1,1469209,1010257
+101-224,20JULY-01-WKDY-Weekday-03,6742016,Route 101 Southbound - San Francisco,1,1469210,1010257
+101-224,20JULY-01-WKDY-Weekday-03,6742017,Route 101 Southbound - San Francisco,1,1469211,1010257
+101-224,20JULY-01-WKDY-Weekday-03,6742018,Route 101 Southbound - San Francisco,1,1469222,1010257
+30-224,20JULY-01-WKDY-Weekday-03,6742019,Route 30  Northbound - San Rafael,0,1469184,300142
+30-224,20JULY-01-WKDY-Weekday-03,6742020,Route 30  Northbound - San Rafael,0,1469183,300142
+30-224,20JULY-01-WKDY-Weekday-03,6742021,Route 30  Northbound - San Rafael,0,1469187,300142
+30-224,20JULY-01-WKDY-Weekday-03,6742022,Route 30  Northbound - San Rafael,0,1469192,300142
+30-224,20JULY-01-WKDY-Weekday-03,6742023,Route 30  Northbound - San Rafael,0,1469206,300142
+30-224,20JULY-01-WKDY-Weekday-03,6742024,Route 30  Northbound - San Rafael,0,1469207,300142
+30-224,20JULY-01-WKDY-Weekday-03,6742025,Route 30  Northbound - San Rafael,0,1469217,300142
+30-224,20JULY-01-WKDY-Weekday-03,6742026,Route 30  Northbound - San Rafael,0,1469197,300142
+30-224,20JULY-01-WKDY-Weekday-03,6742027,Route 30  Northbound - San Rafael,0,1469200,300142
+30-224,20JULY-01-WKDY-Weekday-03,6742028,Route 30  Northbound - San Rafael,0,1469199,300142
+30-224,20JULY-01-WKDY-Weekday-03,6742029,Route 30  Northbound - San Rafael,0,1469201,300142
+30-224,20JULY-01-WKDY-Weekday-03,6742030,Route 30  Northbound - San Rafael,0,1469202,300142
+30-224,20JULY-01-WKDY-Weekday-03,6742031,Route 30  Northbound - San Rafael,0,1469196,300142
+30-224,20JULY-01-WKDY-Weekday-03,6742032,Route 30  Northbound - San Rafael,0,1469167,300142
+30-224,20JULY-01-WKDY-Weekday-03,6742033,Route 30  Northbound - San Rafael,0,1469169,300142
+30-224,20JULY-01-WKDY-Weekday-03,6742034,Route 30  Northbound - San Rafael,0,1469198,300142
+30-224,20JULY-01-WKDY-Weekday-03,6742035,Route 30  Northbound - San Rafael,0,1469222,300142
+30-224,20JULY-01-WKDY-Weekday-03,6742036,Route 30  Northbound - San Rafael,0,1469208,300142
+30-224,20JULY-01-WKDY-Weekday-03,6742037,Route 30  Northbound - San Rafael,0,1469181,300142
+30-224,20JULY-01-WKDY-Weekday-03,6742038,Route 30 Southbound - San Francisco,1,1469205,300143
+30-224,20JULY-01-WKDY-Weekday-03,6742039,Route 30 Southbound - San Francisco,1,1469204,300143
+30-224,20JULY-01-WKDY-Weekday-03,6742040,Route 30 Southbound - San Francisco,1,1469203,300143
+30-224,20JULY-01-WKDY-Weekday-03,6742041,Route 30 Southbound - San Francisco,1,1469194,300143
+30-224,20JULY-01-WKDY-Weekday-03,6742042,Route 30 Southbound - San Francisco,1,1469193,300143
+30-224,20JULY-01-WKDY-Weekday-03,6742043,Route 30 Southbound - San Francisco,1,1469166,300143
+30-224,20JULY-01-WKDY-Weekday-03,6742044,Route 30 Southbound - San Francisco,1,1469208,300143
+30-224,20JULY-01-WKDY-Weekday-03,6742045,Route 30 Southbound - San Francisco,1,1469202,300143
+30-224,20JULY-01-WKDY-Weekday-03,6742046,Route 30 Southbound - San Francisco,1,1469201,300143
+30-224,20JULY-01-WKDY-Weekday-03,6742047,Route 30 Southbound - San Francisco,1,1469199,300143
+30-224,20JULY-01-WKDY-Weekday-03,6742048,Route 30 Southbound - San Francisco,1,1469195,300143
+30-224,20JULY-01-WKDY-Weekday-03,6742049,Route 30 Southbound - San Francisco,1,1469194,300143
+30-224,20JULY-01-WKDY-Weekday-03,6742050,Route 30 Southbound - San Francisco,1,1469184,300143
+30-224,20JULY-01-WKDY-Weekday-03,6742051,Route 30 Southbound - San Francisco,1,1469188,300143
+30-224,20JULY-01-WKDY-Weekday-03,6742052,Route 30 Southbound - San Francisco,1,1469190,300143
+30-224,20JULY-01-WKDY-Weekday-03,6742053,Route 30 Southbound - San Francisco,1,1469223,300143
+30-224,20JULY-01-WKDY-Weekday-03,6742054,Route 30 Southbound - San Francisco,1,1469235,300143
+30-224,20JULY-01-WKDY-Weekday-03,6742055,Route 30 Southbound - San Francisco,1,1469196,300143
+30-224,20JULY-01-WKDY-Weekday-03,6742056,Route 30 Southbound - San Francisco,1,1469186,300143
+30-224,20JULY-01-WKDY-Weekday-03,6742057,Route 30 Southbound - San Francisco,1,1469235,300143
+30-224,20JULY-01-WKDY-Weekday-03,6742058,Route 30 Southbound - San Francisco,1,1469192,300143
+30-224,20JULY-01-WKDY-Weekday-03,6742059,Route 30  Northbound - San Rafael,0,1469166,300142
+30-224,20JULY-01-WKDY-Weekday-03,6742060,Route 30  Northbound - San Rafael,0,1469198,300142
+30-224,20JULY-01-WKDY-Weekday-03,6742061,Route 30  Northbound - San Rafael,0,1469168,300142
+40-224,20JULY-01-WKDY-Weekday-03,6742062,Route 40 Eastbound - El Cerrito del Norte BART,0,1469176,400105
+40-224,20JULY-01-WKDY-Weekday-03,6742063,Route 40 Eastbound - El Cerrito del Norte BART,0,1469175,400105
+40-224,20JULY-01-WKDY-Weekday-03,6742064,Route 40 Eastbound - El Cerrito del Norte BART,0,1469176,400105
+40-224,20JULY-01-WKDY-Weekday-03,6742065,Route 40 Eastbound - El Cerrito del Norte BART,0,1469175,400105
+40-224,20JULY-01-WKDY-Weekday-03,6742066,Route 40 Eastbound - El Cerrito del Norte BART,0,1469176,400105
+40-224,20JULY-01-WKDY-Weekday-03,6742067,Route 40 Eastbound - El Cerrito del Norte BART,0,1469175,400105
+40-224,20JULY-01-WKDY-Weekday-03,6742068,Route 40 Eastbound - El Cerrito del Norte BART,0,1469176,400105
+40-224,20JULY-01-WKDY-Weekday-03,6742069,Route 40 Eastbound - El Cerrito del Norte BART,0,1469175,400105
+40-224,20JULY-01-WKDY-Weekday-03,6742070,Route 40 Eastbound - El Cerrito del Norte BART,0,1469176,400105
+40-224,20JULY-01-WKDY-Weekday-03,6742071,Route 40 Eastbound - El Cerrito del Norte BART,0,1469175,400105
+40-224,20JULY-01-WKDY-Weekday-03,6742072,Route 40 Eastbound - El Cerrito del Norte BART,0,1469178,400105
+40-224,20JULY-01-WKDY-Weekday-03,6742073,Route 40 Eastbound - El Cerrito del Norte BART,0,1469200,400105
+40-224,20JULY-01-WKDY-Weekday-03,6742074,Route 40 Eastbound - El Cerrito del Norte BART,0,1469179,400105
+40-224,20JULY-01-WKDY-Weekday-03,6742075,Route 40 Eastbound - El Cerrito del Norte BART,0,1469200,400105
+40-224,20JULY-01-WKDY-Weekday-03,6742076,Route 40 Eastbound - El Cerrito del Norte BART,0,1469179,400105
+40-224,20JULY-01-WKDY-Weekday-03,6742077,Route 40 Westbound - San Rafael,1,1469268,400106
+40-224,20JULY-01-WKDY-Weekday-03,6742078,Route 40 Westbound - San Rafael,1,1469177,400106
+40-224,20JULY-01-WKDY-Weekday-03,6742079,Route 40 Westbound - San Rafael,1,1469175,400106
+40-224,20JULY-01-WKDY-Weekday-03,6742080,Route 40 Westbound - San Rafael,1,1469176,400106
+40-224,20JULY-01-WKDY-Weekday-03,6742081,Route 40 Westbound - San Rafael,1,1469175,400106
+40-224,20JULY-01-WKDY-Weekday-03,6742082,Route 40 Westbound - San Rafael,1,1469176,400106
+40-224,20JULY-01-WKDY-Weekday-03,6742083,Route 40 Westbound - San Rafael,1,1469175,400106
+40-224,20JULY-01-WKDY-Weekday-03,6742084,Route 40 Westbound - San Rafael,1,1469176,400106
+40-224,20JULY-01-WKDY-Weekday-03,6742085,Route 40 Westbound - San Rafael,1,1469175,400106
+40-224,20JULY-01-WKDY-Weekday-03,6742086,Route 40 Westbound - San Rafael,1,1469178,400106
+40-224,20JULY-01-WKDY-Weekday-03,6742087,Route 40 Westbound - San Rafael,1,1469179,400106
+40-224,20JULY-01-WKDY-Weekday-03,6742088,Route 40 Westbound - San Rafael,1,1469200,400106
+40-224,20JULY-01-WKDY-Weekday-03,6742089,Route 40 Westbound - San Rafael,1,1469179,400106
+40-224,20JULY-01-WKDY-Weekday-03,6742090,Route 40 Westbound - San Rafael,1,1469200,400106
+40-224,20JULY-01-WKDY-Weekday-03,6742091,Route 40 Westbound - San Rafael,1,1469179,400106
+40-224,20JULY-01-WKDY-Weekday-03,6742092,Route 40 Eastbound - El Cerrito del Norte BART,0,1469178,400105
+40-224,20JULY-01-WKDY-Weekday-03,6742093,Route 40 Eastbound - El Cerrito del Norte BART,0,1469179,400105
+40-224,20JULY-01-WKDY-Weekday-03,6742094,Route 40 Westbound - San Rafael,1,1469176,400106
+40-224,20JULY-01-WKDY-Weekday-03,6742095,Route 40 Westbound - San Rafael,1,1469175,400106
+40-224,20JULY-01-WKDY-Weekday-03,6742096,Route 40 Westbound - San Rafael,1,1469176,400106
+40-224,20JULY-01-WKDY-Weekday-03,6742097,Route 40 Eastbound - El Cerrito del Norte BART,0,1469175,400105
+40-224,20JULY-01-WKDY-Weekday-03,6742098,Route 40 Eastbound - El Cerrito del Norte BART,0,1469200,400105
+40-224,20JULY-01-WKDY-Weekday-03,6742099,Route 40 Westbound - San Rafael,1,1469175,400106
+70-224,20JULY-01-WKDY-Weekday-03,6742100,Route 70 Northbound - Novato,0,1469194,700317
+70-224,20JULY-01-WKDY-Weekday-03,6742101,Route 70 Northbound - Novato,0,1469208,700317
+70-224,20JULY-01-WKDY-Weekday-03,6742102,Route 70 Northbound - Novato,0,1469166,700317
+70-224,20JULY-01-WKDY-Weekday-03,6742103,Route 70 Northbound - Novato,0,1469193,700317
+70-224,20JULY-01-WKDY-Weekday-03,6742104,Route 70 Southbound - San Francisco,1,1469183,700318
+70-224,20JULY-01-WKDY-Weekday-03,6742105,Route 70 Southbound - San Francisco,1,1469187,700318
+70-224,20JULY-01-WKDY-Weekday-03,6742106,Route 70 Northbound - Novato,0,1469207,700317
+70-224,20JULY-01-WKDY-Weekday-03,6742107,Route 70 Northbound - Novato,0,1469189,700317
+70-224,20JULY-01-WKDY-Weekday-03,6742108,Route 70 Northbound - Novato,0,1469191,700317
+70-224,20JULY-01-WKDY-Weekday-03,6742109,Route 70 Northbound - Novato,0,1469180,700317
+70-224,20JULY-01-WKDY-Weekday-03,6742110,Route 70 Northbound - Novato,0,1469206,700317
+70-224,20JULY-01-WKDY-Weekday-03,6742111,Route 70 Northbound - Novato,0,1469217,700317
+70-224,20JULY-01-WKDY-Weekday-03,6742112,Route 70 Northbound - Novato,0,1469235,700317
+70-224,20JULY-01-WKDY-Weekday-03,6742113,Route 70 Northbound - Novato,0,1469194,700317
+70-224,20JULY-01-WKDY-Weekday-03,6742114,Route 70 Northbound - Novato,0,1469195,700317
+70-224,20JULY-01-WKDY-Weekday-03,6742115,Route 70 Northbound - Novato,0,1469196,700317
+70-224,20JULY-01-WKDY-Weekday-03,6742116,Route 70 Northbound - Novato,0,1469167,700317
+70-224,20JULY-01-WKDY-Weekday-03,6742117,Route 70 Northbound - Novato,0,1469169,700317
+70-224,20JULY-01-WKDY-Weekday-03,6742118,Route 70 Northbound - Novato,0,1469198,700317
+70-224,20JULY-01-WKDY-Weekday-03,6742119,Route 70 Southbound - San Francisco,1,1469195,700318
+70-224,20JULY-01-WKDY-Weekday-03,6742120,Route 70 Southbound - San Francisco,1,1469235,700318
+70-224,20JULY-01-WKDY-Weekday-03,6742121,Route 70 Southbound - San Francisco,1,1469167,700318
+70-224,20JULY-01-WKDY-Weekday-03,6742122,Route 70 Southbound - San Francisco,1,1469196,700318
+70-224,20JULY-01-WKDY-Weekday-03,6742123,Route 70 Southbound - San Francisco,1,1469224,700318
+70-224,20JULY-01-WKDY-Weekday-03,6742124,Route 70 Southbound - San Francisco,1,1469180,700318
+70-224,20JULY-01-WKDY-Weekday-03,6742125,Route 70 Southbound - San Francisco,1,1469206,700318
+70-224,20JULY-01-WKDY-Weekday-03,6742126,Route 70 Southbound - San Francisco,1,1469207,700318
+70-224,20JULY-01-WKDY-Weekday-03,6742127,Route 70 Southbound - San Francisco,1,1469217,700318
+70-224,20JULY-01-WKDY-Weekday-03,6742128,Route 70 Southbound - San Francisco,1,1469189,700318
+70-224,20JULY-01-WKDY-Weekday-03,6742129,Route 70 Southbound - San Francisco,1,1469191,700318
+70-224,20JULY-01-WKDY-Weekday-03,6742130,Route 70 Southbound - San Francisco,1,1469194,700318
+70-224,20JULY-01-WKDY-Weekday-03,6742131,Route 70 Northbound - Novato,0,1469203,700317
+70-224,20JULY-01-WKDY-Weekday-03,6742132,Route 70 Northbound - Novato,0,1469211,700317
+70-224,20JULY-01-WKDY-Weekday-03,6742133,Route 70 Southbound - San Francisco,1,1469169,700318
+70-224,20JULY-01-WKDY-Weekday-03,6742134,Route 70 Southbound - San Francisco,1,1469198,700318
+70-224,20JULY-01-WKDY-Weekday-03,6742135,Route 70 Southbound - San Francisco,1,1469208,700318
+70-224,20JULY-01-WKDY-Weekday-03,6742136,Route 70 Southbound - San Francisco,1,1469166,700318
+70-224,20JULY-01-WKDY-Weekday-03,6742137,Route 70 Southbound - San Francisco,1,1469193,700318
+70-224,20JULY-01-WKDY-Weekday-03,6742138,Route 70 Northbound - Novato,0,1469189,700317
+70-224,20JULY-01-WKDY-Weekday-03,6742139,Route 70 Northbound - Novato,0,1469191,700317
+70-224,20JULY-01-WKDY-Weekday-03,6742140,Route 70 Northbound - Novato,0,1469235,700317
+70-224,20JULY-01-WKDY-Weekday-03,6742141,Route 70 Northbound - Novato,0,1469194,700317
+70-224,20JULY-01-WKDY-Weekday-03,6742142,Route 70 Southbound - San Francisco,1,1469185,700318
+70-224,20JULY-01-WKDY-Weekday-03,6742143,Route 70 Southbound - San Francisco,1,1469189,700318
+70-224,20JULY-01-WKDY-Weekday-03,6742144,Route 70 Southbound - San Francisco,1,1469191,700318
+70-224,20JULY-01-WKDY-Weekday-03,6742145,Route 70 Northbound - Novato,0,1469285,700317
+LF-220,20JULY-FerryMVS-Weekday-01,6734624,Special,1,1467637,LF0019
+LF-220,20JULY-FerryMVS-Weekday-01,6734625,Special,1,1467637,LF0019
+LF-220,20JULY-FerryMVS-Weekday-01,6734626,Special,1,1467637,LF0019
+LF-220,20JULY-FerryMVS-Weekday-01,6734627,Special,1,1467637,LF0019
+LF-220,20JULY-FerryMVS-Weekday-01,6734628,Special,1,1467637,LF0019
+LF-220,20JULY-FerryMVS-Weekday-01,6734629,Special,1,1467637,LF0019
+LF-220,20JULY-FerryMVS-Weekday-01,6734630,Special,1,1467637,LF0019
+LF-220,20JULY-FerryMVS-Weekday-01,6734631,Special,0,1467637,LF0018
+LF-220,20JULY-FerryMVS-Weekday-01,6734632,Special,0,1467637,LF0018
+LF-220,20JULY-FerryMVS-Weekday-01,6734633,Special,0,1467637,LF0018
+LF-220,20JULY-FerryMVS-Weekday-01,6734634,Special,0,1467637,LF0018
+LF-220,20JULY-FerryMVS-Weekday-01,6734635,Special,0,1467637,LF0018
+LF-220,20JULY-FerryMVS-Weekday-01,6734636,Special,0,1467634,LF0018
+LF-220,20JULY-FerryMVS-Weekday-01,6734637,Special,0,1467637,LF0018
+SF-220,20JULY-FerryMVS-Weekday-01,6734638,Special,1,1467636,SF0009
+SF-220,20JULY-FerryMVS-Weekday-01,6734639,Special,0,1467636,SF0008
+SF-220,20JULY-FerryMVS-Weekday-01,6734640,Special,1,1467636,SF0009
+SF-220,20JULY-FerryMVS-Weekday-01,6734641,Special,0,1467636,SF0008
+TF-220,20JULY-FerryMVS-Weekday-01,6734642,Special,1,1467635,TF0006
+TF-220,20JULY-FerryMVS-Weekday-01,6734643,Special,1,1467633,TF0006
+TF-220,20JULY-FerryMVS-Weekday-01,6734644,Special,0,1467633,TF0005
+TF-220,20JULY-FerryMVS-Weekday-01,6734645,Special,0,1467633,TF0005
